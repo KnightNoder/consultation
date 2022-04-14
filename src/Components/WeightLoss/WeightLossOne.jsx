@@ -3,10 +3,16 @@ import ProceedTemplate from '.././ProceedTemplate';
 import { useState } from 'react';
 
 const WeightLossOne = () => {
-  const numberCheck = (event) => {
-    if (!/[0-9]/.test(event.key)) {
-      event.preventDefault();
-    }
+  const [height,SetHeight] = useState('')
+  const [weight,SetWeight] = useState('')
+  const heightCheck = (e) => {
+    const onlyDigits = e.target.value.replace(/\D/g, "");
+    SetHeight(onlyDigits)
+  }
+
+  const weightCheck = (e) => {
+    const onlyDigits = e.target.value.replace(/\D/g, "");
+    SetWeight(onlyDigits)
   }
   return (
     <>
@@ -16,9 +22,9 @@ const WeightLossOne = () => {
             </div>
             <div className='assessment'>
               <h5>Please enter your height and weight below?</h5>
-              <input className='input' type="text" onkeyDown={numberCheck} placeholder='Height(in cms)' />
+              <input className='input' type="text" onChange={heightCheck} value={height} placeholder='Height(in cms)' />
               <br />
-              <input className='input' type="text" onKeyDown={numberCheck} placeholder='Weight(in Kgs)' />
+              <input className='input' type="text" onChange={weightCheck} value={weight} placeholder='Weight(in Kgs)' />
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"weightloss-1"} backLink="choice"/>
