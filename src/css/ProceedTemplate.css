@@ -1,0 +1,49 @@
+.proceed-container{
+    display: flex;
+    margin-top: 4%;
+}
+
+.back-button{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: #000000;
+    cursor: pointer
+}
+
+.proceed-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+}
+
+@media only screen and (max-width: 480px)
+{
+    .proceed-container{
+        margin-right: 0%;
+    }
+
+    .back-button{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 480px)
+{
+    .proceed-container{
+        margin-right: 12.5%;
+    }
+
+    .proceed-button{
+        flex:3;
+    }
+
+    .back-button{
+        flex: 7;
+    }
+}

@@ -1,0 +1,54 @@
+.assessment h5{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.input-age h5{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    color: #000000;
+    margin-left: 3%;
+    margin-bottom: 7%;
+    margin-top: 10%;
+}
+
+.assessment .input{
+    background: #FCFCFD;
+    border: 1px solid #CFD0D7;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-left: 3%;
+    height: 58px;
+    width: 87%;
+    padding-left: 4%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 5%;
+}
+
+.assessment .input::placeholder{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: rgba(26, 32, 61, 0.3);
+}
+
+.input-age{
+    margin-top: 30px;
+}
+
+.assessment-image .image{
+    height: 550px;
+    width: 95%;
+}

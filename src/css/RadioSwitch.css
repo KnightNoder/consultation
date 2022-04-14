@@ -1,0 +1,31 @@
+.radio-switch{
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-switch .heading{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.heading .switch{
+}
+
+.switch-container{
+    display: flex;
+    justify-content: flex-end;
+    height: 55px;
+}
+
+.switch {
+    width: 33%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
