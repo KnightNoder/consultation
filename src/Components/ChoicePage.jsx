@@ -21,21 +21,14 @@ const ChoicePage = () => {
   }
 
   useEffect(() => {
-    const val = JSON.parse(window.localStorage.getItem('choice'))
-    const choiceKey = Object.keys(val)
-    SetSelected(choiceKey[0]);
-    console.log(choiceKey[0],'choiceKey');
+    const val = JSON.parse(window.localStorage.getItem('choice')) || 'Hairfall'
+    SetSelected(val);
     window.scrollTo(0, 0);
   }, [])
 
   useEffect(() => {
     const key = selected;
-    window.localStorage.setItem('choice', JSON.stringify({[key]:{
-      'current_condition': null,
-      'family_hair_loss':null,
-      'past_allergic_reactions':null,
-      'big_events':null
-    }}));
+    window.localStorage.setItem('choice', JSON.stringify(selected));
   }, [selected]);
   
   const handleClick = (choice) => {
