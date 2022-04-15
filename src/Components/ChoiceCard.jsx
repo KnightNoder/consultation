@@ -3,7 +3,6 @@ import Radio from '@mui/material/Radio';
 import { height } from '@mui/system';
 
 const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
-  console.log(input == true,'input')
   const selectStyle = {
     background: "#FFF1EF",
     border: "1px solid #FE8276",
@@ -13,12 +12,12 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     margin: "6% 0%",
     // padding: "2% 2%",
     // padding: "3% 0%",
-    height: "57px",
+    height: "65px",
     cursor:"pointer",
     fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "500",
-    fontSize: "18px",
+    fontSize: "20px",
     lineHeight: "23px",
     color: "#FF8277",
   }
@@ -30,12 +29,12 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     margin: "6% 0%",
     background: "white",
     // padding: "2% 2%",
-    height: "57px",
+    height: "65px",
     cursor:"pointer",
     fontFamily: "Roboto",
     fontStyle:" normal",
     fontWeight:" 400",
-    fontSize:" 16px",
+    fontSize:" 20px",
     lineHeight:" 23px",
     color: "#000000",
   }
@@ -44,8 +43,8 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "500",
-    fontSize: "17px",
-    lineHeight: "17px",
+    fontSize: "19px",
+    lineHeight: "19px",
     color: "#FF8277",
   }
 
@@ -53,8 +52,8 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     fontFamily: "Roboto",
     fontStyle:" normal",
     fontWeight:" 400",
-    fontSize:"17px",
-    lineHeight:" 17px",
+    fontSize:"19px",
+    lineHeight:" 19px",
     color: "#000000",
   }
 
@@ -66,8 +65,8 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     display: "none"
   }
 
-  const semi = {
-    width: "38%"
+  const subtextStyle = {
+    fontSize:"15px"
   }
 
   const full = {
@@ -109,7 +108,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
                 <div className='text'>
                   {text} 
                 </div>
-                <div className='subText'>
+                <div className='subText' style={subtextStyle}>
                   {subtext}
                 </div>
               </div>

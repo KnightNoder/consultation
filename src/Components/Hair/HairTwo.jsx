@@ -23,7 +23,6 @@ const HairOne = () => {
     borderRadius: "5px",
   }
 
-  console.log(hairLoss,allergy,event,'status')
   return (
     <>
         <div className="choice-container">

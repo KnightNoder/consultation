@@ -22,7 +22,8 @@ const ChoicePage = () => {
 
   useEffect(() => {
     const val = JSON.parse(window.localStorage.getItem('choice')) || 'Hairfall'
-    SetSelected(Object.keys(val)[0])
+    const choiceVal = Object.keys(val)[0] || 'Hairfall' 
+    SetSelected(choiceVal)
     window.scrollTo(0, 0);
   }, [])
 

@@ -119,7 +119,7 @@
 
   .assessment{
     flex: 3;
-    margin-right: 10%;
+    margin-right: 8%;
     /* border: solid 1px; */
     /* padding-right: 5%; */
   }
@@ -173,5 +173,12 @@
 
   .choice-card{
     width: 90%;
+  }
+
+  .assessment-container {
+    display: "flex";
+    flex-direction:column;
+    flex:3; 
+    margin-right: 8%
   }
 }

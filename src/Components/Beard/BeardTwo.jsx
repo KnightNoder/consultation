@@ -1,7 +1,8 @@
 import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState } from 'react';
+import { useState,useEffect } from 'react'; 
+import '../../css/BeardTwo.css'
 
 const BeardTwo = () => {
   const [selectedOne,SetSelectedOne] = useState('Beard Growth')
@@ -9,6 +10,11 @@ const BeardTwo = () => {
   const handleClickOne = (choice) => {
     SetSelectedOne(choice)
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   const handleClickTwo = (choice) => {
     SetSelectedTwo(choice)
   }
@@ -18,16 +24,16 @@ const BeardTwo = () => {
             <div className='assessment-image'>
                 <img src={assessmentImage} className='image' alt="" srcset="" />
             </div>
-            <div style={{display: "flex",flexDirection:"column",flex:"3", marginRight: "10%"}}>
-                <div className='assessment'>
-                <h5>What exactly are you looking for?</h5>
-                    <ChoiceCard 
-                        clickHandler={handleClickOne} noImage="true" choice={selectedOne} text="Beard Growth"/>
-                    <ChoiceCard 
-                        clickHandler={handleClickOne} noImage="true" choice={selectedOne}  text="Beard Care"/>
-                </div>
-                <div className='assessment'>
-                <h5>How do you trim your beard?</h5>
+            <div className='assessment-container'>
+                <div className=''>
+                  <h5>What exactly are you looking for?</h5>
+                      <ChoiceCard 
+                          clickHandler={handleClickOne} noImage="true" choice={selectedOne} text="Beard Growth"/>
+                      <ChoiceCard 
+                          clickHandler={handleClickOne} noImage="true" choice={selectedOne}  text="Beard Care"/>
+                  </div>
+                <div className=''>
+                  <h5>How do you trim your beard?</h5>
                     <ChoiceCard 
                         clickHandler={handleClickTwo} noImage="true" choice={selectedTwo} text="I generally shave my beard"/>
                     <ChoiceCard 
