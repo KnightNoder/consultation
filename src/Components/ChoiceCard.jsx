@@ -13,6 +13,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     margin: "6% 0%",
     // padding: "2% 2%",
     // padding: "3% 0%",
+    height: "64px",
     cursor:"pointer"
   }
   const deselectStyle = {
@@ -23,6 +24,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     margin: "6% 0%",
     background: "white",
     // padding: "2% 2%",
+    height: "64px",
     cursor:"pointer"
   }
 
