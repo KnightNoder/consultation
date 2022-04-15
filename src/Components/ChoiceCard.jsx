@@ -3,6 +3,7 @@ import Radio from '@mui/material/Radio';
 import { height } from '@mui/system';
 
 const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
+  console.log(input, 'input')
   const selectStyle = {
     background: "#FFF1EF",
     border: "1px solid #FE8276",
@@ -12,14 +13,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     margin: "6% 0%",
     // padding: "2% 2%",
     // padding: "3% 0%",
-    height: "64px",
-    cursor:"pointer",
-    fontFamily: "Roboto",
-    fontStyle: "normal",
-    fontWeight: "500",
-    fontSize: "20px",
-    lineHeight: "23px",
-    color: "#FF8277",
+    cursor:"pointer"
   }
   const deselectStyle = {
     border: "1px solid #CACACA",
@@ -29,14 +23,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     margin: "6% 0%",
     background: "white",
     // padding: "2% 2%",
-    height: "64px",
-    cursor:"pointer",
-    fontFamily: "Roboto",
-    fontStyle:" normal",
-    fontWeight:" 400",
-    fontSize:" 20px",
-    lineHeight:" 23px",
-    color: "#000000",
+    cursor:"pointer"
   }
 
   const selectTextStyle = {
@@ -71,13 +58,17 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     marginTop:"5px"
   }
 
+  const semi = {
+    width: "38%"
+  }
+
   const full = {
     width: "100%"
   }
 
   return (
     <>
-          <div className="choice-card" onClick={() => clickHandler(text)}  
+          <div className={`choice-card ${ input ? "semi": "full"}`} onClick={() => clickHandler(text)}  
           name={text} style={((choice == text) ? selectStyle : deselectStyle)}
           >
               {/* <div className='radio-button'>

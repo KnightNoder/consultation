@@ -1,10 +1,13 @@
 import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const BeardOne = () => {
   const [selected,SetSelected] = useState('Patchy Beard')
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
   const handleClick = (choice) => {
     SetSelected(choice)
   }

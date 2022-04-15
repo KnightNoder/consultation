@@ -19,7 +19,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 48px;
 }
 
 @media only screen and (max-width: 480px)
@@ -31,20 +30,26 @@
     .back-button{
         margin-top: 20px;
         margin-bottom: 10px;
+        font-size: 19px;
+    }
+
+    .proceed-button{
+        height: 48px;
     }
 }
 
 @media only screen and (min-width: 480px)
 {
     .proceed-container{
-        margin-right: 11%;
+        margin-right: 8%;
     }
 
     .proceed-button{
-        flex:3;
+        flex:1;
+        height: 56px;
     }
 
     .back-button{
-        flex: 7;
+        flex:3;
     }
 }

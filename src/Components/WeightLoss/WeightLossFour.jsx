@@ -18,7 +18,12 @@ const WeightLossFour = () => {
               <CheckBoxCard  text="Diabetes"/>
               <CheckBoxCard  text="Kidney"/>
               <CheckBoxCard  text="No such problems"/>
-              <CheckBoxCard  text="Others"/>
+              <div className='optional-input' style={{display:"flex", justifyContent: "center",
+                alignItems:"center"
+              }}>
+              <CheckBoxCard  text="Others" input="true"/>
+              <input className='input' style={{height:"65px", marginTop:"0px",marginLeft:"10px"}} type="text" placeholder='Specify the issue' />
+              </div>
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"weightloss-3"} backLink="weightloss-2"/>

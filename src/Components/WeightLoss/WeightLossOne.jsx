@@ -1,10 +1,15 @@
 import assessmentImage from '../../images/assessment.png'
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 const WeightLossOne = () => {
   const [height,SetHeight] = useState('')
   const [weight,SetWeight] = useState('')
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   const heightCheck = (e) => {
     const onlyDigits = e.target.value.replace(/\D/g, "");
     SetHeight(onlyDigits)

@@ -12,6 +12,10 @@ import { useState,useEffect } from 'react';
 const HairOne = () => {
     const [selected,SetSelected] = useState('Condition one')
 
+    useEffect(() => {
+      window.scrollTo(0,0)
+    }, []);
+
     // useEffect(() => {
     //   const val = JSON.parse(window.localStorage.getItem('choice'))
     //   SetSelected(val['Hairfall']['current_condition']);

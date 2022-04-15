@@ -35,3 +35,25 @@
     width: 50px;
     margin-top: 5px;
 }
+
+.semi{
+    width: 38%;
+    padding-right: 5%;
+}
+
+.full{
+    width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+    .choice-card {
+        height: "57px",
+    }
+}
+
+
+@media only screen and (min-width: 480px) {
+    .choice-card {
+        height: "64px",
+    }
+}

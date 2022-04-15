@@ -7,10 +7,8 @@ const SkinOne = () => {
   const [selected,SetSelected] = useState('')
 
   useEffect(() => {
-    const val =  JSON.parse(window.localStorage.getItem('choice'))
-    SetSelected(val['Skin']['current_condition']);
-    window.scrollTo(0, 0);
-  }, [])
+    window.scrollTo(0,0)
+  }, []);
 
   useEffect(() => {
     const val = JSON.parse(window.localStorage.getItem('choice'))
@@ -40,8 +38,12 @@ const SkinOne = () => {
               <ChoiceCard 
                clickHandler={handleClick} noImage="true" choice={selected}  text="I have tan & dull skin "
                subtext="(i want a glowing skin)"/>
-              <ChoiceCard input="true"
-               clickHandler={handleClick} noImage="true" choice={selected}  text="Others"/>
+               <div className='optional-input' style={{display:"flex"
+              }}>
+                  <ChoiceCard input="true" 
+                  clickHandler={handleClick} noImage="true" choice={selected}  text="Others"/>
+                  <input className='input' style={{height:"65px", marginTop:"6%",marginLeft:"10px"}} type="text" placeholder='Specify the issue' />
+               </div>
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"skin-1"} backLink="choice"/>

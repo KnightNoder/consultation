@@ -30,6 +30,9 @@ function App() {
   //   const screenWidth = window.innerWidth;
   //   setScreenSize(screenWidth);
   // })
+  const [choice,SetChoice] = useState({
+    
+  })
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

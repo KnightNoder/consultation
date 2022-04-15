@@ -4,7 +4,7 @@ import Checkbox from '@mui/material/Checkbox';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 
-const CheckBoxCard = ({text}) => {
+const CheckBoxCard = ({text,input}) => {
   const [clicked,SetClicked] = useState(false)
   const selectStyle = {
     background: "#FFF1EF",
@@ -15,7 +15,7 @@ const CheckBoxCard = ({text}) => {
     margin: "6% 0%",
     // padding: "2% 2%",
     // padding: "3% 0%",
-    height: "57px",
+    height: "64px",
     cursor:"pointer",
     fontFamily: "Roboto",
     fontStyle: "normal",
@@ -32,7 +32,7 @@ const CheckBoxCard = ({text}) => {
     margin: "6% 0%",
     background: "white",
     // padding: "2% 2%",
-    height: "57px",
+    height: "64px",
     cursor:"pointer",
     fontFamily: "Roboto",
     fontStyle:" normal",
@@ -69,7 +69,7 @@ const CheckBoxCard = ({text}) => {
   }
   return (
     <>
-          <div className="choice-card" onClick={() => SetClicked(!clicked)}  
+          <div className={`choice-card ${ input ? "semi": "full"}` } onClick={() => SetClicked(!clicked)}  
           name={text} style={(clicked) ? selectStyle : deselectStyle }
           >
               {/* <div className='radio-button'>
@@ -82,8 +82,8 @@ const CheckBoxCard = ({text}) => {
                   {text}
                 </div> */}
               <div className='one'>
-                  <Checkbox  icon={<RadioButtonUncheckedIcon />} disableRipple
-                  checkedIcon={ <CheckCircleOutlineIcon backgroundColor="white"/>}
+                  <Checkbox  icon={<RadioButtonUncheckedIcon fontSize="small" />} disableRipple
+                  checkedIcon={ <CheckCircleOutlineIcon backgroundColor="white" fontSize='small'/>}
                   sx={{
                     color: "#CACACA",
                     '&.Mui-checked': {
@@ -91,6 +91,7 @@ const CheckBoxCard = ({text}) => {
                     },
                   }}
                   checked={clicked}
+                  fontSize="small"
                   />
               </div>
               <div className='three' style={clicked ? selectTextStyle: deselectTextStyle}>
