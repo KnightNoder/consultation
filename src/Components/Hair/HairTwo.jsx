@@ -1,11 +1,5 @@
-import hairOne from '../../images/hair-one.png'
-import hairTwo from '../../images/hair-two.png'
-import hairThree from '../../images/hair-three.png'
-import hairFour from '../../images/hair-four.png'
 import assessmentImage from '../../images/assessment.png'
-import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import RadioSwitch from '../RadioSwitch'
 import '../../css/RadioSwitch.css';
 import '../../css/ChoicePage.css'
 import { useState } from 'react';
@@ -13,7 +7,7 @@ import { useState } from 'react';
 
 const HairOne = () => {
   const [hairLoss,SetHairLoss] = useState(true);
-  const [allergy,SetAllergy] = useState(true);
+  const [allergy,SetAllergy] = useState(false);
   const [event,SetEvent] = useState(true);
 
   const selectHairLossStyle = {
