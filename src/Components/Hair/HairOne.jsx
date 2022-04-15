@@ -12,17 +12,17 @@ import { useState,useEffect } from 'react';
 const HairOne = () => {
     const [selected,SetSelected] = useState('Condition one')
 
-    useEffect(() => {
-      const val = JSON.parse(window.localStorage.getItem('choice'))
-      SetSelected(val['Hairfall']['current_condition']);
-      window.scrollTo(0, 0);
-    }, [])
+    // useEffect(() => {
+    //   const val = JSON.parse(window.localStorage.getItem('choice'))
+    //   SetSelected(val['Hairfall']['current_condition']);
+    //   window.scrollTo(0, 0);
+    // }, [])
   
-    useEffect(() => {
-      const val = JSON.parse(window.localStorage.getItem('choice'))
-      console.log(val,'value')
-      window.localStorage.setItem('choice', JSON.stringify({['Hairfall']:{['current_condition']:selected}}));
-    }, [selected]);
+    // useEffect(() => {
+    //   const val = JSON.parse(window.localStorage.getItem('choice'))
+    //   console.log(val,'value')
+    //   window.localStorage.setItem('choice', JSON.stringify({['Hairfall']:{['current_condition']:selected}}));
+    // }, [selected]);
 
     const handleClick = (choice) => {
       SetSelected(choice)

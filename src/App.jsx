@@ -15,6 +15,7 @@ import PerformanceOne from './Components/Performance/PerformanceOne';
 import PerformanceTwo from './Components/Performance/PerformanceTwo'
 import PerformanceThree from './Components/Performance/PerformanceThree';
 import PerformanceFour from './Components/Performance/PerformanceFour';
+import PerformanceFive from './Components/Performance/PerformanceFive';
 import BeardOne from './Components/Beard/BeardOne';
 import BeardTwo from './Components/Beard/BeardTwo';
 import BeardThree from './Components/Beard/BeardThree';
@@ -51,6 +52,7 @@ function App() {
              <Route path='/performance-1' exact element={<PerformanceTwo/>}/>
              <Route path='/performance-2' exact element={<PerformanceThree/>}/>
              <Route path='/performance-3' exact element={<PerformanceFour/>}/>
+             <Route path='/performance-4' exact element={<PerformanceFive/>}/>
              <Route path='/beard' exact element={<BeardOne/>}/>
              <Route path='/beard-1' exact element={<BeardTwo/>}/>
              <Route path='/beard-2' exact element={<BeardThree/>}/>

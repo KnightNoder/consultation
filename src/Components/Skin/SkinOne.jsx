@@ -6,16 +6,16 @@ import { useState,useEffect } from 'react';
 const SkinOne = () => {
   const [selected,SetSelected] = useState('')
 
-  useEffect(() => {
-    const val = JSON.parse(window.localStorage.getItem('choice'))
-    SetSelected(val['Skin']['current_condition']);
-    window.scrollTo(0, 0);
-  }, [])
+  // useEffect(() => {
+  //   const val =  JSON.parse(window.localStorage.getItem('choice'))
+  //   SetSelected(val['Skin']['current_condition']);
+  //   window.scrollTo(0, 0);
+  // }, [])
 
-  useEffect(() => {
-    const val = JSON.parse(window.localStorage.getItem('choice'))
-    window.localStorage.setItem('choice', JSON.stringify({['Skin']:{['current_condition']:selected}}));
-  }, [selected]);
+  // useEffect(() => {
+  //   const val = JSON.parse(window.localStorage.getItem('choice'))
+  //   window.localStorage.setItem('choice', JSON.stringify({['Skin']:{['current_condition']:selected}}));
+  // }, [selected]);
   
 
   const handleClick = (choice) => {
