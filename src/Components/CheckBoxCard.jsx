@@ -46,8 +46,8 @@ const CheckBoxCard = ({text}) => {
     fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "500",
-    fontSize: "16px",
-    lineHeight: "23px",
+    fontSize: "19px",
+    lineHeight: "19px",
     color: "#FF8277",
   }
 
@@ -55,8 +55,8 @@ const CheckBoxCard = ({text}) => {
     fontFamily: "Roboto",
     fontStyle:" normal",
     fontWeight:" 400",
-    fontSize:"16px",
-    lineHeight:" 23px",
+    fontSize: "19px",
+    lineHeight: "19px",
     color: "#000000",
   }
 

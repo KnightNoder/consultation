@@ -12,7 +12,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     margin: "6% 0%",
     // padding: "2% 2%",
     // padding: "3% 0%",
-    height: "65px",
+    height: "64px",
     cursor:"pointer",
     fontFamily: "Roboto",
     fontStyle: "normal",
@@ -29,7 +29,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     margin: "6% 0%",
     background: "white",
     // padding: "2% 2%",
-    height: "65px",
+    height: "64px",
     cursor:"pointer",
     fontFamily: "Roboto",
     fontStyle:" normal",
@@ -66,7 +66,9 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
   }
 
   const subtextStyle = {
-    fontSize:"15px"
+    fontSize:"15px",
+    marginLeft:"3px",
+    marginTop:"5px"
   }
 
   const full = {

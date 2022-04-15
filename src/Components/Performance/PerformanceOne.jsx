@@ -1,13 +1,18 @@
 import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const PerformanceOne = () => {
   const [selected,SetSelected] = useState('')
   const handleClick = (choice) => {
     SetSelected(choice)
   }
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
         <div className="choice-container">
