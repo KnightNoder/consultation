@@ -22,13 +22,16 @@ const ChoicePage = () => {
 
   useEffect(() => {
     const val = JSON.parse(window.localStorage.getItem('choice')) || 'Hairfall'
-    SetSelected(val);
+    SetSelected(Object.keys(val)[0])
     window.scrollTo(0, 0);
   }, [])
 
   useEffect(() => {
     const key = selected;
-    window.localStorage.setItem('choice', JSON.stringify(selected));
+    window.localStorage.setItem('choice', JSON.stringify({[selected]:{
+      "current_condition":"",
+      "acne_frequency":""
+    }}));
   }, [selected]);
   
   const handleClick = (choice) => {

@@ -1,7 +1,9 @@
 import '../css/ChoiceCard.css'
 import Radio from '@mui/material/Radio';
+import { height } from '@mui/system';
 
-const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage}) => {
+const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
+  console.log(input == true,'input')
   const selectStyle = {
     background: "#FFF1EF",
     border: "1px solid #FE8276",
@@ -64,10 +66,18 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage}) => {
     display: "none"
   }
 
+  const semi = {
+    width: "38%"
+  }
+
+  const full = {
+    width: "100%"
+  }
+
   return (
     <>
           <div className="choice-card" onClick={() => clickHandler(text)}  
-          name={text} style={(choice == text) ? selectStyle : deselectStyle }
+          name={text} style={((choice == text) ? selectStyle : deselectStyle)}
           >
               {/* <div className='radio-button'>
                   <img src={ cardSelected ? selectImage : deselectImage} name={text} alt="" />
@@ -97,7 +107,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage}) => {
               </div>
               <div className='three' style={(choice == text) ? selectTextStyle : deselectTextStyle }>
                 <div className='text'>
-                  {text}
+                  {text} 
                 </div>
                 <div className='subText'>
                   {subtext}
