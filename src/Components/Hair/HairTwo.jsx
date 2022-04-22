@@ -84,7 +84,7 @@ const HairOne = () => {
                 </div>
             </div>
         </div>
-        <ProceedTemplate text="Book Appointment" choice={'hairfall-1'} backLink="hairfall"/>
+        <ProceedTemplate text="Proceed" choice={'appointment'} backLink="hairfall"/>
     </>
   )
 }

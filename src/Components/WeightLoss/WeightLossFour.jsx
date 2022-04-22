@@ -26,7 +26,7 @@ const WeightLossFour = () => {
               </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"weightloss-3"} backLink="weightloss-2"/>
+        <ProceedTemplate text="Proceed" choice={"appointment"} backLink="weightloss-2"/>
     </>
   )
 }

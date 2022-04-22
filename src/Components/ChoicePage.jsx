@@ -10,10 +10,15 @@ import assessmentImage from '../images/assessment.png'
 import '../css/ChoicePage.css'
 import '../css/ChoiceCard.css'
 import { useState, useEffect } from 'react';  
+import { Hidden } from '@mui/material';
 
 const ChoicePage = () => {
-  const [selected,SetSelected] = useState('Hairfall')
-
+  const [selected,SetSelected] = useState(window.localStorage.getItem('choice') || 'Hairfall')
+  const [age,SetAge] = useState('')
+  const [vibrate,SetVibrate] = useState(false);
+  const vibrateText = () => {
+    SetVibrate(true)
+  }
   const numberCheck = (event) => {
     if (!/[0-9]/.test(event.key)) {
       event.preventDefault();
@@ -21,29 +26,37 @@ const ChoicePage = () => {
   }
 
   useEffect(() => {
-    const val = JSON.parse(window.localStorage.getItem('choice')) || 'Hairfall'
-    const choiceVal = Object.keys(val)[0] || 'Hairfall' 
-    SetSelected(choiceVal)
+    const val = (window.localStorage.getItem('choice')) || 'Hairfall';
+    SetAge(window.localStorage.getItem('age') || '');
+    SetSelected(val)
     window.scrollTo(0, 0);
   }, [])
 
   useEffect(() => {
     const key = selected;
-    window.localStorage.setItem('choice', JSON.stringify({[selected]:{
-      "current_condition":"",
-      "acne_frequency":""
-    }}));
-  }, [selected]);
+    window.localStorage.setItem('choice',selected);
+    window.localStorage.setItem('age',age);
+    SetVibrate(false);
+  }, [selected,age]);
   
+  const onchange = (e) =>{
+    SetAge(e.target.value) 
+  }
+
   const handleClick = (choice) => {
-    SetSelected(choice)
+    console.log(choice,'choice')
+    SetSelected(choice) 
+    window.localStorage.setItem('choice',choice)
+    if(choice != 'Hairfall'){
+      SetAge('')
+    }
   }
 
   return (
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src={assessmentImage} className='image' alt="" srcset="" />
+                <img src={assessmentImage} className='image' alt=""  />
             </div>
             <div className='assessment'>
               <h5>I would like to Assess my </h5>
@@ -59,12 +72,17 @@ const ChoicePage = () => {
                clickHandler={handleClick} choice={selected} image={skinImage} text="Skin"/>
               <div className='input-age'>
                 <h5 style={{display:"inline-block"}}>Age</h5>
-                <span> (Your secret's safe <img src={winkImage} alt="" srcset="" />) </span>
+                <span> (Your secret's safe <img src={winkImage} alt=""  />) </span>
               </div>
-              <input className='input' type="text" onKeyPress={numberCheck} placeholder='Eg.24 yrs' />
+              <input  className='input' value={age} onChange={(e) => onchange(e)} disabled={selected != 'Hairfall'} type="text" onKeyPress={numberCheck} placeholder='Eg.24' />
+              <div className={`error-text ${vibrate ? "text-vibrate" : ''} `} style={(age == '' && selected == 'Hairfall' ) ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
+                  Please provide your age to proceed
+                  {/* visibility:"hidden" */}
+              </div>
             </div>
         </div>
-          <ProceedTemplate text="Proceed" choice={selected.toLowerCase()} backLink=""/>
+          <ProceedTemplate text="Proceed" choice='user-details' backLink="" 
+          conditionMet={age || (selected != "Hairfall")} vibrate={vibrate} vibrateText={vibrateText} />
     </>
   )
 }

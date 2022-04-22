@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading {
+            display: flex;
+            justify-content: center;
+            background-color: grey;
+        }
+
+        .one {
+            flex: 1;
+            background-color: grey;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .one:hover {
+            background-color: lightgray;
+        }
+
+        .content-div {
+            height: 300px;
+            width: 100%;
+            background-color: grey;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const ChangeColor = () => {
+            alert('hey')
+        }
+    </script>
+</head>
+
+<body>
+    <div class="heading">
+        <div class="one" onclick="ChangeColor()">
+            London
+        </div>
+        <div class="one">
+            Paris
+        </div>
+        <div class="one">
+            New York
+        </div>
+        <div class="one">
+            Hyderabad
+        </div>
+    </div>
+    <div class="content-div">
+        Hey you are in London
+    </div>
+</body>
+
+</html>

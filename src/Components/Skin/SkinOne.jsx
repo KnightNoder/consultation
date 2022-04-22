@@ -10,13 +10,13 @@ const SkinOne = () => {
     window.scrollTo(0,0)
   }, []);
 
-  useEffect(() => {
-    const val = JSON.parse(window.localStorage.getItem('choice'))
-    window.localStorage.setItem('choice', JSON.stringify({['Skin']:{
-      ['current_condition']:selected,
-      ['acne_frequency']:""
-    }}));
-  }, [selected]);
+  // useEffect(() => {
+  //   const val = JSON.parse(window.localStorage.getItem('choice'))
+  //   window.localStorage.setItem('choice', JSON.stringify({['Skin']:{
+  //     ['current_condition']:selected,
+  //     ['acne_frequency']:""
+  //   }}));
+  // }, [selected]);
   
 
   const handleClick = (choice) => {
@@ -42,7 +42,7 @@ const SkinOne = () => {
               }}>
                   <ChoiceCard input="true" 
                   clickHandler={handleClick} noImage="true" choice={selected}  text="Others"/>
-                  <input className='input' style={{height:"65px", marginTop:"6%",marginLeft:"10px"}} type="text" placeholder='Specify the issue' />
+                  <input className='input' style={{height:"65px", marginTop:"6%",marginLeft:"10px"}} disabled={selected != "Others"} type="text" placeholder='Specify the issue' />
                </div>
             </div>
         </div>

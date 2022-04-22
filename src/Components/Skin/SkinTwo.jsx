@@ -6,20 +6,20 @@ import { useState,useEffect } from 'react';
 const SkinTwo = () => {
   const [selected,SetSelected] = useState('')
   
-  useEffect(() => {
-    const val = JSON.parse(window.localStorage.getItem('choice'))
-    SetSelected(val['Skin']['acne_frequency']);
-    window.scrollTo(0, 0);
-  }, [])
+  // useEffect(() => {
+  //   const val = JSON.parse(window.localStorage.getItem('choice'))
+  //   SetSelected(val['Skin']['acne_frequency']);
+  //   window.scrollTo(0, 0);
+  // }, [])
 
-  useEffect(() => {
-    const val = JSON.parse(window.localStorage.getItem('choice'))
-    window.localStorage.setItem('choice', JSON.stringify(
-      {
-        ['Skin']:{
-          ['acne_frequency']:selected
-    }}));
-  }, [selected]);
+  // useEffect(() => {
+  //   const val = JSON.parse(window.localStorage.getItem('choice'))
+  //   window.localStorage.setItem('choice', JSON.stringify(
+  //     {
+  //       ['Skin']:{
+  //         ['acne_frequency']:selected
+  //   }}));
+  // }, [selected]);
   
   const handleClick = (choice) => {
     SetSelected(choice)

@@ -40,7 +40,7 @@ const PerformanceFive = () => {
                 </div>
             </div>
         </div>
-        <ProceedTemplate text="Book Appointment" choice={"choice"} backLink="performance-3"/>
+        <ProceedTemplate text="Proceed" choice={"appointment"} backLink="performance-3"/>
     </>
   )
 }

@@ -34,7 +34,7 @@ const SkinFour = () => {
                clickHandler={handleClick} noImage="true" choice={selected}  text="2 - 4 times in a day"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"skin-3"} backLink="skin-2"/>
+        <ProceedTemplate text="Proceed" choice={"appointment"} backLink="skin-2"/>
     </>
   )
 }

@@ -3,7 +3,6 @@ import Radio from '@mui/material/Radio';
 import { height } from '@mui/system';
 
 const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
-  console.log(input, 'input')
   const selectStyle = {
     background: "#FFF1EF",
     border: "1px solid #FE8276",
@@ -19,7 +18,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
   const deselectStyle = {
     border: "1px solid #CACACA",
     boxSizing: "border-box",
-    filter: "drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.12))",
+    // filter: "drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.12))",
     borderRadius: "6px",
     margin: "6% 0%",
     background: "white",

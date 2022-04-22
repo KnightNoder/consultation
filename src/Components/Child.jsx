@@ -1,32 +1,16 @@
-import '../css/Child.css'
-import React, { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom"
 
-
-const Child = (props) => {
-  console.log(props,'props');
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    setCount(JSON.parse(window.localStorage.getItem('count')));
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('count', count);
-  }, [count]);
-
-  const increaseCount = () => {
-    return setCount(count + 1);
-  }
-  const decreaseCount = () => {
-    return setCount(count - 1)
-  }
+const Parent = ({firstName,lastName,onchange,choice}) => {
+  const navigate = useNavigate()
   return (
-    <div className='second' onClick={props.func}>
-         <h1> Count {count} </h1>
-        <button onClick={increaseCount}>+</button>
-        <button onClick={decreaseCount}>-</button>
+    <div>
+        Hello {choice}
+        <br />
+        <input type="text" value={firstName} name="firstNameTwo" onChange={onchange}/>
+        <input type="text" value={lastName} name="lastNameTwo" onChange={onchange}/>
+        <button onClick={() => navigate('/final')}>Next</button>
     </div>
   )
 }
 
-export default Child
+export default Parent

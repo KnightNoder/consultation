@@ -48,7 +48,7 @@ const BeardThree = () => {
               </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"beard-2"} backLink="beard-1"/>
+        <ProceedTemplate text="Proceed" choice={"appointment"} backLink="beard-1"/>
     </>
   )
 }

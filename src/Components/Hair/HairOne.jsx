@@ -55,7 +55,7 @@ const HairOne = () => {
               <input className='input' type="text" placeholder='Eg.24 yrs' /> */}
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={'hairfall-1'} backLink="choice"/>
+        <ProceedTemplate text="Proceed" choice={'hairfall-1'} backLink="choice"/> 
     </>
   )
 }
