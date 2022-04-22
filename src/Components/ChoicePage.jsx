@@ -17,6 +17,7 @@ const ChoicePage = () => {
   const [age,SetAge] = useState('')
   const [vibrate,SetVibrate] = useState(false);
   const vibrateText = () => {
+    navigator.vibrate(1000)
     SetVibrate(true)
   }
   const numberCheck = (event) => {
