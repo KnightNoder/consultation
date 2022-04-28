@@ -38,6 +38,7 @@
     flex:1;
     display: flex;
     justify-content: center;
+    flex-direction: column-reverse;
   }
   
   .header-block,.self-assessment-section,.assessment-image{
@@ -50,7 +51,7 @@
   }
   
   .choice-container {
-    flex: 9;
+    flex: 5;
     margin-left: 9%;
     margin-right: 9%;
     margin-top: 10%;
@@ -58,11 +59,6 @@
 
   .assessment h5{
     font-size: 16px;
-  }
-
-  .proceed-container{
-    flex-direction: column-reverse;
-    margin-top: 10%;
   }
 
   .back-button{
@@ -75,7 +71,6 @@
 
   .proceed-button{
     padding-left: 0;
-    margin: 0 6%;
     height: 50px;
   }
 
@@ -177,14 +172,6 @@
 
   .assessment h5{
     font-size: 24px;
-  }
-
-  .proceed-button{
-    padding-left: 10%;
-  }
-
-  .choice-card{
-    width: 90%;
   }
 
   .assessment-container {

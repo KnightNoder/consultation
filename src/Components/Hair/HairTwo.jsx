@@ -2,21 +2,41 @@ import assessmentImage from '../../images/assessment.png'
 import ProceedTemplate from '.././ProceedTemplate';
 import '../../css/RadioSwitch.css';
 import '../../css/ChoicePage.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const HairOne = () => {
-  const [hairLoss,SetHairLoss] = useState(true);
-  const [allergy,SetAllergy] = useState(false);
-  const [event,SetEvent] = useState(true);
+  const [family_hair_loss,Set_family_hair_loss] = useState(window.localStorage.getItem('family_hair_loss'));
+  const [past_allergy,Set_past_allergy] = useState(window.localStorage.getItem('past_allergy'));
+  const [big_event_120_days,Set_big_event_120_days] = useState(window.localStorage.getItem('big_event_120_days'));
 
-  const selectHairLossStyle = {
-    background: "#FF8277",
+  console.log(window.localStorage.getItem('family_hair_loss'),window.localStorage.getItem('past_allergy')
+  ,window.localStorage.getItem('big_event_120_days'),'ls');
+  console.log(family_hair_loss,past_allergy,big_event_120_days,'states');
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+
+  useEffect(() => {
+    window.localStorage.setItem('family_hair_loss', family_hair_loss );
+}, [family_hair_loss]);
+
+useEffect(()=>{
+    window.localStorage.setItem('past_allergy', past_allergy );
+  },[past_allergy])
+
+  useEffect(()=>{
+    window.localStorage.setItem('big_event_120_days', big_event_120_days );
+  },[big_event_120_days])
+
+  const selectStyle = {
+    backgroundColor: "#FF8277",
     color: "white",
     borderRadius: "5px"
   }
 
-  const deselectHairStyle = {
+  const deselectStyle = {
     background: "#FBFDFE",
     border: "1px solid #CACACA",
     boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)",
@@ -34,57 +54,55 @@ const HairOne = () => {
                 <RadioSwitch  text="Do you have any past allergic reactions to medicines? "/>
                 <RadioSwitch  text="Do you have any big events coming up in next 120 days? "/> */}
                 <div className='radio-switch'>
-
                     <div className='heading'>
-                    Does anyone in your family have hair loss?
+                    Does anyone in your family have hair loss? {family_hair_loss}
                     </div>
                     <div className='switch-container'>
-                        <div className='switch' name="hairLoss" 
-                        style={ hairLoss ? deselectHairStyle : selectHairLossStyle  }
-                        onClick={() => SetHairLoss(!hairLoss)}>
+                        <div className='switch' style={ (family_hair_loss == 'Yes' ) ? selectStyle : deselectStyle   }
+                        onClick={() => Set_family_hair_loss('Yes')}>
                             Yes
                         </div>
                         <div className='switch' 
-                            style={ hairLoss ? selectHairLossStyle: deselectHairStyle  }
-                        onClick={() => SetHairLoss(!hairLoss)}>
+                            style={ (family_hair_loss == 'No' ) ? selectStyle : deselectStyle }
+                        onClick={() => Set_family_hair_loss('No')}>
                             No
                         </div>
                     </div>
                      
                     <div className='heading'>
-                    Do you have any past allergic reactions to medicines?
+                    Do you have any past allergic reactions to medicines? {past_allergy}
                     </div>
                     <div className='switch-container'>
-                        <div className='switch' name="hairLoss" 
-                            style={ allergy ? deselectHairStyle : selectHairLossStyle  }
-                            onClick={() => SetAllergy(!allergy)}>
+                        <div className='switch'  
+                            style={ past_allergy == 'Yes' ? selectStyle : deselectStyle   }
+                            onClick={() => Set_past_allergy('Yes')}>
                                 Yes
                             </div>
                             <div className='switch' 
-                                style={ allergy ? selectHairLossStyle: deselectHairStyle  }
-                            onClick={() => SetAllergy(!allergy)}>
+                                style={ past_allergy == 'No' ? selectStyle : deselectStyle  }
+                            onClick={() => Set_past_allergy('No')}>
                                 No
                         </div>
                     </div>
                     <div className='heading'>
-                    Do you have any big events coming up in next 120 days?
+                    Do you have any big events coming up in next 120 days? {big_event_120_days}
                     </div>
                     <div className='switch-container'>
-                        <div className='switch' name="hairLoss" 
-                            style={ event ? deselectHairStyle : selectHairLossStyle  }
-                            onClick={() => SetEvent(!event)}>
+                        <div className='switch'  
+                            style={ (big_event_120_days == 'Yes') ? selectStyle : deselectStyle  }
+                            onClick={() => Set_big_event_120_days('Yes')}>
                                 Yes
                             </div>
                             <div className='switch' 
-                                style={ event ? selectHairLossStyle: deselectHairStyle  }
-                            onClick={() => SetEvent(!event)}>
+                                style={ (big_event_120_days == 'No') ? selectStyle : deselectStyle  }
+                            onClick={() => Set_big_event_120_days('No')}>
                             No
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={'appointment'} backLink="hairfall"/>
+        <ProceedTemplate text="Proceed" choice={'appointment'} backLink="hairfall" conditionMet="true"/>
     </>
   )
 }

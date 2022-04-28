@@ -7,57 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .heading {
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .fixed {
             display: flex;
-            justify-content: center;
-            background-color: grey;
-        }
-
-        .one {
-            flex: 1;
-            background-color: grey;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .one:hover {
-            background-color: lightgray;
-        }
-
-        .content-div {
-            height: 300px;
+            background-color: lightgreen;
+            position: fixed;
+            top: 0;
+            margin-top: 200px;
             width: 100%;
-            background-color: grey;
+            height: 100px;
+        }
+
+        .flex {
+            width: 50%;
+            display: block;
             text-align: center;
+            border: solid 1px;
+            line-height: 100px;
+            border: solid 1px;
+        }
+
+        .button-new {
+            width: 20%;
+            padding: .5%
         }
     </style>
-    <script>
-        const ChangeColor = () => {
-            alert('hey')
-            navigator.vibrate()
-        }
-    </script>
 </head>
 
 <body>
-    <div class="heading">
-        <div class="one" onclick="ChangeColor()">
-            London
+
+    <div class="fixed">
+        <div id="a" class="flex">
+            <button class="button-new">Hello</button>
         </div>
-        <div class="one">
-            Paris
+        <div id="a" class="flex">
         </div>
-        <div class="one">
-            New York
+        <div id="a" class="flex">
         </div>
-        <div class="one">
-            Hyderabad
+        <div id="a" class="flex">
+        </div>
+        <div id="b" class="flex">
+            <button class="button-new">Hello</button>
         </div>
     </div>
-    <div class="content-div">
-        Hey you are in London
-    </div>
+
 </body>
 
 </html>

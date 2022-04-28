@@ -1,12 +1,22 @@
 import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { WindowOutlined } from '@mui/icons-material';
 
 const WeightLossTwo = () => {
-  const [selected,SetSelected] = useState('3 times')
+  const [meals_a_day,Set_meals_a_day] = useState(window.localStorage.getItem('meals_a_day') || '3 times')
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+  useEffect(()=>{
+    window.localStorage.setItem('meals_a_day',meals_a_day)
+  },[meals_a_day])
+
   const handleClick = (choice) => {
-    SetSelected(choice)
+    Set_meals_a_day(choice)
   }
   return (
     <>
@@ -17,16 +27,16 @@ const WeightLossTwo = () => {
             <div className='assessment'>
               <h5>How often do you eat meals in a day? (including tea, coffee, fruits, salads, snacks)  </h5>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected} text="Greater than 6 times"/>
+                clickHandler={handleClick} noImage="true" choice={meals_a_day} text="Greater than 6 times"/>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected}  text="4-6 times"/>
+                clickHandler={handleClick} noImage="true" choice={meals_a_day}  text="4-6 times"/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={selected}  text="3 times"/>
+               clickHandler={handleClick} noImage="true" choice={meals_a_day}  text="3 times"/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={selected}  text="Less than 3 times"/>
+               clickHandler={handleClick} noImage="true" choice={meals_a_day}  text="Less than 3 times"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"weightloss-2"} backLink="weightloss"/>
+        <ProceedTemplate text="Proceed" choice={"weightloss-2"} backLink="weightloss" conditionMet="true"/>
     </>
   )
 }

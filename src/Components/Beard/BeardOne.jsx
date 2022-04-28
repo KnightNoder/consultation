@@ -4,12 +4,17 @@ import ProceedTemplate from '.././ProceedTemplate';
 import { useState, useEffect } from 'react';
 
 const BeardOne = () => {
-  const [selected,SetSelected] = useState('Patchy Beard')
+  const [beard_condition,Set_beard_condition] = useState(window.localStorage.getItem('beard_condition') ||  'Patchy Beard')
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('beard_condition',beard_condition);
+  }, [beard_condition])
+
   const handleClick = (choice) => {
-    SetSelected(choice)
+    Set_beard_condition(choice)
   }
   return (
     <>
@@ -20,18 +25,18 @@ const BeardOne = () => {
             <div className='assessment'>
               <h5>Choose a condition that best describes your beard </h5>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected} text="Patchy Beard"/>
+                clickHandler={handleClick} noImage="true" choice={beard_condition} text="Patchy Beard"/>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected}  text="No Beard growth"/>
+                clickHandler={handleClick} noImage="true" choice={beard_condition}  text="No Beard growth"/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={selected}  text="Very less"
+               clickHandler={handleClick} noImage="true" choice={beard_condition}  text="Very less"
                subtext={"(Only moustaches and chin hair)"}/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={selected}  text="Excellent beard"
+               clickHandler={handleClick} noImage="true" choice={beard_condition}  text="Excellent beard"
                subtext={"(need something for beard care)"}/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"beard-1"} backLink="choice"/>
+        <ProceedTemplate text="Proceed" choice={"beard-1"} backLink="choice" conditionMet="true"/>
     </>
   )
 }

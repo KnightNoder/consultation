@@ -1,13 +1,21 @@
 import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const PerformanceThree = () => {
-  const [selected,SetSelected] = useState('No issues with ejaculation')
+  const [ejaculation_case,Set_ejaculation_case] = 
+  useState(window.localStorage.getItem('ejaculation_case') || 'No issues with ejaculation')
   const handleClick = (choice) => {
-    SetSelected(choice)
+    Set_ejaculation_case(choice)
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+  useEffect(()=>{
+    window.localStorage.setItem('ejaculation_case',ejaculation_case)
+  },[ejaculation_case])
   return (
     <>
         <div className="choice-container">
@@ -15,14 +23,14 @@ const PerformanceThree = () => {
                 <img src={assessmentImage} className='image' alt="" srcset="" />
             </div>
             <div className='assessment'>
-              <h5>Which of the following is the case with you??</h5>
+              <h5>Which of the following is the case with you?</h5>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected} text="Ejaculate too early during performance"/>
+                clickHandler={handleClick} noImage="true" choice={ejaculation_case} text="Ejaculate too early during performance"/>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected}  text="No issues with ejaculation"/>
+                clickHandler={handleClick} noImage="true" choice={ejaculation_case}  text="No issues with ejaculation"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"performance-3"} backLink="performance-1"/>
+        <ProceedTemplate conditionMet="true" text="Proceed" choice={"performance-3"} backLink="performance-1"/>
     </>
   )
 }

@@ -3,17 +3,14 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
     line-height: 21px;
     color: #000000;
-    margin-bottom: 10%;
 }
 
 .assessment h3{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 22px;
     line-height: 21px;
     color: #000000;
     margin-top: 5%;
@@ -32,6 +29,23 @@
 }
 @media only screen and (min-width: 480px){
     .assessment h4{
-        margin-top: 3%;
+        margin-top: 2%;
+        font-size: 16px;
+        margin-bottom: 2%;
+    }
+    
+    .assessment h3{
+        font-size: 22px;
+        
     }
 }
+
+@media only screen and (max-width: 480px){
+    .assessment h4{
+    }
+
+    .assessment h3{
+        font-size: 18px;
+    }
+}
+

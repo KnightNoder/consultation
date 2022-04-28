@@ -1,21 +1,23 @@
 import assessmentImage from '../../images/assessment.png'
 import ProceedTemplate from '.././ProceedTemplate';
 import '../../css/RadioSwitch.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const BeardThree = () => {
-  const [hairLoss,SetHairLoss] = useState('true')
-  const handleClick = (choice) => {
-    SetHairLoss(choice)
-  }
+  const [family_beard_growth_issues,Set_family_beard_growth_issues] = 
+  useState(window.localStorage.getItem('family_beard_growth_issues') || 'No')
 
-  const selectHairLossStyle = {
+  useEffect(()=>{
+    window.localStorage.setItem('family_beard_growth_issues',family_beard_growth_issues);
+  },[family_beard_growth_issues])
+
+  const selectStyle = {
     background: "#FF8277",
     color: "white",
     borderRadius: "5px"
   }
 
-  const deselectHairStyle = {
+  const deselectStyle = {
     background: "#FBFDFE",
     border: "1px solid #CACACA",
     boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)",
@@ -35,20 +37,20 @@ const BeardThree = () => {
                 </div>
                 <div className='switch-container'>
                     <div className='switch' name="hairLoss" 
-                    style={ hairLoss ? deselectHairStyle : selectHairLossStyle  }
-                    onClick={() => SetHairLoss(!hairLoss)}>
+                    style={ (family_beard_growth_issues == "Yes") ? selectStyle : deselectStyle  }
+                    onClick={() => Set_family_beard_growth_issues("Yes")}>
                         Yes
                     </div>
                     <div className='switch' 
-                        style={ hairLoss ? selectHairLossStyle: deselectHairStyle  }
-                    onClick={() => SetHairLoss(!hairLoss)}>
+                        style={ (family_beard_growth_issues == "No") ? selectStyle: deselectStyle  }
+                    onClick={() => Set_family_beard_growth_issues("No")}>
                         No
                     </div>
                 </div>
               </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"appointment"} backLink="beard-1"/>
+        <ProceedTemplate text="Proceed" choice={"appointment"} backLink="beard-1" conditionMet="true"/>
     </>
   )
 }

@@ -2,22 +2,33 @@ import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import '../../css/RadioSwitch.css';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const PerformanceFive = () => {
-  const [hairLoss,SetHairLoss] = useState(true)
-  const selectHairLossStyle = {
+  const [cramps_tiredness,Set_cramps_tiredness] = 
+  useState(window.localStorage.getItem('cramps_tiredness') || 'No')
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+  useEffect(()=>{
+    window.localStorage.setItem('cramps_tiredness',cramps_tiredness)
+  },[cramps_tiredness])
+
+  const selectStyle = {
     background: "#FF8277",
     color: "white",
     borderRadius: "5px"
   }
 
-  const deselectHairStyle = {
+  const deselectStyle = {
     background: "#FBFDFE",
     border: "1px solid #CACACA",
     boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)",
     borderRadius: "5px",
   }
+
   return (
     <>
         <div className="choice-container">
@@ -28,19 +39,19 @@ const PerformanceFive = () => {
               <h5>Do you experience any cramps or tiredness while performing?</h5>
               <div className='switch-container'>
                     <div className='switch' name="hairLoss" 
-                    style={ hairLoss ? deselectHairStyle : selectHairLossStyle  }
-                    onClick={() => SetHairLoss(!hairLoss)}>
+                    style={ (cramps_tiredness == "Yes") ? selectStyle : deselectStyle  }
+                    onClick={() => Set_cramps_tiredness("Yes")}>
                         Yes
                     </div>
                     <div className='switch' 
-                        style={ hairLoss ? selectHairLossStyle: deselectHairStyle  }
-                    onClick={() => SetHairLoss(!hairLoss)}>
+                        style={ (cramps_tiredness == 'No') ? selectStyle: deselectStyle  }
+                    onClick={() => Set_cramps_tiredness("No")}>
                         No
                     </div>
                 </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"appointment"} backLink="performance-3"/>
+        <ProceedTemplate text="Proceed" conditionMet="true" choice={"appointment"} backLink="performance-3"/>
     </>
   )
 }

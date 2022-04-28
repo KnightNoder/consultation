@@ -14,7 +14,7 @@ import { Hidden } from '@mui/material';
 
 const ChoicePage = () => {
   const [selected,SetSelected] = useState(window.localStorage.getItem('choice') || 'Hairfall')
-  const [age,SetAge] = useState('')
+  const [age,SetAge] = useState(window.localStorage.getItem('age') || '')
   const [vibrate,SetVibrate] = useState(false);
   const vibrateText = () => {
     navigator.vibrate(1000)
@@ -27,14 +27,10 @@ const ChoicePage = () => {
   }
 
   useEffect(() => {
-    const val = (window.localStorage.getItem('choice')) || 'Hairfall';
-    SetAge(window.localStorage.getItem('age') || '');
-    SetSelected(val)
     window.scrollTo(0, 0);
   }, [])
 
   useEffect(() => {
-    const key = selected;
     window.localStorage.setItem('choice',selected);
     window.localStorage.setItem('age',age);
     SetVibrate(false);
@@ -82,7 +78,7 @@ const ChoicePage = () => {
               </div>
             </div>
         </div>
-          <ProceedTemplate text="Proceed" choice='user-details' backLink="" 
+          <ProceedTemplate text="Proceed" choice='user-details' backLink=""
           conditionMet={age || (selected != "Hairfall")} vibrate={vibrate} vibrateText={vibrateText} />
     </>
   )

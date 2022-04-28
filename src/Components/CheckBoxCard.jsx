@@ -69,7 +69,7 @@ const CheckBoxCard = ({text,input}) => {
   }
   return (
     <>
-          <div className={`choice-card ${ input ? "semi": "full"}` } onClick={() => SetClicked(!clicked)}  
+          <div className={`choice-card` } onClick={() => SetClicked(!clicked)}  
           name={text} style={(clicked) ? selectStyle : deselectStyle }
           >
               {/* <div className='radio-button'>

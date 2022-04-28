@@ -4,19 +4,20 @@ import ProceedTemplate from '.././ProceedTemplate';
 import { useState,useEffect } from 'react';
 
 const SkinFour = () => {
-  const [selected,SetSelected] = useState('')
+  const [skin_allergy_to,Set_skin_allergy_to] = 
+  useState(window.localStorage.getItem('skin_allergy_to') ||  'Vitamin C')
 
   useEffect(() => {
-    SetSelected(window.localStorage.getItem('wash_face_frequency'));
+    // SetSelected(window.localStorage.getItem('wash_face_frequency'));
     window.scrollTo(0, 0);
   }, [])
 
   useEffect(() => {
-    window.localStorage.setItem('wash_face_frequency', selected);
-  }, [selected]);
+    window.localStorage.setItem('skin_allergy_to', skin_allergy_to);
+  }, [skin_allergy_to]);
 
   const handleClick = (choice) => {
-    SetSelected(choice)
+    Set_skin_allergy_to(choice)
   }
   return (
     <>
@@ -25,16 +26,23 @@ const SkinFour = () => {
                 <img src={assessmentImage} className='image' alt="" srcset="" />
             </div>
             <div className='assessment'>
-              <h5>How often you do wash your face in a day? </h5>
+              <h5>Are you allergic to any of the ingredients </h5>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected} text="Only while I take bath"/>
+                clickHandler={handleClick} noImage="true" choice={skin_allergy_to} text="Vitamin C"/>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected}  text="2 times a day"/>
+                clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="Salicylic Acid"/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={selected}  text="2 - 4 times in a day"/>
+               clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="Retinol"/>
+               <ChoiceCard 
+                clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="Niacinamide"/>
+              <ChoiceCard 
+               clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="Kojic Acid"/>
+               <ChoiceCard 
+               clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="None"/>
             </div>
+            
         </div>
-        <ProceedTemplate text="Proceed" choice={"appointment"} backLink="skin-2"/>
+        <ProceedTemplate text="Proceed"  conditionMet="true" choice={"appointment"} backLink="skin-2"/>
     </>
   )
 }

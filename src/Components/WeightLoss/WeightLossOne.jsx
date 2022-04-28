@@ -3,12 +3,17 @@ import ProceedTemplate from '.././ProceedTemplate';
 import { useState,useEffect } from 'react';
 
 const WeightLossOne = () => {
-  const [height,SetHeight] = useState('')
-  const [weight,SetWeight] = useState('')
+  const [height,SetHeight] = useState(window.localStorage.getItem('height') || '')
+  const [weight,SetWeight] = useState(window.localStorage.getItem('weight') || '')
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
+
+  useEffect(()=>{
+    window.localStorage.setItem('height',height);
+    window.localStorage.setItem('weight',weight);
+  },[height,weight])
 
   const heightCheck = (e) => {
     const onlyDigits = e.target.value.replace(/\D/g, "");
@@ -28,11 +33,11 @@ const WeightLossOne = () => {
             <div className='assessment'>
               <h5>Please enter your height and weight below?</h5>
               <input className='input' type="text" onChange={heightCheck} value={height} placeholder='Height(in cms)' />
-              <br />
+              <div  style={{visibility:"hidden"}} > Hello</div>
               <input className='input' type="text" onChange={weightCheck} value={weight} placeholder='Weight(in Kgs)' />
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"weightloss-1"} backLink="choice"/>
+        <ProceedTemplate text="Proceed" choice={"weightloss-1"} backLink="choice" conditionMet="true"/>
     </>
   )
 }

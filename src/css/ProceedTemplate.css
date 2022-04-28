@@ -1,8 +1,3 @@
-.proceed-container{
-    display: flex;
-    margin-top: 3%;
-}
-
 .back-button{
     display: flex;
     align-items: center;
@@ -12,44 +7,75 @@
     font-size: 24px;
     text-align: center;
     color: #000000;
-    cursor: pointer
+    flex: 1
 }
 
 .proceed-button{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex:1
+}
+
+.empty{
+    flex:1
+}
+
+.proceed-button,.back-button, .empty {
+    /* border: solid 1px; */
 }
 
 @media only screen and (max-width: 480px)
 {
     .proceed-container{
-        margin-right: 0%;
+        width: 100%;
     }
 
     .back-button{
-        margin-top: 20px;
-        margin-bottom: 10px;
         font-size: 19px;
+        width: 90%;
+        margin-left: 6%;
     }
 
     .proceed-button{
-        height: 48px;
+    }
+
+    .back-button, .proceed-button{
+        width: 90%;
+        margin-left: 6%;
+    }
+
+    .empty{
+        display: none;
     }
 }
 
 @media only screen and (min-width: 480px)
 {
-    .proceed-container{
-        margin-right: 8%;
-    }
-
     .proceed-button{
         flex:1;
-        height: 56px;
+        margin-left: 10%;
     }
 
     .back-button{
-        flex:3;
+        flex:1;
+        /* text-align: center; */
+        /* display: flex; */
+        /* justify-content: center; */
+    }
+    
+    .proceed-button,.back-button{
+        padding: 15px 200px;
+    }
+
+    .proceed-container{
+        border-top: 1px solid #DADADA;
+        height: 70px;
+        margin-top: 3%;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
     }
 }

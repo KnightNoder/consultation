@@ -120,7 +120,6 @@
     font-weight: 600;
     line-height: 26px;
     color: #003660;
-    margin: 1% 0 0 5%;
 }
 
 .product-card{
@@ -133,15 +132,11 @@
 }
 
 .product-card .image-section{
-    flex: 3;
-    background: #FFF1EF;
-    border-radius: 16px 0px 0px 16px;
+    /* background: #FFF1EF; */
+    /* background: #f9dfd1; */
+    background: #fcdfcb;
+    border-radius: 16px 16px 16px 16px;
     height: 100%;
-}
-
-.product-card .image-section .image{
-    height: 60%;
-    width: 70%;
 }
 
 .product-card .details{
@@ -153,7 +148,6 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
-    font-size: 28px;
     line-height: 28px;
     color: #000000;
 }
@@ -161,7 +155,7 @@
 .image-section .image{
     height: 100%;
     width: 100%;
-    /* border: solid 1px; */
+    border: none;
 }
 
 .details .buy-button {
@@ -247,11 +241,16 @@
 
     .product-card {
         height: 500px;
-        margin: 5% 5%
+        margin: 5% 10%
     }
+
+    .reco-1{
+        display: none;
+    }
+
     .doctor-info{
         height: 400px;
-        margin: 0 5%;
+        margin: 0 10%;
     }
 
     .logo {
@@ -259,7 +258,7 @@
     }
 
     .doctor-info .details {
-        margin: 5% 0 0 15%
+        margin: 5% 0 0 0%
     }
 
     .shown-h3{
@@ -268,6 +267,33 @@
 
     .hidden-h3{
         font-size: 20px;
+    }
+
+    .heading {
+        font-size: 16px;
+        margin-top: 3%;
+    }
+
+    .product-info h3  {
+        margin: 1% 0 0 10%;
+    }
+
+    .product-card .image-section .image{
+        height: 70%;
+        width: 60%;
+    }
+
+    .product-card .image-section{
+        flex: 12
+    }
+
+    .recommendation-section h2{
+        display: none;
+    }
+
+    .doctor-info{
+        border: none;
+        margin-bottom: 10%;
     }
 } 
 
@@ -278,6 +304,7 @@
 
     .product-info h3 {
         font-size: 28px;
+        margin: 1% 0 0 5%;
     }
 
     .availability-text{
@@ -285,5 +312,18 @@
     }
 
     .doctor-info{
+    }
+
+    .product-card .details .heading{
+        font-size: 26px;
+    }
+
+    .product-card .image-section .image{
+        height: 80%;
+        width: 90%;
+    }
+
+    .product-card .image-section{
+        flex:3
     }
 }

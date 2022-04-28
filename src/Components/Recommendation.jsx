@@ -69,7 +69,7 @@ const Recommendation = ({category}) => {
                             Complete treatment plan
                         </div>
                         <div className="subtext">
-                            Treats all hair concerns and improves overall hair growth
+                            {/* Treats all hair concerns and improves overall hair growth */}
                         </div>
                         <div className="price">
                             Rs. 1699 <span style={{fontSize:"16px",color: "black"}}><strike>Rs. 1999</strike> </span>
@@ -91,7 +91,7 @@ const Recommendation = ({category}) => {
                             Hair Care routine
                         </div>
                         <div className="subtext">
-                            Treats all hair concerns and improves overall hair growth
+                            {/* Treats all hair concerns and improves overall hair growth */}
                         </div>
                         <div className="price">
                             Rs. 1699 <span style={{fontSize:"16px",color: "black"}}><strike>Rs. 1999</strike> </span>

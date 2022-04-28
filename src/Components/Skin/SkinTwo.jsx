@@ -4,25 +4,19 @@ import ProceedTemplate from '../ProceedTemplate';
 import { useState,useEffect } from 'react';
 
 const SkinTwo = () => {
-  const [selected,SetSelected] = useState('')
+  const [skin_texture,Set_skin_texture] = 
+  useState(window.localStorage.getItem('skin_texture') || 'Oily')
   
-  // useEffect(() => {
-  //   const val = JSON.parse(window.localStorage.getItem('choice'))
-  //   SetSelected(val['Skin']['acne_frequency']);
-  //   window.scrollTo(0, 0);
-  // }, [])
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, []);
 
-  // useEffect(() => {
-  //   const val = JSON.parse(window.localStorage.getItem('choice'))
-  //   window.localStorage.setItem('choice', JSON.stringify(
-  //     {
-  //       ['Skin']:{
-  //         ['acne_frequency']:selected
-  //   }}));
-  // }, [selected]);
-  
+  useEffect(()=>{
+    window.localStorage.setItem('skin_texture',skin_texture)
+  },[skin_texture])
+
   const handleClick = (choice) => {
-    SetSelected(choice)
+    Set_skin_texture(choice)
   }
   return (
     <>
@@ -31,20 +25,16 @@ const SkinTwo = () => {
                 <img src={assessmentImage} className='image' alt="" srcset="" />
             </div>
             <div className='assessment'>
-              <h5>What is the frequency of your acne?? </h5>
+              <h5>Please select your skin texture </h5>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected} text="Once in a week"/>
+                clickHandler={handleClick} noImage="true" choice={skin_texture} text="Oily"/>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={selected}  text="Once in a month or 2 months"/>
+                clickHandler={handleClick} noImage="true" choice={skin_texture}  text="Dry"/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={selected}  text="Always have acne"/>
-              <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={selected}  text="Very rarely"/>
-               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={selected}  text="No acne"/>
+               clickHandler={handleClick} noImage="true" choice={skin_texture}  text="Combined "/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"skin-2"} backLink="skin"/>
+        <ProceedTemplate conditionMet="true" text="Proceed" choice={"skin-2"} backLink="skin"/>
     </>
   )
 }

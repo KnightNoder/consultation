@@ -6,34 +6,31 @@ import { useState,useEffect } from 'react';
 import { flexbox } from '@mui/system';
 
 const BasicInfo = () => {
-  const [nextPage,SetNextPage] = useState('')
-  const [details, SetDetails] = useState({
-    firstName: "",
-    lastName:"",
-    phoneNumber:"",
-    email:""
-  })
- 
+  const [nextPage,SetNextPage] = useState(window.localStorage.getItem('choice') ||'');
+  const [first_name, Set_first_name] = useState(window.localStorage.getItem('first_name'));
+  const [last_name, Set_last_name] = useState(window.localStorage.getItem('last_name') || '');
+  const [phone_number, Set_phone_number] = useState(window.localStorage.getItem('phone_number') || '');
+  const [email, Set_email] = useState(window.localStorage.getItem('email') ||'');
   const numberCheck = (event) => {
     if (!/[0-9]/.test(event.key)) {
       event.preventDefault();
     }
   }
 
-  const {firstName,lastName,phoneNumber,email} = details;
-  const onchange = (e) => {
-    SetDetails((prevState) => {
-      return {
-        ...prevState,[e.target.name]:e.target.value
-      }
-    })
-  }
-
   useEffect(() => {
-    const category = window.localStorage.getItem('choice');
-    SetNextPage(category);
     window.scrollTo(0, 0);
   }, [])
+
+  useEffect(() => {
+      window.localStorage.setItem('first_name',first_name)
+      window.localStorage.setItem('last_name',last_name)
+      window.localStorage.setItem('email',email)
+      window.localStorage.setItem('phone_number',phone_number)    
+  }, [first_name,last_name,email,phone_number,email])
+
+  const getItem = (item) => {
+    return window.localStorage.getItem(item);
+  }
   
     // useEffect(() => {
     //   const val = JSON.parse(window.localStorage.getItem('choice'))
@@ -53,38 +50,35 @@ const BasicInfo = () => {
             <div className='assessment'>
               <h5>Fill in your basic information </h5>
               <h4>We're just getting to know you better</h4>
-              <InputCard heading="First Name" placeholder="Eg. John" name="firstName" onchange={onchange}
-              value={firstName} errorText="Invalid input" requiredErrorText="Field is required" required="*" />
+              <InputCard heading="First Name" placeholder="Eg. John" name="first_name" onchange={(e) => Set_first_name(e.target.value)}
+              value={first_name} errorText="Invalid input" requiredErrorText="Field is required" required="*" />
               <br />
-              <InputCard heading="Last Name" placeholder="Eg. Doe" value={lastName} onchange={onchange}
+              <InputCard heading="Last Name" placeholder="Eg. Doe" value={last_name} onchange={(e) => Set_last_name(e.target.value)}
               errorText="Invalid input" requiredErrorText="Field is required" />
               <br />
-              <InputCard heading="Phone"  placeholder="Eg. 9876543210" name="phoneNumber" value={phoneNumber}
-              onchange={onchange} errorText="Invalid input" requiredErrorText="Field is required" 
+              <InputCard heading="Phone"  placeholder="Eg. 9876543210" name="phone_number" value={phone_number}
+              onchange={(e) => Set_phone_number(e.target.value)} errorText="Invalid input" requiredErrorText="Field is required" 
               numberCheck={numberCheck} required="*"/>
               <br />
               <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={email}
-              onchange={onchange} errorText="Invalid input" requiredErrorText="Field is required" required="*"/>
+              onchange={(e) => Set_email(e.target.value)} errorText="Invalid input" requiredErrorText="Field is required" required="*"/>
               <br />
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={nextPage} backLink="choice"/> 
+        <ProceedTemplate text="Proceed" choice={nextPage} backLink="choice" conditionMet="true"/> 
     </>
   )
 }
 
-const InputCard = ({heading,placeholder,errorText,requiredErrorText,required,onchange,numberCheck}) => {
+const InputCard = ({heading,placeholder,requiredErrorText,value,required,onchange,numberCheck}) => {
   return (
     <>
       <h3 style={{}}>{heading} 
         <div style={{display:"inline-block",fontSize:"20px",color:"#EA2C2C", marginLeft:"3px"}} className=''>{required}
         </div>
       </h3>
-      <input className='input' onChange={onchange} style={{height:"50px", marginTop:"0px"}} 
+      <input className='input' onChange={onchange} style={{height:"50px"}} value={value}
       type="text" placeholder={placeholder} onKeyPress={numberCheck}/>
-      <span style={{visibility:"hidden"}} className='error-text' id="top">
-        {errorText}
-      </span>
       <span style={{visibility:"hidden"}} className='error-text' id="two">
         {requiredErrorText}
       </span>
