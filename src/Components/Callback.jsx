@@ -45,7 +45,7 @@ const Callback = () => {
         });
     }
 
-    //  getData();
+     getData();
 
     const data = getSendMailData();
     console.log(data,'data for send mail');
