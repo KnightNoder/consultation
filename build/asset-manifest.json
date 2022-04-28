@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.89f29e12.css",
+    "main.js": "/static/js/main.b5d9c9bd.js",
+    "static/js/787.05a4e8b9.chunk.js": "/static/js/787.05a4e8b9.chunk.js",
+    "static/media/assessment.png": "/static/media/assessment.e8d2577873d1d402bb5a.png",
+    "static/media/gif.gif": "/static/media/gif.a7d6b0eae6239d4eb2c9.gif",
+    "static/media/product-reco-1.png": "/static/media/product-reco-1.7ab8919037d449bcb473.png",
+    "static/media/product-reco-2.png": "/static/media/product-reco-2.f3446db66998624a84c5.png",
+    "index.html": "/index.html",
+    "main.89f29e12.css.map": "/static/css/main.89f29e12.css.map",
+    "main.b5d9c9bd.js.map": "/static/js/main.b5d9c9bd.js.map",
+    "787.05a4e8b9.chunk.js.map": "/static/js/787.05a4e8b9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89f29e12.css",
+    "static/js/main.b5d9c9bd.js"
+  ]
+}

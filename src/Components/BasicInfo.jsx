@@ -53,7 +53,7 @@ const BasicInfo = () => {
               <br />
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={nextPage} backLink="choice" conditionMet="true"/> 
+        <ProceedTemplate text="Proceed" choice={nextPage} backLink="choice" conditionMet={first_name && email && phone_number}/> 
     </>
   )
 }
