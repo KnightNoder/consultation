@@ -73,7 +73,7 @@ function App() {
   //   console.log(event.target.value);
   // }
   return (
-    <BrowserRouter basename="/"> 
+    <BrowserRouter basename="/pages/consultation"> 
        <div className='main-container'>
            <Routes>
              <Route path='/' exact element={<LandingPage/>}/>
