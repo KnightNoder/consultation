@@ -6,9 +6,9 @@ import { useState, useEffect } from 'react';
 
 
 const HairOne = () => {
-  const [family_hair_loss,Set_family_hair_loss] = useState(window.localStorage.getItem('family_hair_loss'));
-  const [past_allergy,Set_past_allergy] = useState(window.localStorage.getItem('past_allergy'));
-  const [big_event_120_days,Set_big_event_120_days] = useState(window.localStorage.getItem('big_event_120_days'));
+  const [family_hair_loss,Set_family_hair_loss] = useState(window.localStorage.getItem('family_hair_loss') || 'Yes');
+  const [past_allergy,Set_past_allergy] = useState(window.localStorage.getItem('past_allergy') || 'Yes');
+  const [big_event_120_days,Set_big_event_120_days] = useState(window.localStorage.getItem('big_event_120_days') || 'Yes');
 
   console.log(window.localStorage.getItem('family_hair_loss'),window.localStorage.getItem('past_allergy')
   ,window.localStorage.getItem('big_event_120_days'),'ls');

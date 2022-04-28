@@ -51,7 +51,7 @@ const Callback = () => {
     console.log(data,'data for send mail');
     const config = {
         method: 'post',
-        url: 'https://staging-01.ap-south-1.elasticbeanstalk.com/api/device/consultation',
+        url: 'http://staging-01.ap-south-1.elasticbeanstalk.com/api/device/consultation',
         headers: { 
           'Content-Type': 'application/json'
         },
