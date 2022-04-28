@@ -1,10 +1,6 @@
 import './App.css';
 import React from 'react'
 import { useEffect,useState } from 'react';
-import Parent from './Components/Parent';
-import First from './Components/First';
-import Child from './Components/Child';
-import Final from './Components/Final';
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import Appointment from './Components/Appointment';
 import Recommendation from './Components/Recommendation';
