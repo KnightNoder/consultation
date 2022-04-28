@@ -7,10 +7,11 @@ import { flexbox } from '@mui/system';
 
 const BasicInfo = () => {
   const [nextPage,SetNextPage] = useState(window.localStorage.getItem('choice') ||'');
-  const [first_name, Set_first_name] = useState(window.localStorage.getItem('first_name'));
+  const [first_name, Set_first_name] = useState(window.localStorage.getItem('first_name' ||  ''));
   const [last_name, Set_last_name] = useState(window.localStorage.getItem('last_name') || '');
   const [phone_number, Set_phone_number] = useState(window.localStorage.getItem('phone_number') || '');
   const [email, Set_email] = useState(window.localStorage.getItem('email') ||'');
+
   const numberCheck = (event) => {
     if (!/[0-9]/.test(event.key)) {
       event.preventDefault();
@@ -28,19 +29,6 @@ const BasicInfo = () => {
       window.localStorage.setItem('phone_number',phone_number)    
   }, [first_name,last_name,email,phone_number,email])
 
-  const getItem = (item) => {
-    return window.localStorage.getItem(item);
-  }
-  
-    // useEffect(() => {
-    //   const val = JSON.parse(window.localStorage.getItem('choice'))
-    //   console.log(val,'value')
-    //   window.localStorage.setItem('choice', JSON.stringify({['Hairfall']:{['current_condition']:selected}}));
-    // }, [selected]);
-
-    // const handleClick = (choice) => {
-    //   SetSelected(choice)
-    // }
   return (
     <>
         <div className="choice-container">
