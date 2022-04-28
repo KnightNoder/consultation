@@ -8,7 +8,7 @@ const WeightLossFour = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src={assessmentImage} className='image' alt="" srcset="" />
+                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" srcset="" />
             </div>
             <div className='assessment'>
               <h5>Do you have any pre-existing problems? </h5>
