@@ -10,7 +10,6 @@
 }
 
 .heading{
-    font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
@@ -20,7 +19,6 @@
 
 .header-text{
     margin-top: 10px;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;

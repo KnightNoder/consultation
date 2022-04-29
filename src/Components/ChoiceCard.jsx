@@ -27,7 +27,6 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
   // }
 
   const selectTextStyle = {
-    fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "500",
     fontSize: "19px",
@@ -36,12 +35,11 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
   }
 
   const deselectTextStyle = {
-    fontFamily: "Roboto",
     fontStyle:" normal",
     fontWeight:" 400",
     fontSize:"19px",
     lineHeight:" 19px",
-    color: "#000000",
+    color: "#333333",
   }
 
   const ImageStyle = {

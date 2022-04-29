@@ -1,6 +1,5 @@
 .generic-button{
     background: #FE8276;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     line-height: 100%;
@@ -20,7 +19,6 @@
     border: 1px solid #DADADA;
     box-sizing: border-box;
     border-radius: 4px;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;

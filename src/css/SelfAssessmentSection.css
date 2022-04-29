@@ -1,5 +1,4 @@
 .assessment-header{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -11,7 +10,6 @@
 }
 
 .assessment-text{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -62,12 +60,11 @@
 
 .stopwatch-text {
     flex: 6;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    color: #000000;
+    color: #333333;
 }
 
 .time-section{
@@ -79,12 +76,11 @@
 }
 
 .content .heading {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 23px;
-    color: #000000;
+    color: #333333;
     margin-left: 10%;
     flex: 1;
 }
@@ -110,12 +106,11 @@
 
 .report .report-text .report-text-content{
     flex: 9;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #000000;
+    color: #333333;
     padding-left: 2%;
 }
 
@@ -137,7 +132,6 @@
 }
 
 .start-assessment-heading .small-heading{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -162,7 +156,6 @@
     list-style: none;
     margin-left: 4%;
     margin-top: 1%;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -186,12 +179,11 @@
 }
 
 .get-started{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 26px;
-    color: #000000;
+    color: #333333;
     margin-top: 3%;
     margin-left: 5%;
 }
@@ -224,7 +216,6 @@
     margin-left: 4%;
     margin-right: 4%;
     margin-bottom: 5%;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -238,24 +229,22 @@
 }
 
 .top-heading .heading{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    color: #000000;
+    color: #333333;
     flex: 1;
     margin-left: 4%;
     margin-top: 4%;
 }
 
 .bottom-heading .heading{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    color: #000000;
+    color: #333333;
     flex: 1;
     margin-left: 4%;
     margin-top: 4%;
@@ -266,7 +255,6 @@
 }
 
 .assessment-card-small .content{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;

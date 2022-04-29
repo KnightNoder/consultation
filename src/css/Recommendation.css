@@ -74,10 +74,9 @@
 
 .name,.designation {
     flex: 1;
-    font-family: 'Roboto';
     font-style: normal;
     line-height: 26px;
-    color: #000000;
+    color: #333333;
 }
 .name {
     font-weight: 600;
@@ -91,7 +90,6 @@
 }
 
 .booking{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -100,12 +98,11 @@
 }
 
 .recommendation-section h2 {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 28px;
     line-height: 26px;
-    color: #000000;
+    color: #333333;
     /* border: solid 1px; */
     margin: 20% 0 0 15%;
 }
@@ -115,7 +112,6 @@
 }
 
 .product-info h3{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     line-height: 26px;
@@ -145,11 +141,10 @@
 }
 
 .product-card .details .heading {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     line-height: 28px;
-    color: #000000;
+    color: #333333;
 }
 
 .image-section .image{
@@ -181,7 +176,6 @@
 
 .reco-1{
     border: 1px solid #0CBC8B;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -192,7 +186,6 @@
 }
 
 .reco-2{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -215,7 +208,6 @@
 }
 
 .product-card .details .subtext{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -224,7 +216,6 @@
 }
 
 .product-card .details .price {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -279,8 +270,8 @@
     }
 
     .product-card .image-section .image{
-        height: 70%;
-        width: 60%;
+        height: 80%;
+        width: 100%;
     }
 
     .product-card .image-section{
@@ -315,12 +306,13 @@
     }
 
     .product-card .details .heading{
-        font-size: 26px;
+        font-size: 24px;
+        width: 90%;
     }
 
     .product-card .image-section .image{
-        height: 80%;
-        width: 90%;
+        height: 100%;
+        width: 100%;
     }
 
     .product-card .image-section{

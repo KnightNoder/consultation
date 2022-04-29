@@ -5,9 +5,12 @@
 }
 
 .choice-card .radio-button,
-.choice-card .image,
-.choice-card .text{
+.choice-card .image{
     margin: 0 1.5%;
+}
+
+.choice-card .text{
+    margin: 0 4.5% 0 1.5%;
 }
 
 .one,.two{
@@ -27,7 +30,6 @@
 .three{
     flex: 7;
     padding-left: 3%;
-    font-size: 20px;
 }
 
 .two .image-section {
@@ -62,19 +64,17 @@
 }
 
 .selectTextStyle{
-    font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    line-height: 19px;
+    line-height: 24px;
     color: #FF8277;
 }
 
 .deselectTextStyle{
-    font-family: Roboto;
     font-style: normal;
     font-weight: 400;
-    line-height: 19px;
-    color: #000000;
+    line-height: 24px;
+    color: #333333;
 }
 
 .subtext{
@@ -104,11 +104,11 @@
     
     .selectStyle{
         margin: 6% 0%;
-        font-size:19px;
+        font-size: 18px;
         
     }
     
     .deselectStyle{
-        font-size:19px;
+        font-size: 18px;
     }
 }

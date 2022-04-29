@@ -58,18 +58,18 @@ const ChoicePage = () => {
             <div className='assessment'>
               <h5>I would like to Assess my </h5>
               <ChoiceCard 
-                clickHandler={handleClick} choice={selected} image={hairfallImage} text="Hairfall"/>
+                clickHandler={handleClick} choice={selected} noImage="true" image={hairfallImage} text="Hairfall"/>
               <ChoiceCard 
-                clickHandler={handleClick} choice={selected} image={beardImage} text="Beard"/>
+                clickHandler={handleClick} choice={selected} noImage="true" image={beardImage} text="Beard"/>
               <ChoiceCard 
-               clickHandler={handleClick} choice={selected} image={performanceImage} text="Performance"/>
+               clickHandler={handleClick} choice={selected} noImage="true" image={performanceImage} text="Performance"/>
               <ChoiceCard 
-               clickHandler={handleClick} choice={selected} image={weightlossImage} text="WeightLoss"/>
+               clickHandler={handleClick} choice={selected} noImage="true" image={weightlossImage} text="WeightLoss"/>
               <ChoiceCard 
-               clickHandler={handleClick} choice={selected} image={skinImage} text="Skin"/>
+               clickHandler={handleClick} choice={selected} noImage="true" image={skinImage} text="Skin"/>
               <div className='input-age'>
                 <h5 style={{display:"inline-block"}}>Age</h5>
-                <span> (Your secret's safe <img src={winkImage} alt=""  />) </span>
+                {/* <span> (Your secret's safe <img src={winkImage} alt=""  />) </span> */}
               </div>
               <input  className='input' value={age} onChange={(e) => onchange(e)} disabled={selected != 'Hairfall'} type="text" onKeyPress={numberCheck} placeholder='Eg.24' />
               <div className={`error-text ${vibrate ? "text-vibrate" : ''} `} style={(age == '' && selected == 'Hairfall' ) ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">

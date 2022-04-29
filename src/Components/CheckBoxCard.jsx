@@ -17,7 +17,6 @@ const CheckBoxCard = ({text,input}) => {
     // padding: "3% 0%",
     height: "64px",
     cursor:"pointer",
-    fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "500",
     fontSize: "20px",
@@ -27,23 +26,20 @@ const CheckBoxCard = ({text,input}) => {
   const deselectStyle = {
     border: "1px solid #CACACA",
     boxSizing: "border-box",
-    filter: "drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.12))",
     borderRadius: "6px",
     margin: "6% 0%",
     background: "white",
     // padding: "2% 2%",
     height: "64px",
     cursor:"pointer",
-    fontFamily: "Roboto",
     fontStyle:" normal",
     fontWeight:" 400",
     fontSize:" 20px",
     lineHeight:" 23px",
-    color: "#000000",
+    color: "#333333",
   }
 
   const selectTextStyle = {
-    fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "500",
     fontSize: "19px",
@@ -52,12 +48,11 @@ const CheckBoxCard = ({text,input}) => {
   }
 
   const deselectTextStyle = {
-    fontFamily: "Roboto",
     fontStyle:" normal",
     fontWeight:" 400",
     fontSize: "19px",
     lineHeight: "19px",
-    color: "#000000",
+    color: "#333333",
   }
 
   const ImageStyle = {

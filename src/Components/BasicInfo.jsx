@@ -6,10 +6,10 @@ import { useState,useEffect } from 'react';
 
 const BasicInfo = () => {
   const [nextPage,SetNextPage] = useState(window.localStorage.getItem('choice') ||'');
-  const [first_name, Set_first_name] = useState(window.localStorage.getItem('first_name' ||  ''));
-  const [last_name, Set_last_name] = useState(window.localStorage.getItem('last_name') || '');
-  const [phone_number, Set_phone_number] = useState(window.localStorage.getItem('phone_number') || '');
-  const [email, Set_email] = useState(window.localStorage.getItem('email') ||'');
+  const [first_name, Set_first_name] = useState('');
+  const [last_name, Set_last_name] = useState('');
+  const [phone_number, Set_phone_number] = useState('');
+  const [email, Set_email] = useState('');
   const [vibrate,SetVibrate] = useState(false);
 
   const vibrateText = () => {
@@ -49,7 +49,7 @@ const BasicInfo = () => {
               <InputCard heading="Last Name" placeholder="Eg. Doe" value={last_name} onchange={(e) => Set_last_name(e.target.value)}
               errorText="Invalid input" vibrate={vibrate} requiredErrorText="Field is required" />
               <br />
-              <InputCard heading="Phone"  placeholder="Eg. 9876543210" name="phone_number" value={phone_number}
+              <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={phone_number}
               onchange={(e) => Set_phone_number(e.target.value)} errorText="Invalid input" requiredErrorText="Field is required" 
               numberCheck={numberCheck} required="*" vibrate={vibrate}/>
               <br />

@@ -4,12 +4,12 @@
 }
 
 .radio-switch .heading{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 30px;
-    color: #000000;
+    color: #333333;
+    font-family: harmonia-bold;
 }
 
 .heading .switch{
@@ -38,13 +38,12 @@
 
     .switch{
         width: 50%;
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
         line-height: 19px;
         text-transform: uppercase;
-        color: #000000;
+        color: #333333;
     }
 
     .switch-container{

@@ -1,18 +1,15 @@
 .assessment h5{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
     line-height: 30px;
-    color: #000000;
+    color: #333333;
 }
 
 .input-age h5{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     line-height: 19px;
-    color: #000000;
+    color: #333333;
     margin-top: 10%;
 }
 
@@ -24,16 +21,13 @@
     height: 58px;  
     width: 100%;
     padding-left: 4%;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
     line-height: 20px;
     margin-top: 2%;
 }
 
 .assessment .input::placeholder{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -61,6 +55,8 @@
         margin-top: 0%;
         height: 45px;
         width: 100%;
+        font-size: 16px;
+
     }
 
     .assessment h5{
@@ -75,6 +71,14 @@
 
     .input-age h5{
         margin-bottom: 7%;
+    }
+
+    .assessment .input{
+        font-size: 16px;
+    }
+
+    .assessment h5{
+        font-size: 21px;
     }
 }
 

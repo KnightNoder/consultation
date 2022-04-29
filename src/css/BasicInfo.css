@@ -1,21 +1,20 @@
 
 .assessment h4{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     line-height: 21px;
-    color: #000000;
+    color: #333333;
 }
 
 .assessment h3{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     line-height: 21px;
-    color: #000000;
+    color: #333333;
     margin-top: 5%;
     margin-bottom: 3%;
     display: inline-block;
+    font-family: 'harmonia-bold';
 }
 
 
@@ -35,7 +34,7 @@
     }
     
     .assessment h3{
-        font-size: 22px;
+        font-size: 18px;
         
     }
 }
