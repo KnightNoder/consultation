@@ -10,10 +10,6 @@ const HairOne = () => {
   const [past_allergy,Set_past_allergy] = useState(window.localStorage.getItem('past_allergy') || 'Yes');
   const [big_event_120_days,Set_big_event_120_days] = useState(window.localStorage.getItem('big_event_120_days') || 'Yes');
 
-  console.log(window.localStorage.getItem('family_hair_loss'),window.localStorage.getItem('past_allergy')
-  ,window.localStorage.getItem('big_event_120_days'),'ls');
-  console.log(family_hair_loss,past_allergy,big_event_120_days,'states');
-
   useEffect(()=>{
     window.scrollTo(0,0)
   },[])
@@ -55,7 +51,7 @@ useEffect(()=>{
                 <RadioSwitch  text="Do you have any big events coming up in next 120 days? "/> */}
                 <div className='radio-switch'>
                     <div className='heading'>
-                    Does anyone in your family have hair loss? {family_hair_loss}
+                    Does anyone in your family have hair loss? 
                     </div>
                     <div className='switch-container'>
                         <div className='switch' style={ (family_hair_loss == 'Yes' ) ? selectStyle : deselectStyle   }
@@ -70,7 +66,7 @@ useEffect(()=>{
                     </div>
                      
                     <div className='heading'>
-                    Do you have any past allergic reactions to medicines? {past_allergy}
+                    Do you have any past allergic reactions to medicines? 
                     </div>
                     <div className='switch-container'>
                         <div className='switch'  
@@ -85,7 +81,7 @@ useEffect(()=>{
                         </div>
                     </div>
                     <div className='heading'>
-                    Do you have any big events coming up in next 120 days? {big_event_120_days}
+                    Do you have any big events coming up in next 120 days? 
                     </div>
                     <div className='switch-container'>
                         <div className='switch'  

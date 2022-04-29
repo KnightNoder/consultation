@@ -51,7 +51,7 @@ const Callback = () => {
     console.log(data,'data for send mail');
     const config = {
         method: 'post',
-        url: 'http://staging-01.ap-south-1.elasticbeanstalk.com/api/device/consultation',
+        url: 'https://stagingappapi.ghc.health',
         headers: { 
           'Content-Type': 'application/json'
         },
