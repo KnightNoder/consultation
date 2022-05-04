@@ -26,7 +26,7 @@ const Appointment = () => {
             </div>
             <div className='assessment'>
               <h5>Your detailed case has been recorded and our inhouse doctors will review it and get back to you  </h5>
-              <h5>Get in touch with us</h5>
+              <p style={{fontSize:"18px", marginTop:"3%"}}>Get in touch with us</p>
               <ChoiceCard 
                 clickHandler={handleClick} noImage="true" choice={appointment_type} text="Request a call back"/>
               <ChoiceCard 
