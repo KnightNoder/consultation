@@ -1,4 +1,3 @@
-import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '../ChoiceCard';
 import ProceedTemplate from '../ProceedTemplate';
 import { useState,useEffect } from 'react';

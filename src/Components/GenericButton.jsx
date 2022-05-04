@@ -1,12 +1,16 @@
 import '../css/GenericButton.css'
 import {useNavigate} from "react-router-dom"
-const GenericButton = ({text,choice,conditionMet,vibrateText,newButton}) => {
+const GenericButton = ({text,choice,conditionMet,vibrateText,newButton,directNavigate,navigateTo}) => {
   const navigate = useNavigate();
   const navigateCheck = () => {
-    if(conditionMet){
-      navigate('/'+choice)
+    if(directNavigate) {
+      navigate(parseInt(navigateTo))
     } else {
-      vibrateText()
+      if(conditionMet){
+        navigate('/'+choice)
+      } else {
+        vibrateText()
+      }
     }
   }
 

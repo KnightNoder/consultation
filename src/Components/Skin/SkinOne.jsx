@@ -1,4 +1,3 @@
-import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
 import { useState,useEffect } from 'react';
@@ -48,7 +47,7 @@ const SkinOne = () => {
                {/* </div> */}
             </div>
         </div>
-        <ProceedTemplate conditionMet="true" text="Proceed" choice={"skin-1"} backLink="choice"/>
+        <ProceedTemplate conditionMet="true" text="Proceed" choice={"skin-1"} backLink="user-details"/>
     </>
   )
 }

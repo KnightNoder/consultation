@@ -37,7 +37,7 @@ const WeightLossOne = () => {
               <input className='input' type="text" onChange={weightCheck} value={weight} placeholder='Weight(in Kgs)' />
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"weightloss-1"} backLink="choice" conditionMet="true"/>
+        <ProceedTemplate text="Proceed" choice={"weightloss-1"} backLink="user-details" conditionMet="true"/>
     </>
   )
 }

@@ -16,6 +16,7 @@ const BeardOne = () => {
   const handleClick = (choice) => {
     Set_beard_condition(choice)
   }
+  
   return (
     <>
         <div className="choice-container">
@@ -36,7 +37,7 @@ const BeardOne = () => {
                subtext={"(need something for beard care)"}/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"beard-1"} backLink="choice" conditionMet="true"/>
+        <ProceedTemplate text="Proceed" choice={"beard-1"} backLink="user-details" conditionMet="true"/>
     </>
   )
 }

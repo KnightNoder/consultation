@@ -71,15 +71,15 @@ const ChoicePage = () => {
                 <h5 style={{display:"inline-block"}}>Age</h5>
                 {/* <span> (Your secret's safe <img src={winkImage} alt=""  />) </span> */}
               </div>
-              <input  className='input' value={age} onChange={(e) => onchange(e)} disabled={selected != 'Hairfall'} type="text" onKeyPress={numberCheck} placeholder='Eg.24' />
-              <div className={`error-text ${vibrate ? "text-vibrate" : ''} `} style={(age == '' && selected == 'Hairfall' ) ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
+              <input  className='input' value={age} onChange={(e) => onchange(e)} type="text" onKeyPress={numberCheck} placeholder='Eg.24' />
+              <div className={`error-text ${vibrate ? "text-vibrate" : ''} `} style={(age == '') ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
                   Please provide your age to proceed
                   {/* visibility:"hidden" */}
               </div>
             </div>
         </div>
           <ProceedTemplate text="Proceed" choice='user-details' backLink=""
-          conditionMet={age || (selected != "Hairfall")} vibrate={vibrate} vibrateText={vibrateText} />
+          conditionMet={age} vibrate={vibrate} vibrateText={vibrateText} />
     </>
   )
 }

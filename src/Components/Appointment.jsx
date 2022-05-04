@@ -1,35 +1,42 @@
-import React from 'react'
-import search from '../images/search.png'
-import '../css/Appointment.css'
-import gif from '../images/gif.gif';
+import assessmentImage from '../images/assessment.png'
+import ChoiceCard from './ChoiceCard';
+import ProceedTemplate from './ProceedTemplate';
+import { useState, useEffect } from 'react';
 import {useNavigate} from "react-router-dom"
 
 const Appointment = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [appointment_type,Set_appointment_type] = useState(window.localStorage.getItem('appointment_type') ||  'Book an appointment')
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('appointment_type',appointment_type);
+  }, [appointment_type])
+
+  const handleClick = (choice) => {
+    Set_appointment_type(choice)
+  }
   return (
     <>
-        <div className='recommendations-container'>
-            <div className='image-container'>
-                <img className='image' src={gif} alt="" />
+        <div className="choice-container">
+            <div className='assessment-image'>
+                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" srcset="" />
             </div>
-            <div className='review-heading'>
-                Your detailed case has been recorded and our inhouse 
-                doctors will review it and get back to you. 
-            </div>
-            <div className='subtext'>
-                Get in touch with us
-            </div>
-            <div className='buttons-container'>
-                <div className='button' onClick={() => navigate('/callback')}>
-                    Request a call back 
-                </div>
-                <div className='button' onClick={() => navigate('/book')}>
-                    Book an appointment
-                </div>
+            <div className='assessment'>
+              <h5>Your detailed case has been recorded and our inhouse doctors will review it and get back to you  </h5>
+              <h5>Get in touch with us</h5>
+              <ChoiceCard 
+                clickHandler={handleClick} noImage="true" choice={appointment_type} text="Request a call back"/>
+              <ChoiceCard 
+                clickHandler={handleClick} noImage="true" choice={appointment_type}  text="Book an appointment"/>
             </div>
         </div>
+        <ProceedTemplate text="Proceed" choice={"beard-1"} directNavigate="true"
+         navigateTo="-1" conditionMet="true"/>
     </>
-    )
+  )
 }
 
 export default Appointment

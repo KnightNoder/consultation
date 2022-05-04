@@ -40,7 +40,7 @@ const PerformanceOne = () => {
                subtext="(Regularly feel like doing it)"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"performance-1"} backLink="choice" conditionMet="true" />
+        <ProceedTemplate text="Proceed" choice={"performance-1"} backLink="user-details" conditionMet="true" />
     </>
   )
 }

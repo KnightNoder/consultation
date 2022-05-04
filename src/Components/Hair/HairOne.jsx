@@ -37,7 +37,7 @@ const HairOne = () => {
               <ChoiceCard clickHandler={handleClick} choice={selected} image={hairFour} text="Condition four"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={'hairfall-1'} backLink="choice" conditionMet="true"/> 
+        <ProceedTemplate text="Proceed" choice={'hairfall-1'} backLink="user-details" conditionMet="true"/> 
     </>
   )
 }
