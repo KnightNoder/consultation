@@ -9,9 +9,7 @@
     margin: 0 1.5%;
 }
 
-.choice-card .text{
-    margin: 0 4.5% 0 1.5%;
-}
+
 
 .one,.two{
     flex:1;
@@ -33,21 +31,19 @@
 }
 
 .two .image-section {
-    height: 50px;
     max-width: 50px;
     margin-top: 5px;
 }
 
 
 .selectStyle{
-    background: #FFF1EF;
+    background-color: #FFF1EF;
     border: 1px solid #FE8276;
     box-sizing: border-box;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
     border-radius: 6px;
     /* padding: 2% 2%;
     padding: 3% 0%; */
-    height: 64px;
     cursor:pointer
 }
 
@@ -57,42 +53,52 @@
     /* filter: drop-shadow(0px 1px 10px rgba(0; 0; 0; 0.12)); */
     border-radius: 6px;
     margin: 6% 0%;
-    background: white;
+    background-color: white;
     /* padding: 2% 2%; */
-    height: 64px;
     cursor:pointer
 }
 
 .selectTextStyle{
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;
     color: #FF8277;
 }
 
 .deselectTextStyle{
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
     color: #333333;
 }
 
 .subtext{
     font-size:15px;
-    margin-left:3px;
     margin-top:5px
 }
+
 @media only screen and (max-width: 480px) {
     .choice-card {
-        height: 57px;
+        height: 48px;
     }
     
     .selectStyle{
         margin: 5% 0%;
+        line-height: 16px;
     }
     
     .deselectStyle{
-        
+        line-height: 20px;
+    }
+
+    .two .image-section{
+        height: 38px;
+    }
+
+    .choice-card .text{
+        /* margin: 0 4.5% 0 1.5%; */
+    }
+
+    .subText{
+        margin-left:-2px;
     }
 }
 
@@ -105,10 +111,23 @@
     .selectStyle{
         margin: 6% 0%;
         font-size: 18px;
-        
+        line-height: 24px;
     }
     
     .deselectStyle{
         font-size: 18px;
+        line-height: 24px;
+    }
+
+    .two .image-section{
+        height: 50px;
+    }
+
+    .choice-card .text{
+        margin: 0 4.5% 0 1.5%;
+    }
+
+    .subText{
+        margin-left:3px;
     }
 }

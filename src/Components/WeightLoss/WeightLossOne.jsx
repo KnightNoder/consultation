@@ -31,7 +31,7 @@ const WeightLossOne = () => {
                 <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" srcset="" />
             </div>
             <div className='assessment'>
-              <h5>Please enter your height and weight below?</h5>
+              <h5 style={{marginBottom:"3%"}}>Please enter your height and weight below?</h5>
               <input className='input' type="text" onChange={heightCheck} value={height} placeholder='Height(in cms)' />
               <div  style={{visibility:"hidden"}} > Hello</div>
               <input className='input' type="text" onChange={weightCheck} value={weight} placeholder='Weight(in Kgs)' />

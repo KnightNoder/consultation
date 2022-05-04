@@ -51,7 +51,7 @@ const Callback = () => {
     console.log(data,'data for send mail');
     const config = {
         method: 'post',
-        url: 'https://stagingappapi.ghc.health',
+        url: 'https://stagingappapi.ghc.health/api/device/consultation',
         headers: { 
           'Content-Type': 'application/json'
         },

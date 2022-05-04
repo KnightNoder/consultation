@@ -25,20 +25,22 @@ const SkinOne = () => {
             </div>
             <div className='assessment'>
               <h5>Please select your skin concern </h5>
-              <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={skin_concern} text="Open pores"/>
-              <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Pigmentation"/>
-              <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Active Acne"/>
-               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Aging"/>
-               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Dark circles"/>
-               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Acne marks & spots"/>
-               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Dull Skin"/>
+              <div className='scroll-div'>
+                <ChoiceCard 
+                  clickHandler={handleClick} noImage="true" choice={skin_concern} text="Open pores"/>
+                <ChoiceCard 
+                  clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Pigmentation"/>
+                <ChoiceCard 
+                clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Active Acne"/>
+                <ChoiceCard 
+                clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Aging"/>
+                <ChoiceCard 
+                clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Dark circles"/>
+                <ChoiceCard 
+                clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Acne marks & spots"/>
+                <ChoiceCard 
+                clickHandler={handleClick} noImage="true" choice={skin_concern}  text="Dull Skin"/>
+              </div>
                {/* <div className='optional-input' style={{display:"flex"
               }}> */}
                   {/* <ChoiceCard 

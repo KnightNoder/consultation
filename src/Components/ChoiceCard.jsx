@@ -2,45 +2,6 @@ import '../css/ChoiceCard.css'
 import Radio from '@mui/material/Radio';
 
 const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
-  // const selectStyle = {
-  //   background: "#FFF1EF",
-  //   border: "1px solid #FE8276",
-  //   boxSizing: "border-box",
-  //   boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.12)",
-  //   borderRadius: "6px",
-  //   margin: "6% 0%",
-  //   // padding: "2% 2%",
-  //   // padding: "3% 0%",
-  //   height: "64px",
-  //   cursor:"pointer"
-  // }
-  // const deselectStyle = {
-  //   border: "1px solid #CACACA",
-  //   boxSizing: "border-box",
-  //   // filter: "drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.12))",
-  //   borderRadius: "6px",
-  //   margin: "6% 0%",
-  //   background: "white",
-  //   // padding: "2% 2%",
-  //   height: "64px",
-  //   cursor:"pointer"
-  // }
-
-  const selectTextStyle = {
-    fontStyle: "normal",
-    fontWeight: "500",
-    fontSize: "19px",
-    lineHeight: "19px",
-    color: "#FF8277",
-  }
-
-  const deselectTextStyle = {
-    fontStyle:" normal",
-    fontWeight:" 400",
-    fontSize:"19px",
-    lineHeight:" 19px",
-    color: "#333333",
-  }
 
   const ImageStyle = {
     display: "block"
@@ -50,18 +11,12 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     display: "none"
   }
 
-  const subtextStyle = {
-    fontSize:"15px",
-    marginLeft:"3px",
-    marginTop:"5px"
-  }
-
 
   let val = (choice == text);
   return (
     <>
-          <div className={`choice-card ${ val ? "selectStyle" : "deselectStyle"}`} onClick={() => clickHandler(text)}  
-          name={text} >
+          <div className={`choice-card ${ val ? "selectStyle" : "deselectStyle"}`} 
+          onClick={() => clickHandler(text)} name={text} >
               {/* <div className='radio-button'>
                   <img src={ cardSelected ? selectImage : deselectImage} name={text} alt="" />
                   </div>
@@ -92,7 +47,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
                 <div className='text'>
                   {text} 
                 </div>
-                <div className='subText' style={subtextStyle}>
+                <div className='subText'>
                   {subtext}
                 </div>
               </div>

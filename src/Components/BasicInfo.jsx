@@ -70,7 +70,7 @@ const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, require
         <div style={{display:"inline-block",fontSize:"20px",color:"#EA2C2C", marginLeft:"3px"}} className=''>{required}
         </div>
       </h3>
-      <input className='input' onChange={onchange} style={{height:"50px"}} value={value}
+      <input className='input' onChange={onchange} value={value}
       type="text" placeholder={placeholder} onKeyPress={numberCheck}/>
       <span style={ ( !value && vibrate) ? {visibility:"visible"} : {visibility:"hidden"}} className='error-text' id="two">
         {requiredErrorText}

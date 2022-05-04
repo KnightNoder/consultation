@@ -5,8 +5,10 @@ import GenericButton from '../Components/GenericButton'
 const ProceedTemplate = ({text,choice,backLink,conditionMet,vibrate,vibrateText,directNavigate,navigateTo}) => {
   return (
     <div className="proceed-container">
+        <div className='empty-navigator'>
+        </div>
         <div className='back-button'>
-         <GenericButton text="Back" directNavigate={directNavigate} navigateTo={navigateTo} choice={backLink} newButton="true"
+        <GenericButton text="Back" directNavigate={directNavigate} navigateTo={navigateTo} choice={backLink} newButton="true"
             conditionMet="true" vibrate={vibrate} vibrateText={vibrateText} /> 
         </div>
         <div className='empty'>

@@ -4,81 +4,18 @@ import Checkbox from '@mui/material/Checkbox';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 
-const CheckBoxCard = ({text,input}) => {
+const CheckBoxCard = ({text, onChange,value}) => {
   const [clicked,SetClicked] = useState(false)
-  const selectStyle = {
-    background: "#FFF1EF",
-    border: "1px solid #FE8276",
-    boxSizing: "border-box",
-    boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.12)",
-    borderRadius: "6px",
-    margin: "6% 0%",
-    // padding: "2% 2%",
-    // padding: "3% 0%",
-    height: "64px",
-    cursor:"pointer",
-    fontStyle: "normal",
-    fontWeight: "500",
-    fontSize: "20px",
-    lineHeight: "23px",
-    color: "#FF8277",
-  }
-  const deselectStyle = {
-    border: "1px solid #CACACA",
-    boxSizing: "border-box",
-    borderRadius: "6px",
-    margin: "6% 0%",
-    background: "white",
-    // padding: "2% 2%",
-    height: "64px",
-    cursor:"pointer",
-    fontStyle:" normal",
-    fontWeight:" 400",
-    fontSize:" 20px",
-    lineHeight:" 23px",
-    color: "#333333",
-  }
 
-  const selectTextStyle = {
-    fontStyle: "normal",
-    fontWeight: "500",
-    fontSize: "19px",
-    lineHeight: "19px",
-    color: "#FF8277",
-  }
-
-  const deselectTextStyle = {
-    fontStyle:" normal",
-    fontWeight:" 400",
-    fontSize: "19px",
-    lineHeight: "19px",
-    color: "#333333",
-  }
-
-  const ImageStyle = {
-    display: "block"
-  }
-
-  const NoImageStyle = {
-    display: "none"
-  }
   return (
     <>
-          <div className={`choice-card` } onClick={() => SetClicked(!clicked)}  
-          name={text} style={(clicked) ? selectStyle : deselectStyle }
+          <div className={`choice-card ${ (clicked) ? "selectStyle" : "deselectStyle"}` }
+           onClick={() => {SetClicked(!clicked); onChange(text,!clicked)}} 
           >
-              {/* <div className='radio-button'>
-                  <img src={ cardSelected ? selectImage : deselectImage} name={text} alt="" />
-                  </div>
-                  <div className='image' >
-                  <img src={image} name={text} className='image-section' alt="" />
-                  </div>
-                  <div className='text'style={cardSelected ? selectTextStyle : deselectTextStyle } >
-                  {text}
-                </div> */}
+
               <div className='one'>
                   <Checkbox  icon={<RadioButtonUncheckedIcon fontSize="small" />} disableRipple
-                  checkedIcon={ <CheckCircleOutlineIcon backgroundColor="white" fontSize='small'/>}
+                  checkedIcon={ <CheckCircleOutlineIcon backgroundcolor="white" fontSize='small'/>}
                   sx={{
                     color: "#CACACA",
                     '&.Mui-checked': {
@@ -89,7 +26,7 @@ const CheckBoxCard = ({text,input}) => {
                   fontSize="small"
                   />
               </div>
-              <div className='three' style={clicked ? selectTextStyle: deselectTextStyle}>
+              <div className={`three ${(clicked) ? "selectTextStyle" : "deselectTextStyle"}`}>
                 {text}
               </div>
           </div>

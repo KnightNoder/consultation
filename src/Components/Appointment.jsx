@@ -33,7 +33,7 @@ const Appointment = () => {
                 clickHandler={handleClick} noImage="true" choice={appointment_type}  text="Book an appointment"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"beard-1"} directNavigate="true"
+        <ProceedTemplate text="Proceed" choice={"callback"} directNavigate="true"
          navigateTo="-1" conditionMet="true"/>
     </>
   )

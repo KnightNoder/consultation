@@ -26,6 +26,7 @@
     box-sizing: border-box;
     caret-color:  #FE8276;
 }
+
 @media only screen and (min-width: 480px){
     .assessment h4{
         margin-top: 2%;
@@ -44,7 +45,11 @@
     }
 
     .assessment h3{
-        font-size: 18px;
+        font-size: 19px;
+    }
+
+    .assessment .input::placeholder{
+        font-size: 15px;
     }
 }
 
