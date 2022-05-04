@@ -41,7 +41,6 @@ const ChoicePage = () => {
   }
 
   const handleClick = (choice) => {
-    console.log(choice,'choice')
     SetSelected(choice) 
     window.localStorage.setItem('choice',choice)
     if(choice != 'Hairfall'){

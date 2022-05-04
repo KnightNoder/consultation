@@ -21,7 +21,6 @@ const Callback = () => {
     const choice = window.localStorage.getItem('choice');
     const category =  getCategory(choice);
     const product_id = getProductId(choice);
-    console.log(product_id,'product id')
     const getData = async () => {
         var config = {
             method: 'get',
@@ -48,7 +47,6 @@ const Callback = () => {
      getData();
 
     const data = getSendMailData();
-    console.log(data,'data for send mail');
     const config = {
         method: 'post',
         url: 'https://stagingappapi.ghc.health/api/device/consultation',
@@ -58,7 +56,7 @@ const Callback = () => {
         data : data
       };
       axios(config).then((response) => {
-        console.log(JSON.stringify(response.data));
+        console.log('success')
       }).catch(function (error) {
         console.log(error);
       }); 

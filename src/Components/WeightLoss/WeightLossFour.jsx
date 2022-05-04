@@ -17,8 +17,6 @@ const WeightLossFour = () => {
 
   const changeHandler = (name,value) =>{
     Set_check_list((prevState) =>{
-      console.log(check_list, 'state')
-      console.log(name,value,'event');
       return {...prevState,[name]:value}
     })
   }
