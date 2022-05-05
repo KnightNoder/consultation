@@ -1,6 +1,6 @@
 import '../css/GenericButton.css'
 import {useNavigate} from "react-router-dom"
-const GenericButton = ({text,choice,conditionMet,vibrateText,newButton,directNavigate,navigateTo}) => {
+const GenericButton = ({text,choice,conditionMet,vibrateText,newButton,directNavigate,navigateTo,radiusBottom}) => {
   const navigate = useNavigate();
   const navigateCheck = () => {
     if(directNavigate) {
@@ -15,7 +15,8 @@ const GenericButton = ({text,choice,conditionMet,vibrateText,newButton,directNav
   }
 
   return (
-    <button className={`generic-button ${newButton ? "backButtonStyle": ''}`} onClick={() => navigateCheck() }>
+    <button className={`generic-button ${newButton ? "backButtonStyle": ''} ${radiusBottom ? "borderRadiusBottom": ''}`}
+     onClick={() => navigateCheck() }>
             {text}
     </button>
 

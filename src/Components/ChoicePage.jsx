@@ -5,16 +5,13 @@ import beardImage from '../images/beard.png';
 import performanceImage from '../images/performance.png'
 import weightlossImage from '../images/weightloss.png'
 import skinImage from '../images/skin.png'
-import winkImage from '../images/wink.png'
-import assessmentImage from '../images/assessment.png'
 import '../css/ChoicePage.css'
 import '../css/ChoiceCard.css'
 import { useState, useEffect } from 'react';  
-import { Hidden } from '@mui/material';
 
 const ChoicePage = () => {
   const [selected,SetSelected] = useState(window.localStorage.getItem('choice') || 'Hairfall')
-  const [age,SetAge] = useState(window.localStorage.getItem('age') || '')
+  const [age,SetAge] = useState('')
   const [vibrate,SetVibrate] = useState(false);
   const vibrateText = () => {
     navigator.vibrate(1000)

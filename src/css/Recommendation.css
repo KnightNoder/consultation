@@ -24,6 +24,15 @@
     border-radius: 16px;
 }
 
+.doctor-info2 {
+    flex: 3;
+    background: #FFFFFF;
+    border: 1px solid #D4DAE1;
+    box-sizing: border-box;
+    border-radius: 16px;
+    height: 400px
+}
+
 .details .image-section{
     flex:2
 }
@@ -48,6 +57,11 @@
     margin: 30% 0 0 15%;
 }
 
+.doctor-info2 .details2 {
+    display: flex;
+    margin: 8% 0 0 15%;
+}
+
 
 .product-card .image-section {
     flex: 2;
@@ -69,7 +83,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-left: 5%;
 }
 
 .name,.designation {
@@ -85,8 +98,9 @@
 
 .designation{
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 2%;
+    margin-right: 3%;
 }
 
 .booking{
@@ -181,7 +195,7 @@
     font-size: 14px;
     line-height: 16px;
     color: #0CBC8B;
-    width: 25%;
+    width: 27%;
     text-align: center;
 }
 
@@ -203,10 +217,6 @@
     /* border: solid 1px; */
 }
 
-.product-card .details .buy-button {
-    flex: 1.3;
-}
-
 .product-card .details .subtext{
     font-style: normal;
     font-weight: 400;
@@ -222,6 +232,8 @@
     line-height: 20px;
     letter-spacing: 0.18px;
     color: #FF8277;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -232,14 +244,16 @@
 
     .product-card {
         height: 500px;
-        margin: 5% 10%
-    }
-
-    .reco-1{
-        display: none;
+        margin: 5% 10%;
+        position: relative;
     }
 
     .doctor-info{
+        height: 400px;
+        margin: 0 10%;
+    }
+
+    .doctor-info2{
         height: 400px;
         margin: 0 10%;
     }
@@ -266,7 +280,7 @@
     }
 
     .product-info h3  {
-        margin: 1% 0 0 10%;
+        margin: 10% 0 0 10%;
     }
 
     .product-card .image-section .image{
@@ -275,7 +289,7 @@
     }
 
     .product-card .image-section{
-        flex: 12
+        flex: 12;
     }
 
     .recommendation-section h2{
@@ -285,6 +299,55 @@
     .doctor-info{
         border: none;
         margin-bottom: 10%;
+    }
+
+    .doctor-info2{
+        border: none;
+    }
+
+    .doctor-info2 .details2{
+        margin: 8% 0 0 0%;
+    }
+
+    .product-card .details{
+        margin-left: 0%;
+    }
+
+    .details .buy-button{
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .details .heading, .details .price{
+        margin-left: 5%;
+    }
+
+    .product-card .image-section{
+        border-radius: 16px 16px 0px 0px;
+    }
+    
+    .product-card .details .buy-button {
+        flex: 1.3;
+    }
+
+    .product-card .details .price {
+        font-size: 16px;
+    }
+
+    .strike-text{
+        font-size: 12px;
+        color: black
+    }
+
+    .reco-1{
+        position: absolute;
+        top: 0px;
+        height: 7%;
+        width: 55%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
     }
 } 
 
@@ -317,5 +380,14 @@
 
     .product-card .image-section{
         flex:3
+    }
+    
+    .product-card .details .buy-button {
+        flex: .8;
+    }
+
+    .strike-text{
+        font-size: 16px;
+        color: black
     }
 }

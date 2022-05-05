@@ -6,7 +6,6 @@ import GenericButton from './GenericButton';
 import { InlineWidget } from "react-calendly";
 import '../css/Recommendation.css'
 import { useEffect, useState } from "react";
-
 const {getCategory,getProductId,getSendMailData} = require('./common/utils')
 const axios = require('axios');
 
@@ -68,27 +67,30 @@ const Callback = () => {
     <>
         <Header/>
         <div className="recommendation-section">
-            <div className="doctor-info">
+            <div className="doctor-info2" style={{marginTop:"0%"}}>
                 <div className="logo">
                     <img src={logo} className='image' alt="" />
                 </div>  
-                <div className="details">
-                    <div className="image-section">
+                <div className="details2">
+                    {/* <div className="image-section">
                         <img src={doctor} className='image' alt="" />
-                    </div>
+                    </div> */}
                     <div className="name-designation">
                         <div className="name">
-                            Dr. Sudha Nanda
+                            Thank you for filling out the assessment!
                         </div>
                         <div className="designation">
-                            MBBS
+                            One of our physician’s assistants will call you shortly.
+                        </div>
+                        <div className="designation">
+                            Meanwhile, Check out our recommended products 
                         </div>
                     </div>
                 </div>
-                <h2>
+                {/* <h2>
                     Audio Consultation
-                </h2>
-                <div className="details" style={{marginTop:"10%"}}> 
+                </h2> */}
+                {/* <div className="details" style={{marginTop:"10%"}}> 
                     <div className="image-section">
                         <img src={phone} className='image-call' alt="" />
                     </div>
@@ -103,7 +105,7 @@ const Callback = () => {
                             Time: 12:30 p.m
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className="product-info">
                 <h3 className="shown-h3">
@@ -124,15 +126,15 @@ const Callback = () => {
                             {title}
                             {/* Completete Hair Treatment */}
                         </div>
-                        <div className="subtext">
+                        {/* <div className="subtext"> */}
                             {/* {product_subtext} */}
                             {/* Treats all hair concerns and improves overall hair growth */}
-                        </div>
+                        {/* </div> */}
                         <div className="price">
-                            {price} <span style={{fontSize:"16px",color: "black"}}><strike>{compare_at_price}</strike> </span>
+                           Rs.{price} <span className="strike-text">&nbsp;&nbsp;<strike>Rs.{compare_at_price}</strike> </span>
                         </div>
                         <div className="buy-button">
-                            <GenericButton text={"Buy Now"}/>
+                            <GenericButton radiusBottom="true" text={"Buy Now"}/>
                         </div>
                     </div>
                 </div>

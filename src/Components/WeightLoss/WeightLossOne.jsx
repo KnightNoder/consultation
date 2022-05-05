@@ -3,8 +3,8 @@ import ProceedTemplate from '.././ProceedTemplate';
 import { useState,useEffect } from 'react';
 
 const WeightLossOne = () => {
-  const [height,SetHeight] = useState(window.localStorage.getItem('height') || '')
-  const [weight,SetWeight] = useState(window.localStorage.getItem('weight') || '')
+  const [height,SetHeight] = useState('')
+  const [weight,SetWeight] = useState('')
 
   useEffect(() => {
     window.scrollTo(0, 0);

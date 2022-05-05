@@ -2,10 +2,8 @@ import assessmentImage from '../images/assessment.png'
 import ChoiceCard from './ChoiceCard';
 import ProceedTemplate from './ProceedTemplate';
 import { useState, useEffect } from 'react';
-import {useNavigate} from "react-router-dom"
 
 const Appointment = () => {
-  const navigate = useNavigate();
   const [appointment_type,Set_appointment_type] = useState(window.localStorage.getItem('appointment_type') ||  'Book an appointment')
   useEffect(() => {
     window.scrollTo(0, 0);
