@@ -23,7 +23,7 @@ const Callback = () => {
     const getData = async () => {
         var config = {
             method: 'get',
-            url: `https://ghc.health/collections/${category}/products.json`,
+            url: `https://${process.env.REACT_APP_GET_PRODUCTS_BASE_URL}/${category}/products.json`,
             headers: { 
               'Content-Type': 'application/json'
             }
@@ -48,7 +48,7 @@ const Callback = () => {
     const data = getSendMailData();
     const config = {
         method: 'post',
-        url: 'https://stagingappapi.ghc.health/api/device/consultation',
+        url: `https://${process.env.REACT_APP_SEND_MAIL_API_BASE_URL}/api/device/consultation`,
         headers: { 
           'Content-Type': 'application/json'
         },
