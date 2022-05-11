@@ -18,7 +18,8 @@ const ChoicePage = () => {
     SetVibrate(true)
   }
   const numberCheck = (event) => {
-    if (!/[0-9]/.test(event.key)) {
+    console.log(event.key,'key');
+    if (!/[0-9]/.test(event.key) || age > 11) {
       event.preventDefault();
     }
   }
@@ -34,15 +35,16 @@ const ChoicePage = () => {
   }, [selected,age]);
   
   const onchange = (e) =>{
-    SetAge(e.target.value) 
+    SetAge(e.target.value)
+    window.localStorage.setItem('age',e.target.value); 
   }
 
   const handleClick = (choice) => {
     SetSelected(choice) 
     window.localStorage.setItem('choice',choice)
-    if(choice != 'Hairfall'){
-      SetAge('')
-    }
+    // if(choice != 'Hairfall'){
+    //   SetAge('')
+    // }
   }
 
   return (
@@ -67,7 +69,7 @@ const ChoicePage = () => {
                 <h5 style={{display:"inline-block"}}>Age</h5>
                 {/* <span> (Your secret's safe <img src={winkImage} alt=""  />) </span> */}
               </div>
-              <input  className='input' value={age} onChange={(e) => onchange(e)} type="text" onKeyPress={numberCheck} placeholder='Eg.24' />
+              <input max="100" className='input' value={age} onChange={(e) => onchange(e)} type="text" onKeyPress={numberCheck} placeholder='Eg.24' />
               <div className={`error-text ${vibrate ? "text-vibrate" : ''} `} style={(age == '') ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
                   Please provide your age to proceed
                   {/* visibility:"hidden" */}

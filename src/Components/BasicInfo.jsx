@@ -18,7 +18,7 @@ const BasicInfo = () => {
   }
 
   const numberCheck = (event) => {
-    if (!/[0-9]/.test(event.key)) {
+    if (phone_number.length >= 10) {
       event.preventDefault();
     }
   }
@@ -47,7 +47,7 @@ const BasicInfo = () => {
               value={first_name} vibrate={vibrate} errorText="Invalid input" requiredErrorText="Field is required" required="*" />
               <br />
               <InputCard heading="Last Name" placeholder="Eg. Doe" value={last_name} onchange={(e) => Set_last_name(e.target.value)}
-              errorText="Invalid input" vibrate={vibrate} requiredErrorText="Field is required" />
+              errorText="Invalid input" vibrate={vibrate} />
               <br />
               <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={phone_number}
               onchange={(e) => Set_phone_number(e.target.value)} errorText="Invalid input" requiredErrorText="Field is required" 
@@ -58,19 +58,19 @@ const BasicInfo = () => {
               <br />
             </div>
         </div>
-        <ProceedTemplate  vibrate={vibrate} vibrateText={vibrateText} text="Proceed" choice={nextPage} backLink="choice" conditionMet={first_name && email && phone_number}/> 
+        <ProceedTemplate  vibrate={vibrate} vibrateText={vibrateText} text="Proceed" choice={nextPage} backLink="choice" conditionMet={first_name && email && phone_number && (phone_number.length == 10)}/> 
     </>
   )
 }
 
-const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,numberCheck}) => {
+const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,numberCheck,pattern,title}) => {
   return (
     <>
       <h3 style={{}}>{heading} 
         <div style={{display:"inline-block",fontSize:"20px",color:"#EA2C2C", marginLeft:"3px"}} className=''>{required}
         </div>
       </h3>
-      <input className='input' onChange={onchange} value={value}
+      <input className='input' onChange={onchange} value={value} 
       type="text" placeholder={placeholder} onKeyPress={numberCheck}/>
       <span style={ ( !value && vibrate) ? {visibility:"visible"} : {visibility:"hidden"}} className='error-text' id="two">
         {requiredErrorText}

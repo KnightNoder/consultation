@@ -14,6 +14,7 @@ const Callback = () => {
     const [price,Set_price] = useState('');
     const [compare_at_price,Set_compare_at_price] = useState('')
     const [title,Set_title] = useState('');
+    const [product_link,Set_link]= useState('');
     // const [product_subtext,Set_product_subtext] = useState('')
     
   useEffect(()=>{
@@ -28,7 +29,7 @@ const Callback = () => {
               'Content-Type': 'application/json'
             }
         };
-        axios(config)
+        await axios(config)
         .then(response => {
             const product_recommended = (response.data["products"].filter((item) => item.id == product_id));
             let product_title = product_recommended[0]["title"];
@@ -40,10 +41,13 @@ const Callback = () => {
             Set_image(img_src)
             Set_price(product_price)
             Set_compare_at_price(compare_price)
+            Set_link(product_recommended[0]["handle"])
+        }).catch((error)=>{
+            console.log(error)
         });
     }
 
-     getData();
+    getData();
 
     const data = getSendMailData();
     const config = {
@@ -134,7 +138,7 @@ const Callback = () => {
                            Rs.{price} <span className="strike-text">&nbsp;&nbsp;<strike>Rs.{compare_at_price}</strike> </span>
                         </div>
                         <div className="buy-button">
-                            <GenericButton radiusBottom="true" text={"Buy Now"}/>
+                            <GenericButton productNavigate="true" productLink={product_link} radiusBottom="true" text={"Buy Now"}/>
                         </div>
                     </div>
                 </div>
