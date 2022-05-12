@@ -15,12 +15,14 @@ const Callback = () => {
     const [compare_at_price,Set_compare_at_price] = useState('')
     const [title,Set_title] = useState('');
     const [product_link,Set_link]= useState('');
+    const [call_customer,Set_call_customer] = useState(false)
     // const [product_subtext,Set_product_subtext] = useState('')
     
   useEffect(()=>{
     const choice = window.localStorage.getItem('choice');
     const category =  getCategory(choice);
     const product_id = getProductId(choice);
+    Set_call_customer(window.localStorage.getItem('appointment_type') == 'Get a free consultation call')
     const getData = async () => {
         var config = {
             method: 'get',
@@ -83,9 +85,9 @@ const Callback = () => {
                         <div className="name">
                             Thank you for filling out the assessment!
                         </div>
-                        <div className="designation">
+                        { call_customer ? <div className="designation">
                             One of our physician’s assistants will call you shortly.
-                        </div>
+                        </div> : ""}
                         <div className="designation">
                             Meanwhile, Check out our recommended products 
                         </div>
