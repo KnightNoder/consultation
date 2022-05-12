@@ -4,7 +4,7 @@ import ProceedTemplate from './ProceedTemplate';
 import { useState, useEffect } from 'react';
 
 const Appointment = () => {
-  const [appointment_type,Set_appointment_type] = useState(window.localStorage.getItem('appointment_type') ||  'Book an appointment')
+  const [appointment_type,Set_appointment_type] = useState(window.localStorage.getItem('appointment_type') ||  'Get a free consultation call')
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
