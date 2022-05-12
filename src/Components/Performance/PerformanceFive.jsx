@@ -1,6 +1,7 @@
 import assessmentImage from '../../images/assessment.png'
-import ChoiceCard from '.././ChoiceCard';
 import '../../css/RadioSwitch.css';
+import ChoiceCard from '.././ChoiceCard';
+import '../../css/BeardTwo.css'
 import ProceedTemplate from '.././ProceedTemplate';
 import { useState, useEffect } from 'react';
 
@@ -29,13 +30,17 @@ const PerformanceFive = () => {
     borderRadius: "5px",
   }
 
+  const handleClickOne = (choice) => {
+    Set_cramps_tiredness(choice)
+  }
+
   return (
     <>
         <div className="choice-container">
             <div className='assessment-image'>
                 <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" srcset="" />
             </div>
-            <div className='assessment'>
+            {/* <div className='assessment'>
               <h5>Do you experience any cramps or tiredness while performing?</h5>
               <div className='switch-container'>
                     <div className='switch' name="hairLoss" 
@@ -49,6 +54,15 @@ const PerformanceFive = () => {
                         No
                     </div>
                 </div>
+            </div> */}
+            <div className='assessment-container'>
+                <div className=''>
+                  <h5>Do you experience any cramps or tiredness while performing?? </h5>
+                      <ChoiceCard 
+                          clickHandler={handleClickOne} noImage="true" choice={cramps_tiredness} text="Yes"/>
+                      <ChoiceCard 
+                          clickHandler={handleClickOne} noImage="true" choice={cramps_tiredness}  text="No"/>
+                  </div>
             </div>
         </div>
         <ProceedTemplate text="Proceed" conditionMet="true" choice={"appointment"} backLink="performance-3"/>

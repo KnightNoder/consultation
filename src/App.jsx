@@ -10,6 +10,7 @@ import ChoicePage from './Components/ChoicePage'
 import LandingPage  from './Components/LandingPage';
 import HairOne from './Components/Hair/HairOne';
 import HairTwo from './Components/Hair/HairTwo';
+import HairThree from './Components/Hair/HairThree';
 import SkinOne from './Components/Skin/SkinOne';
 import SkinTwo from './Components/Skin/SkinTwo';
 import SkinThree from './Components/Skin/SkinThree';
@@ -77,6 +78,7 @@ function App() {
              <Route path='/user-details' exact element={<BasicInfo category={choice}/>}/>
              <Route path='/hairfall' exact element={<HairOne/>}/>
              <Route path='/hairfall-1' exact element={<HairTwo/>}/>
+             <Route path='/hairfall-2' exact element={<HairThree/>}/>
              <Route path='/skin' exact element={<SkinOne/>}/>
              <Route path='/skin-1' exact element={<SkinTwo/>}/>
              <Route path='/skin-2' exact element={<SkinThree/>}/>

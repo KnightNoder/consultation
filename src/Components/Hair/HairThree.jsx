@@ -7,21 +7,16 @@ import '../../css/BeardTwo.css'
 import { useState, useEffect } from 'react';
 
 
-const HairOne = () => {
-  const [family_hair_loss,Set_family_hair_loss] = useState(window.localStorage.getItem('family_hair_loss') || 'Yes');
-  const [past_allergy,Set_past_allergy] = useState(window.localStorage.getItem('past_allergy') || 'Yes');
+const HairThree = () => {
+  const [big_event_120_days,Set_big_event_120_days] = useState(window.localStorage.getItem('big_event_120_days') || 'Yes');
 
   useEffect(()=>{
     window.scrollTo(0,0)
   },[])
 
-  useEffect(() => {
-    window.localStorage.setItem('family_hair_loss', family_hair_loss );
-}, [family_hair_loss]);
-
-useEffect(()=>{
-    window.localStorage.setItem('past_allergy', past_allergy );
-  },[past_allergy])
+  useEffect(()=>{
+    window.localStorage.setItem('big_event_120_days', big_event_120_days );
+  },[big_event_120_days])
 
 //   const selectStyle = {
 //     backgroundColor: "#FF8277",
@@ -37,10 +32,7 @@ useEffect(()=>{
 //   }
 
   const handleClickOne = (choice) => {
-    Set_family_hair_loss(choice)
-  }
-  const handleClickTwo = (choice) => {
-    Set_past_allergy(choice)
+    Set_big_event_120_days(choice)
   }
 
   return (
@@ -100,24 +92,17 @@ useEffect(()=>{
             </div> */}
             <div className='assessment-container'>
                 <div className=''>
-                  <h5>Does anyone in your family have hair loss? </h5>
+                  <h5>Do you have any big events coming up in next 120 days?? </h5>
                       <ChoiceCard 
-                          clickHandler={handleClickOne} noImage="true" choice={family_hair_loss} text="Yes"/>
+                          clickHandler={handleClickOne} noImage="true" choice={big_event_120_days} text="Yes"/>
                       <ChoiceCard 
-                          clickHandler={handleClickOne} noImage="true" choice={family_hair_loss}  text="No"/>
+                          clickHandler={handleClickOne} noImage="true" choice={big_event_120_days}  text="No"/>
                   </div>
-                <div className=''>
-                  <h5>Do you have any past allergic reactions to medicines??</h5>
-                    <ChoiceCard 
-                        clickHandler={handleClickTwo} noImage="true" choice={past_allergy} text="Yes"/>
-                    <ChoiceCard 
-                        clickHandler={handleClickTwo} noImage="true" choice={past_allergy}  text="No"/>
-                </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={'hairfall-2'} backLink="hairfall" conditionMet="true"/>
+        <ProceedTemplate text="Proceed" choice={'appointment'} backLink="hairfall-1" conditionMet="true"/>
     </>
   )
 }
 
-export default HairOne
+export default HairThree
