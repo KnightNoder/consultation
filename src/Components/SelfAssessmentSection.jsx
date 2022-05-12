@@ -52,8 +52,16 @@ const SelfAssessmentSection = () => {
                                 <img src={pic3} alt="" />
                             </div>
                             <div className='report-text-content'>
-                                Get your analysis and book an appointment in 30 seconds
+                                Get your analysis in 30 seconds
                             </div>
+                        </div>
+                        <div className='report-text'>
+                            <div className='tick'>
+                                <img src={pic3} alt="" />
+                            </div>
+                            <div className='report-text-content'>
+                                Get a free doctor’s consultation
+                            </div>                   
                         </div>
                         <div className='report-text'>
                             <div className='tick'>
@@ -64,7 +72,6 @@ const SelfAssessmentSection = () => {
                             </div>                   
                         </div>
                         <div className='report-text'>
-                                             
                         </div>
                     </div>
                 </div>
@@ -72,7 +79,7 @@ const SelfAssessmentSection = () => {
                     Start Assessment
                 </div>
             </div> 
-            <div className='assessment-card'>
+            {/* <div className='assessment-card'>
                 <div className='time-section'>
                     <div className='stopwatch'>
                         <div className='clock'>
@@ -117,7 +124,7 @@ const SelfAssessmentSection = () => {
                 <div className='start-assessment' onClick={() => navigate('/choice')}>
                     Start Assessment
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>  
 

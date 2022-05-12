@@ -23,12 +23,12 @@ const Appointment = () => {
                 <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" srcset="" />
             </div>
             <div className='assessment'>
-              <h5>Your detailed case has been recorded and our inhouse doctors will review it and get back to you  </h5>
-              <p style={{fontSize:"18px", marginTop:"3%"}}>Get in touch with us</p>
+              <h5>Hey! Your detailed case has been recorded. Wasn’t that easy?</h5>
+              <p style={{fontSize:"18px", marginTop:"3%"}}>How would you like us to respond?</p>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={appointment_type} text="Request a call back"/>
+                clickHandler={handleClick} noImage="true" choice={appointment_type} text="Get a free consultation call"/>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={appointment_type}  text="Book an appointment"/>
+                clickHandler={handleClick} noImage="true" choice={appointment_type}  text="Proceed without consultation"/>
             </div>
         </div>
         <ProceedTemplate text="Proceed" choice={"callback"} directNavigate="true"

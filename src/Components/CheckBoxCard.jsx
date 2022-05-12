@@ -5,12 +5,13 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 
 const CheckBoxCard = ({text, onChange,value}) => {
-  const [clicked,SetClicked] = useState(false)
-
+  if(text === 'No such problems'){
+    text = 'No_such_problems'
+  }
   return (
     <>
-          <div className={`choice-card ${ (clicked) ? "selectStyle" : "deselectStyle"}` }
-           onClick={() => {SetClicked(!clicked); onChange(text,!clicked)}} 
+          <div className={`choice-card ${ (value) ? "selectStyle" : "deselectStyle"}` }
+           onClick={() => {onChange(text,value)}} 
           >
 
               <div className='one'>
@@ -22,11 +23,11 @@ const CheckBoxCard = ({text, onChange,value}) => {
                       color: "#FE8276",
                     },
                   }}
-                  checked={clicked}
+                  checked={value}
                   fontSize="small"
                   />
               </div>
-              <div className={`three ${(clicked) ? "selectTextStyle" : "deselectTextStyle"}`}>
+              <div className={`three ${(value) ? "selectTextStyle" : "deselectTextStyle"}`}>
                 {text}
               </div>
           </div>
