@@ -2,10 +2,12 @@ import assessmentImage from '../../images/assessment.png'
 import CheckBoxCard from '.././CheckBoxCard';
 import ProceedTemplate from '.././ProceedTemplate';
 import '../../css/WeightLossFour.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const WeightLossFour = () => {
-  const [check_list,Set_check_list] = useState({
+  const check_list_from_local= JSON.parse(window.localStorage.getItem('check_list'))
+  check_list_from_local.Others_input= '';
+  const [check_list,Set_check_list] = useState(check_list_from_local || {
     "Cholestrol": true,
     "Thyroid":false,
     "Heart":false,
@@ -19,9 +21,20 @@ const WeightLossFour = () => {
   
   const changeHandler = (name,value) =>{
     Set_check_list((prevState) =>{
+      if(name == 'No such problems'){
+        name = 'No_such_problems'
+      }
       return {...prevState,[name]: !value}
     })
   }
+
+  useEffect(()=>{
+    window.localStorage.setItem('check_list',JSON.stringify(check_list));
+  },
+  // [check_list.Cholestrol,check_list.Thyroid,check_list.Diabetes,check_list.Heart,check_list.Kidney,check_list.No_such_problems,
+  // check_list.Others, check_list.Others_input]
+  [check_list]
+  )
 
   const inputHandler = (e) => {
     Set_check_list((prevState) =>{
@@ -32,7 +45,7 @@ const WeightLossFour = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" srcset="" />
+                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" />
             </div>
             <div className='assessment'>
               <h5>Do you have any pre-existing problems? </h5>

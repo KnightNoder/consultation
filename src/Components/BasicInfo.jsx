@@ -32,12 +32,8 @@ const BasicInfo = () => {
     }
   }
 
-  const numberCheck = (event) => {
-    console.log(phone_number.length,phone_number_valid,'length and validity');
-    if (phone_number.length >= 10 || !/[0-9]/.test(event.key)) {
-      event.preventDefault();
-    } else {
-      if( phone_number.length == 9) {
+  const numberCheck = () => { {
+      if( phone_number.length == 9 && /^[0-9]+$/.test(phone_number)) {
         Set_phone_number_valid(true)
       } else {
         Set_phone_number_valid(false);
@@ -97,7 +93,7 @@ const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, require
         </div>
       </h3>
       <input className='input' onChange={onchange} value={value} 
-      type="text" placeholder={placeholder} onKeyPress={numberCheck}/>
+      type="text" placeholder={placeholder} onKeyDown={numberCheck}/>
       <span style={ (vibrate && !validity) ? {visibility:"visible"} : {visibility:"hidden"}} className='error-text' id="two">
         {requiredErrorText}
       </span>

@@ -59,7 +59,7 @@ const Recommendation = ({category}) => {
                 </h3>
                 <div className="product-card">
                     <div className="image-section">
-                        <img src={productReco_1} className="image" alt="" srcset="" />
+                        <img src={productReco_1} className="image" alt="" />
                     </div>
                     <div className="details">
                         <div className="reco-1">

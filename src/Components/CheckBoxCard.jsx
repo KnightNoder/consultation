@@ -5,9 +5,6 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 
 const CheckBoxCard = ({text, onChange,value}) => {
-  if(text === 'No such problems'){
-    text = 'No_such_problems'
-  }
   return (
     <>
           <div className={`choice-card ${ (value) ? "selectStyle" : "deselectStyle"}` }

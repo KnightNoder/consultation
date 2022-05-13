@@ -21,10 +21,11 @@ const WeightLossThree = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" srcset="" />
+                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt=""  />
             </div>
             <div className='assessment'>
-              <h5>How many days do you exercise in a week?(No Judgements here) </h5>
+              <h5>How many days do you exercise in a week?</h5>
+              <h5>(no judgements here)</h5>
               <ChoiceCard 
                 clickHandler={handleClick} noImage="true" choice={exercise_a_week} text="Don't work out at all"/>
               <ChoiceCard 

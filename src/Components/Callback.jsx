@@ -3,7 +3,6 @@ import logo from '../images/mars-logo.png'
 import doctor  from '../images/doctor-small.png'
 import phone from '../images/call.png'
 import GenericButton from './GenericButton';
-import { InlineWidget } from "react-calendly";
 import '../css/Recommendation.css'
 import { useEffect, useState } from "react";
 const {getCategory,getProductId,getSendMailData} = require('./common/utils')
@@ -16,12 +15,19 @@ const Callback = () => {
     const [title,Set_title] = useState('');
     const [product_link,Set_link]= useState('');
     const [call_customer,Set_call_customer] = useState(false)
+    const [bmi,Set_bmi] = useState('')
+    const [category, Set_catgory] = useState('')
     // const [product_subtext,Set_product_subtext] = useState('')
     
   useEffect(()=>{
     const choice = window.localStorage.getItem('choice');
+    Set_catgory(choice)
     const category =  getCategory(choice);
     const product_id = getProductId(choice);
+    const weight = parseInt(window.localStorage.getItem("weight"));
+    const height = parseInt(window.localStorage.getItem("height"));
+    const BMI = parseInt((weight * 10000) / (height * height));
+    Set_bmi(BMI)
     Set_call_customer(window.localStorage.getItem('appointment_type') == 'Get a free consultation call')
     const getData = async () => {
         var config = {
@@ -87,9 +93,9 @@ const Callback = () => {
                         </div>
                         { call_customer ? <div className="designation">
                             One of our physician’s assistants will call you shortly.
-                        </div> : ""}
+                        </div> : <div className="designation"> </div> }
                         <div className="designation">
-                            Meanwhile, Check out our recommended products 
+                            {call_customer ? "Meanwhile," : ""} Check out our recommended products 
                         </div>
                     </div>
                 </div>
@@ -114,12 +120,23 @@ const Callback = () => {
                 </div> */}
             </div>
             <div className="product-info">
-                <h3 className="shown-h3">
-                    We Recommend only the best for you
-                </h3>
-                <h3 className="hidden-h3">
-                    Our Recommendation
-                </h3>
+                <div className="product-header">
+                    <h3 className="shown-h3">
+                        We Recommend only the best for you
+                    </h3>
+                    <h3 className="hidden-h3">
+                         Our Recommendation
+                    </h3>
+                   { category === 'WeightLoss' ?  <div className="bmi">
+                        <div className="bmi-text">
+                            Your BMI
+                        </div>
+                        <div className="bmi-number">
+                            {bmi}
+                        </div> 
+                    </div>: ""}
+                </div>
+               
                 <div className="product-card">
                     <div className="image-section">
                         <img src={image} className="image" alt="Product1" srcset="" />

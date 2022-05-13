@@ -18,7 +18,6 @@ const ChoicePage = () => {
     SetVibrate(true)
   }
   const numberCheck = (event) => {
-    console.log(event.key,'key');
     if (!/[0-9]/.test(event.key) || age > 11) {
       event.preventDefault();
     }
