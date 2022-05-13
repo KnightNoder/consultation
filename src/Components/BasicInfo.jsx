@@ -32,13 +32,12 @@ const BasicInfo = () => {
     }
   }
 
-  const numberCheck = () => { {
+  const numberCheck = () => { 
       if( phone_number.length == 9 && /^[0-9]+$/.test(phone_number)) {
         Set_phone_number_valid(true)
       } else {
         Set_phone_number_valid(false);
       }
-    }
      
   }
 
@@ -47,10 +46,11 @@ const BasicInfo = () => {
   }, [])
 
   useEffect(() => {
+      Set_phone_number(phone_number);
       window.localStorage.setItem('first_name',first_name)
       window.localStorage.setItem('last_name',last_name)
       window.localStorage.setItem('email',email)
-      window.localStorage.setItem('phone_number',phone_number)    
+      window.localStorage.setItem('phone_number',phone_number)  
   }, [first_name,last_name,email,phone_number,email])
 
   // console.log(first_name && email_valid && phone_number_valid,first_name,email,email_valid,phone_number_valid,'condition');
@@ -70,7 +70,7 @@ const BasicInfo = () => {
               errorText="Invalid input" vibrate={true} validity={true} />
               <br />
               <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={phone_number} validity={phone_number_valid}
-              onchange={(e) => {Set_phone_number(e.target.value);SetVibratePhone(false)}} errorText="Invalid input" requiredErrorText="Invalid input" 
+              onchange={(e) => {console.log(e.target.value); Set_phone_number(e.target.value);SetVibratePhone(false); numberCheck()}} errorText="Invalid input" requiredErrorText="Invalid input" 
               numberCheck={numberCheck} required="*" vibrate={vibrate_phone}/>
               <br />
               <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={email} validity={email_valid}
@@ -85,7 +85,6 @@ const BasicInfo = () => {
 }
 
 const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,numberCheck,validity}) => {
-  // console.log((!value && vibrate && !validity),heading,!value, vibrate, validity,'conditions');
   return (
     <>
       <h3 style={{}}>{heading} 
