@@ -95,7 +95,7 @@ const Callback = () => {
                             One of our physician’s assistants will call you shortly.
                         </div> : <div className="designation"> </div> }
                         <div className="designation">
-                            {call_customer ? "Meanwhile," : ""} Check out our recommended products 
+                            {call_customer ? "Meanwhile," : ""} Check out our recommended products.
                         </div>
                     </div>
                 </div>
