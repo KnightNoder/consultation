@@ -49,7 +49,7 @@ html {
     padding-top: 0%;
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 110vh;
     overflow: auto
   }
 
