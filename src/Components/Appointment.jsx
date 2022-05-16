@@ -1,6 +1,7 @@
 import assessmentImage from '../images/assessment.png'
 import ChoiceCard from './ChoiceCard';
 import ProceedTemplate from './ProceedTemplate';
+import ImageCard from './ImageCard';
 import { useState, useEffect } from 'react';
 
 const Appointment = () => {
@@ -20,7 +21,7 @@ const Appointment = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" />
+              <ImageCard/>    
             </div>
             <div className='assessment'>
               <h5>Hey! Your detailed case has been recorded. Wasn’t that easy?</h5>

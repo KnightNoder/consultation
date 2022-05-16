@@ -3,6 +3,7 @@ import CheckBoxCard from '.././CheckBoxCard';
 import ProceedTemplate from '.././ProceedTemplate';
 import '../../css/WeightLossFour.css';
 import { useEffect, useState } from 'react';
+import ImageCard from '../ImageCard'
 
 const WeightLossFour = () => {
   const [check_list,Set_check_list] = useState(JSON.parse(window.localStorage.getItem('check_list')) || {
@@ -55,7 +56,7 @@ const WeightLossFour = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" />
+                <ImageCard/>
             </div>
             <div className='assessment'>
               <h5>Do you have any pre-existing problems? </h5>

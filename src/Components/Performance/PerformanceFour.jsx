@@ -2,7 +2,7 @@ import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
 import { useState, useEffect } from 'react';
-
+import ImageCard from '../ImageCard';
 const PerformanceFour = () => {
   const [history_of_heart_issues,Set_history_of_heart_issues] = 
   useState(window.localStorage.getItem('history_of_heart_issues') ||  'No')
@@ -20,7 +20,7 @@ const PerformanceFour = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" />
+                <ImageCard/>
             </div>
             <div className='assessment'>
               <h5>Do you have any existing or any history of Heart issues?</h5>

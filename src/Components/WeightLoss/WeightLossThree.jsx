@@ -2,7 +2,7 @@ import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
 import { useEffect, useState } from 'react';
-
+import ImageCard from '../ImageCard';
 const WeightLossThree = () => {
   const [exercise_a_week,Set_exercise_a_week] = useState(window.localStorage.getItem('exercise_a_week') || 'Daily')
 
@@ -21,7 +21,7 @@ const WeightLossThree = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt=""  />
+                <ImageCard/>
             </div>
             <div className='assessment'>
               <h5>How many days do you exercise in a week?</h5>

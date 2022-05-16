@@ -5,7 +5,7 @@ import '../../css/ChoicePage.css'
 import ChoiceCard from '.././ChoiceCard';
 import '../../css/BeardTwo.css'
 import { useState, useEffect } from 'react';
-
+import ImageCard from '../ImageCard'
 
 const HairThree = () => {
   const [big_event_120_days,Set_big_event_120_days] = useState(window.localStorage.getItem('big_event_120_days') || 'Yes');
@@ -39,7 +39,7 @@ const HairThree = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt=""  />
+            <ImageCard/>
             </div>  
             {/* <div className='assessment'>
                 <div className='radio-switch'>

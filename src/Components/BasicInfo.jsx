@@ -2,6 +2,7 @@ import assessmentImage from '../images/assessment.png'
 import ProceedTemplate from './ProceedTemplate';
 import '../css/ChoicePage.css'
 import '../css/BasicInfo.css'
+import ImageCard from './ImageCard'
 import { useState,useEffect } from 'react';
 
 const BasicInfo = () => {
@@ -41,7 +42,7 @@ const BasicInfo = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt=""  />
+            <ImageCard/>
             </div>  
             <div className='assessment'>
               <h5>Fill in your basic information </h5>

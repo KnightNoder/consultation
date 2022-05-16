@@ -3,6 +3,7 @@ import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
 import { useState,useEffect } from 'react'; 
 import '../../css/BeardTwo.css'
+import ImageCard from '../ImageCard';
 
 const BeardTwo = () => {
   const [looking_for,Set_looking_for] = useState(window.localStorage.getItem('looking_for') || 'Beard Growth')
@@ -28,7 +29,7 @@ const BeardTwo = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" />
+                <ImageCard/>
             </div>
             <div className='assessment-container'>
                 <div className=''>

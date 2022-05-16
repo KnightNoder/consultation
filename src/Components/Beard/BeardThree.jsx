@@ -3,6 +3,7 @@ import ChoiceCard from '.././ChoiceCard';
 import '../../css/RadioSwitch.css';
 import '../../css/BeardTwo.css'
 import { useEffect, useState } from 'react';
+import ImageCard from '../ImageCard';
 
 const BeardThree = () => {
   const [family_beard_growth_issues,Set_family_beard_growth_issues] = 
@@ -24,7 +25,7 @@ const BeardThree = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt="" />
+                <ImageCard/>
             </div>
              <div className='assessment-container'>
                 <div className=''>

@@ -52,9 +52,6 @@ html {
     height: 700px;
     overflow: auto
   }
-
-  .choice-container{
-  }
   
   .proceed-container{
     flex:1;
@@ -122,7 +119,7 @@ html {
   }
   
   .choice-container{
-    flex: 8
+    flex: 8;
   }
   
   .proceed-container{
@@ -202,6 +199,11 @@ html {
     flex-direction:column;
     flex:3; 
     margin-right: 8%
+  }
+
+  .main-image {
+    height: 550px;
+    width: 96%;
   }
 
 }

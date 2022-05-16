@@ -1,6 +1,7 @@
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
 import { useState,useEffect } from 'react';
+import ImageCard from '../ImageCard';
 
 const SkinOne = () => {
   const [skin_concern,Set_skin_concern] = 
@@ -21,7 +22,7 @@ const SkinOne = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt=""/>
+              <ImageCard/>    
             </div>
             <div className='assessment'>
               <h5>Please select your skin concern </h5>

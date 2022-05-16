@@ -3,6 +3,7 @@ import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
 import { useState, useEffect } from 'react';
 import { WindowOutlined } from '@mui/icons-material';
+import ImageCard from '../ImageCard';
 
 const PerformanceOne = () => {
   const [sexual_drive_over_a_year,Set_sexual_drive_over_a_year] = 
@@ -25,7 +26,7 @@ const PerformanceOne = () => {
     <>
         <div className="choice-container">
             <div className='assessment-image'>
-                <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/assessment.png?v=1651128252" className='image' alt=""/>
+                <ImageCard/>
             </div>
             <div className='assessment'>
               <h5>How is your sexual drive over the last one year?</h5>
