@@ -92,7 +92,7 @@ const HairThree = () => {
             </div> */}
             <div className='assessment-container'>
                 <div className=''>
-                  <h5>Do you have any big events coming up in next 120 days?? </h5>
+                  <h5>Do you have any big events coming up in next 120 days?</h5>
                       <ChoiceCard 
                           clickHandler={handleClickOne} noImage="true" choice={big_event_120_days} text="Yes"/>
                       <ChoiceCard 

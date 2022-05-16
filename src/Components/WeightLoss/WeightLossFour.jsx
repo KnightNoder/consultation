@@ -72,7 +72,7 @@ const WeightLossFour = () => {
                 }}> */}
                 <CheckBoxCard name="Others" onChange={(name,value)=>changeHandler(name,value)} value={check_list.Others} text="Others"/>
                 <input className='input' name="Others_input" value={check_list.Others_input} disabled={check_list.Others != true}
-                onChange={(e) => inputHandler(e)} style={{height:"65px"}} type="text" placeholder='Specify the issue' />
+                onChange={(e) => inputHandler(e)} style={{height:"65px"}} type="text" placeholder='Specify the issue' autoComplete='off' />
                 {/* </div> */}
               </div>
             </div>

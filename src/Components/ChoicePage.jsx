@@ -64,7 +64,7 @@ const ChoicePage = () => {
                 {/* <span> (Your secret's safe <img src={winkImage} alt=""  />) </span> */}
               </div>
               <input className='input' value={age} onChange={(e) => SetAge(e.target.value)} type="text" placeholder='Eg.24' />
-              <div className={`error-text ${(vibrate) ? "text-vibrate" : ''} `} style={(!age || age>120) ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
+              <div className={`error-text ${(vibrate) ? "text-vibrate" : ''} `} style={(!age || age>120 || /[a-zA-Z]/.test(age)) ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
                   Please provide your age to proceed
                   {/* visibility:"hidden" */}
               </div>

@@ -107,7 +107,7 @@ useEffect(()=>{
                           clickHandler={handleClickOne} noImage="true" choice={family_hair_loss}  text="No"/>
                   </div>
                 <div className=''>
-                  <h5>Do you have any past allergic reactions to medicines??</h5>
+                  <h5>Do you have any past allergic reactions to medicines?</h5>
                     <ChoiceCard 
                         clickHandler={handleClickTwo} noImage="true" choice={past_allergy} text="Yes"/>
                     <ChoiceCard 
