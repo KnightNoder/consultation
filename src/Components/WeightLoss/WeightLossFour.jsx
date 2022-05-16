@@ -5,9 +5,7 @@ import '../../css/WeightLossFour.css';
 import { useEffect, useState } from 'react';
 
 const WeightLossFour = () => {
-  const check_list_from_local= JSON.parse(window.localStorage.getItem('check_list'))
-  check_list_from_local.Others_input= '';
-  const [check_list,Set_check_list] = useState(check_list_from_local || {
+  const [check_list,Set_check_list] = useState(window.localStorage.getItem('check_list') || {
     "Cholestrol": true,
     "Thyroid":false,
     "Heart":false,
@@ -18,7 +16,12 @@ const WeightLossFour = () => {
     "Others_input":""
   })
 
-  
+  useEffect(()=>{
+    Set_check_list((prevState)=>{
+      return {...prevState, "Others_input":""}
+    })
+  },[])
+
   const changeHandler = (name,value) =>{
     Set_check_list((prevState) =>{
       if(name == 'No such problems'){
