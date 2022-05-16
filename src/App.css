@@ -50,6 +50,7 @@ html {
     display: flex;
     flex-direction: column;
     height: 120vh;
+    overflow: auto
   }
 
   .choice-container{
