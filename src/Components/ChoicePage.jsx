@@ -25,7 +25,6 @@ const ChoicePage = () => {
   
   useEffect(() => {
     SetAge(age)
-    console.log(age && age>120,'condition');
     window.localStorage.setItem('choice',selected);
     window.localStorage.setItem('age',age);
     SetVibrate(false);

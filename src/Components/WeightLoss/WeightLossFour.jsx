@@ -5,7 +5,7 @@ import '../../css/WeightLossFour.css';
 import { useEffect, useState } from 'react';
 
 const WeightLossFour = () => {
-  const [check_list,Set_check_list] = useState(window.localStorage.getItem('check_list') || {
+  const [check_list,Set_check_list] = useState(JSON.parse(window.localStorage.getItem('check_list')) || {
     "Cholestrol": true,
     "Thyroid":false,
     "Heart":false,
@@ -16,26 +16,33 @@ const WeightLossFour = () => {
     "Others_input":""
   })
 
-  useEffect(()=>{
-    Set_check_list((prevState)=>{
-      return {...prevState, "Others_input":""}
-    })
-  },[])
 
   const changeHandler = (name,value) =>{
+    
     Set_check_list((prevState) =>{
       if(name == 'No such problems'){
         name = 'No_such_problems'
       }
-      return {...prevState,[name]: !value}
+      if(name == "No_such_problems" && value == false){
+        return {
+          "Cholestrol": false,
+          "Thyroid":false,
+          "Heart":false,
+          "Diabetes": false,
+          "Kidney":false,
+          "No_such_problems": true,
+          "Others": false,
+          "Others_input":""
+        }
+      } else {
+        return {...prevState,[name]: !value,"No_such_problems":false}
+      }
     })
   }
 
   useEffect(()=>{
     window.localStorage.setItem('check_list',JSON.stringify(check_list));
   },
-  // [check_list.Cholestrol,check_list.Thyroid,check_list.Diabetes,check_list.Heart,check_list.Kidney,check_list.No_such_problems,
-  // check_list.Others, check_list.Others_input]
   [check_list]
   )
 
@@ -64,7 +71,7 @@ const WeightLossFour = () => {
                   alignItems:"center"
                 }}> */}
                 <CheckBoxCard name="Others" onChange={(name,value)=>changeHandler(name,value)} value={check_list.Others} text="Others"/>
-                <input className='input' name="Others_input" value={check_list.Others_input} 
+                <input className='input' name="Others_input" value={check_list.Others_input} disabled={check_list.Others != true}
                 onChange={(e) => inputHandler(e)} style={{height:"65px"}} type="text" placeholder='Specify the issue' />
                 {/* </div> */}
               </div>

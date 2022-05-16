@@ -53,7 +53,7 @@ const BasicInfo = () => {
               errorText="Invalid input" vibrate={true} validity={true} />
               <br />
               <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={phone_number} validity={phone_number.length == 10 && /^[0-9]+$/.test(phone_number)}
-              onchange={(e) => {console.log(e.target.value); Set_phone_number(e.target.value);SetVibratePhone(false);}} errorText="Invalid input" requiredErrorText="Invalid input" 
+              onchange={(e) => {Set_phone_number(e.target.value);SetVibratePhone(false);}} errorText="Invalid input" requiredErrorText="Invalid input" 
                required="*" vibrate={vibrate_phone}/>
               <br />
               <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={email} validity={email.includes('@')}
