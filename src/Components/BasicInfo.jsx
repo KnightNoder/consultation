@@ -23,23 +23,6 @@ const BasicInfo = () => {
     SetVibratePhone(true)
   }
 
-  const emailCheck = () => {
-    console.log(email_valid,'email status');
-    if(email.includes('@')){
-      Set_email_valid(true);
-    } else{
-      Set_email_valid(false)
-    }
-  }
-
-  const numberCheck = () => { 
-      if( phone_number.length == 9 && /^[0-9]+$/.test(phone_number)) {
-        Set_phone_number_valid(true)
-      } else {
-        Set_phone_number_valid(false);
-      }
-     
-  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -69,17 +52,17 @@ const BasicInfo = () => {
               <InputCard heading="Last Name" placeholder="Eg. Doe" value={last_name} onchange={(e) => Set_last_name(e.target.value)}
               errorText="Invalid input" vibrate={true} validity={true} />
               <br />
-              <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={phone_number} validity={phone_number_valid}
-              onchange={(e) => {console.log(e.target.value); Set_phone_number(e.target.value);SetVibratePhone(false); numberCheck()}} errorText="Invalid input" requiredErrorText="Invalid input" 
-              numberCheck={numberCheck} required="*" vibrate={vibrate_phone}/>
+              <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={phone_number} validity={phone_number.length == 10 && /^[0-9]+$/.test(phone_number)}
+              onchange={(e) => {console.log(e.target.value); Set_phone_number(e.target.value);SetVibratePhone(false);}} errorText="Invalid input" requiredErrorText="Invalid input" 
+               required="*" vibrate={vibrate_phone}/>
               <br />
-              <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={email} validity={email_valid}
+              <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={email} validity={email.includes('@')}
               onchange={(e) => {Set_email(e.target.value);SetVibrateEmail(false)}} errorText="Invalid input"
-              numberCheck={emailCheck} requiredErrorText="Invalid Input" required="*" vibrate={vibrate_email}/>
+               requiredErrorText="Invalid Input" required="*" vibrate={vibrate_email}/>
               <br />
             </div>
         </div>
-        <ProceedTemplate  vibrate={false} vibrateText={vibrateText} text="Proceed" choice={nextPage} backLink="choice" conditionMet={first_name && email_valid && phone_number_valid}/> 
+        <ProceedTemplate  vibrate={false} vibrateText={vibrateText} text="Proceed" choice={nextPage} backLink="choice" conditionMet={first_name && email.includes('@') && (phone_number.length == 10 && /^[0-9]+$/.test(phone_number))}/> 
     </>
   )
 }
@@ -92,7 +75,7 @@ const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, require
         </div>
       </h3>
       <input className='input' onChange={onchange} value={value} 
-      type="text" placeholder={placeholder} onKeyDown={numberCheck}/>
+      type="text" placeholder={placeholder}/>
       <span style={ (vibrate && !validity) ? {visibility:"visible"} : {visibility:"hidden"}} className='error-text' id="two">
         {requiredErrorText}
       </span>

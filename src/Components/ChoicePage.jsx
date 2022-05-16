@@ -13,37 +13,33 @@ const ChoicePage = () => {
   const [selected,SetSelected] = useState(window.localStorage.getItem('choice') || 'Hairfall')
   const [age,SetAge] = useState('')
   const [vibrate,SetVibrate] = useState(false);
+  const [age_valid,Set_age_valid]= useState(false);
   const vibrateText = () => {
     navigator.vibrate(1000)
     SetVibrate(true)
   }
-  const numberCheck = (event) => {
-    if (!/[0-9]/.test(event.key) || age > 11) {
-      event.preventDefault();
-    }
-  }
-
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
-
+  
   useEffect(() => {
+    SetAge(age)
+    console.log(age && age>120,'condition');
     window.localStorage.setItem('choice',selected);
     window.localStorage.setItem('age',age);
     SetVibrate(false);
+    if (/^\d+$/.test(age) &&  parseInt(age) <= 12) {
+      Set_age_valid(true)
+    } else {
+      Set_age_valid(false)
+    }
   }, [selected,age]);
-  
-  const onchange = (e) =>{
-    SetAge(e.target.value)
-    window.localStorage.setItem('age',e.target.value); 
-  }
+
 
   const handleClick = (choice) => {
     SetSelected(choice) 
     window.localStorage.setItem('choice',choice)
-    // if(choice != 'Hairfall'){
-    //   SetAge('')
-    // }
   }
 
   return (
@@ -68,15 +64,15 @@ const ChoicePage = () => {
                 <h5 style={{display:"inline-block"}}>Age</h5>
                 {/* <span> (Your secret's safe <img src={winkImage} alt=""  />) </span> */}
               </div>
-              <input max="100" className='input' value={age} onChange={(e) => onchange(e)} type="text" onKeyPress={numberCheck} placeholder='Eg.24' />
-              <div className={`error-text ${vibrate ? "text-vibrate" : ''} `} style={(age == '') ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
+              <input className='input' value={age} onChange={(e) => SetAge(e.target.value)} type="text" placeholder='Eg.24' />
+              <div className={`error-text ${(vibrate) ? "text-vibrate" : ''} `} style={(!age || age>120) ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
                   Please provide your age to proceed
                   {/* visibility:"hidden" */}
               </div>
             </div>
         </div>
           <ProceedTemplate text="Proceed" choice='user-details' backLink=""
-          conditionMet={age} vibrate={vibrate} vibrateText={vibrateText} />
+          conditionMet={age> 0 && age <= 120} vibrate={vibrate} vibrateText={vibrateText} />
     </>
   )
 }
