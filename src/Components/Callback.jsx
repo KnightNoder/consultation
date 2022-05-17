@@ -27,6 +27,7 @@ const Callback = () => {
     const weight = parseInt(window.localStorage.getItem("weight"));
     const height = parseInt(window.localStorage.getItem("height"));
     const BMI = parseInt((weight * 10000) / (height * height));
+    if(category == '')
     Set_bmi(BMI)
     Set_call_customer(window.localStorage.getItem('appointment_type') == 'Get a free consultation call')
     const getData = async () => {

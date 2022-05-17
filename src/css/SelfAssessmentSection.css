@@ -28,7 +28,7 @@
 
 .assessment-card {
     background: #FFFFFF;
-    border: 1px solid #FF8277;
+    border: 1px solid var(--saturnBorder);
     box-sizing: border-box;
     border-radius: 24px;
     height: 130%;
@@ -40,7 +40,7 @@
 }
 
 .stopwatch{
-    border: 1px solid #FE8276;
+    border: 1px solid var(--saturnBorder);
     box-sizing: border-box;
     border-radius: 24px;
     height: 60%;
@@ -115,14 +115,14 @@
 }
 
 .assessment-card:hover {
-    background: #FFF1EF;
-    border: 1px solid #FF9186;
+    background: var(--saturnHover);
+    border: 1px solid var(--saturnBorder);
     box-sizing: border-box;
     border-radius: 24px;
 }
 
 .assessment-card:hover .start-assessment{
-    background: #FF9186;
+    background: var(--saturnAssessment);
     border-radius: 0px 0px 24px 24px;
     color: white;
 }

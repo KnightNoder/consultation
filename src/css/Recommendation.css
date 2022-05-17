@@ -145,7 +145,7 @@
 }
 
 .product-header .bmi{
-    background: #FFF1EF;
+    background: var(--saturnLight);
     border-radius: 16px;
     width: 25%;
     display: flex;
@@ -159,7 +159,7 @@
 }
 
 .bmi .bmi-number{
-    background: #FE8276;
+    background: var(--saturnBorder);
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -272,7 +272,7 @@
     font-size: 24px;
     line-height: 20px;
     letter-spacing: 0.18px;
-    color: #FF8277;
+    color: var(--priceText);
     display: flex;
     align-items: center;
 }

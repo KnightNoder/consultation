@@ -15,9 +15,9 @@ const CheckBoxCard = ({text, onChange,value}) => {
                   <Checkbox  icon={<RadioButtonUncheckedIcon fontSize="small" />} disableRipple
                   checkedIcon={ <CheckCircleOutlineIcon backgroundcolor="white" fontSize='small'/>}
                   sx={{
-                    color: "#CACACA",
+                    color: "#000000",
                     '&.Mui-checked': {
-                      color: "#FE8276",
+                      color: "#975169",
                     },
                   }}
                   checked={value}

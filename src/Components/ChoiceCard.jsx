@@ -29,9 +29,9 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
               <div className='one'>
                   <Radio 
                   sx={{
-                    color: "#FF8277",
+                    color: "#CACACA",
                     '&.Mui-checked': {
-                      color: "#FF8277",
+                      color: "#975169",
                     },
                     '& .MuiSvgIcon-root': {
                       fontSize: 15 ,

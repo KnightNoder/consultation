@@ -22,9 +22,9 @@
 .input:focus {
     outline: none;
     background: #FCFCFD;
-    border: 1px solid #FE8276;
+    border: 1px solid var(--saturnBorder);
     box-sizing: border-box;
-    caret-color:  #FE8276;
+    caret-color:  var(--saturnBorder);
 }
 
 @media only screen and (min-width: 480px){

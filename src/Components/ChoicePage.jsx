@@ -50,12 +50,12 @@ const ChoicePage = () => {
             </div>
             <div className='assessment'>
               <h5>I would like to Assess my </h5>
-              <ChoiceCard 
+              {/* <ChoiceCard 
                 clickHandler={handleClick} choice={selected} noImage="true" image={hairfallImage} text="Hairfall"/>
               <ChoiceCard 
                 clickHandler={handleClick} choice={selected} noImage="true" image={beardImage} text="Beard"/>
               <ChoiceCard 
-               clickHandler={handleClick} choice={selected} noImage="true" image={performanceImage} text="Performance"/>
+               clickHandler={handleClick} choice={selected} noImage="true" image={performanceImage} text="Performance"/> */}
               <ChoiceCard 
                clickHandler={handleClick} choice={selected} noImage="true" image={weightlossImage} text="WeightLoss"/>
               <ChoiceCard 
