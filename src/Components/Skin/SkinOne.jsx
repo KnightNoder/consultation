@@ -9,7 +9,7 @@ const SkinOne = ({saturn_choice,Set_minor_data}) => {
   useEffect(() => {
     window.scrollTo(0,0);
     setTimeout(() => {
-      Set_disp(false)
+      Set_disp(true)
     }, 2000);
   }, []);
 
