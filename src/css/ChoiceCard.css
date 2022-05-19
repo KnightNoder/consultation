@@ -75,7 +75,7 @@
     margin-top:5px
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     .choice-card {
         height: 48px;
     }
@@ -103,7 +103,7 @@
 }
 
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 600px) {
     .choice-card {
         height: 64px;
     }

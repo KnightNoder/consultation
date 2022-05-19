@@ -46,7 +46,7 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     .review-heading {
         font-size: 15px;
         font-weight: 600;
@@ -73,7 +73,7 @@
     }
 }
 
-@media only screen and (min-width: 480px){
+@media only screen and (min-width: 600px){
     .review-heading {
         font-size: 22px;
         font-weight: 500;

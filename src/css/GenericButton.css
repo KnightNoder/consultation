@@ -22,13 +22,14 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
-    color: var(--marsBlack);
+    color: var(--newButtonTextColor);
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 600px){
     .generic-button{
         font-size: 19px;
         height: 100%;
+        border-radius: 0px;
     }
 
     .borderRadiusBottom{
@@ -36,7 +37,7 @@
     }
 } 
 
-@media only screen and (min-width: 480px){
+@media only screen and (min-width: 600px ){
     .generic-button{
         font-size: 18px;
         height: 100%;

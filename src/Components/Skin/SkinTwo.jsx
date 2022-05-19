@@ -1,23 +1,14 @@
 import ChoiceCard from '../ChoiceCard';
 import ProceedTemplate from '../ProceedTemplate';
-import { useState,useEffect } from 'react';
+import { useEffect } from 'react';
 import ImageCard from '../ImageCard';
 
-const SkinTwo = () => {
-  const [skin_texture,Set_skin_texture] = 
-  useState(window.localStorage.getItem('skin_texture') || 'Oily')
+const SkinTwo = ({saturn_choice,Set_minor_data}) => {
   
   useEffect(() => {
     window.scrollTo(0,0)
   }, []);
-
-  useEffect(()=>{
-    window.localStorage.setItem('skin_texture',skin_texture)
-  },[skin_texture])
-
-  const handleClick = (choice) => {
-    Set_skin_texture(choice)
-  }
+  
   return (
     <>
         <div className="choice-container">
@@ -27,11 +18,11 @@ const SkinTwo = () => {
             <div className='assessment'>
               <h5>Please select your skin texture </h5>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={skin_texture} text="Oily"/>
+                clickHandler={() => Set_minor_data("skin","skin_texture","Oily")} noImage="true" choice={saturn_choice.skin.skin_texture} value="Oily" text="Oily"/>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={skin_texture}  text="Dry"/>
+                clickHandler={() => Set_minor_data("skin","skin_texture","Dry")} noImage="true" choice={saturn_choice.skin.skin_texture}  value="Dry" text="Dry"/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_texture}  text="Combined "/>
+               clickHandler={() => Set_minor_data("skin","skin_texture","Combined")} noImage="true" choice={saturn_choice.skin.skin_texture}  value="Combined" text="Combined "/>
             </div>
         </div>
         <ProceedTemplate conditionMet="true" text="Proceed" choice={"skin-2"} backLink="skin"/>

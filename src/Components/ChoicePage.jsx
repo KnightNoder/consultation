@@ -10,11 +10,12 @@ import '../css/ChoiceCard.css'
 import ImageCard from './ImageCard'
 import { useState, useEffect } from 'react';  
 
-const ChoicePage = () => {
-  const [selected,SetSelected] = useState(window.localStorage.getItem('choice') || 'Hairfall')
-  const [age,SetAge] = useState('')
+const ChoicePage = ({saturn_choice,Set_data,Set_minor_data}) => {
+
   const [vibrate,SetVibrate] = useState(false);
   const [age_valid,Set_age_valid]= useState(false);
+
+  console.log(saturn_choice.user_info,'app state');
   const vibrateText = () => {
     navigator.vibrate(1000)
     SetVibrate(true)
@@ -22,25 +23,21 @@ const ChoicePage = () => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
+    Set_minor_data("user_info","age","")
   }, [])
   
-  useEffect(() => {
-    SetAge(age)
-    window.localStorage.setItem('choice',selected);
-    window.localStorage.setItem('age',age);
-    SetVibrate(false);
-    if (/^\d+$/.test(age) &&  parseInt(age) <= 12) {
-      Set_age_valid(true)
-    } else {
-      Set_age_valid(false)
-    }
-  }, [selected,age]);
+  // useEffect(() => {
+  //   SetAge(age)
+  //   window.localStorage.setItem('choice',selected);
+  //   window.localStorage.setItem('age',age);
+  //   SetVibrate(false);
+  //   if (/^\d+$/.test(age) &&  parseInt(age) <= 12) {
+  //     Set_age_valid(true)
+  //   } else {
+  //     Set_age_valid(false)
+  //   }
+  // }, [selected,age]);
 
-
-  const handleClick = (choice) => {
-    SetSelected(choice) 
-    window.localStorage.setItem('choice',choice)
-  }
 
   return (
     <>
@@ -56,23 +53,26 @@ const ChoicePage = () => {
                 clickHandler={handleClick} choice={selected} noImage="true" image={beardImage} text="Beard"/>
               <ChoiceCard 
                clickHandler={handleClick} choice={selected} noImage="true" image={performanceImage} text="Performance"/> */}
+              {/* <ChoiceCard 
+               clickHandler={() => Set_data("category","weight-management")} choice={saturn_choice.category} noImage="true" image={weightlossImage} text="Weight Management" 
+               value="weight-management"/> */}
               <ChoiceCard 
-               clickHandler={handleClick} choice={selected} noImage="true" image={weightlossImage} text="WeightLoss"/>
-              <ChoiceCard 
-               clickHandler={handleClick} choice={selected} noImage="true" image={skinImage} text="Skin"/>
+               clickHandler={() => Set_data("category","skin")} choice={saturn_choice.category} noImage="true" image={skinImage} text="Skin Health"
+               value="skin"/>
               <div className='input-age'>
                 <h5 style={{display:"inline-block"}}>Age</h5>
                 {/* <span> (Your secret's safe <img src={winkImage} alt=""  />) </span> */}
               </div>
-              <input className='input' value={age} onChange={(e) => SetAge(e.target.value)} type="text" placeholder='Eg.24' />
-              <div className={`error-text ${(vibrate) ? "text-vibrate" : ''} `} style={(!age || age>120 || /[a-zA-Z]/.test(age)) ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
+              <input className='input' value={saturn_choice.user_info.age} onChange={(e) => Set_minor_data("user_info","age",e.target.value)} type="text" placeholder='Eg.24' />
+              <div className={`error-text ${(vibrate) ? "text-vibrate" : ''} `} style={(!(saturn_choice.user_info.age) || (saturn_choice.user_info.age)>120 || /[a-zA-Z]/.test(saturn_choice.user_info.age))
+               ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
                   Please provide your age to proceed
                   {/* visibility:"hidden" */}
               </div>
             </div>
         </div>
           <ProceedTemplate text="Proceed" choice='user-details' backLink=""
-          conditionMet={age> 0 && age <= 120} vibrate={vibrate} vibrateText={vibrateText} />
+          conditionMet={(saturn_choice.user_info.age)> 0 && (saturn_choice.user_info.age) <= 120} vibrate={vibrate} vibrateText={vibrateText} />
     </>
   )
 }

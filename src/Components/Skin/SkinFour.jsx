@@ -1,25 +1,14 @@
-import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useState,useEffect } from 'react';
+import { useEffect } from 'react';
 import ImageCard from '../ImageCard';
 
-const SkinFour = () => {
-  const [skin_allergy_to,Set_skin_allergy_to] = 
-  useState(window.localStorage.getItem('skin_allergy_to') ||  'Vitamin C')
+const SkinFour = ({saturn_choice,Set_minor_data}) => {
 
   useEffect(() => {
-    // SetSelected(window.localStorage.getItem('wash_face_frequency'));
     window.scrollTo(0, 0);
   }, [])
 
-  useEffect(() => {
-    window.localStorage.setItem('skin_allergy_to', skin_allergy_to);
-  }, [skin_allergy_to]);
-
-  const handleClick = (choice) => {
-    Set_skin_allergy_to(choice)
-  }
   return (
     <>
         <div className="choice-container">
@@ -29,17 +18,23 @@ const SkinFour = () => {
             <div className='assessment'>
               <h5>Are you allergic to any of the ingredients </h5>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={skin_allergy_to} text="Vitamin C"/>
+                clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Vitamin C")} noImage="true"
+                 choice={saturn_choice.skin.skin_allergy_to} value="Vitamin C" text="Vitamin C"/>
               <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="Salicylic Acid"/>
+                clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Salicylic Acid")} noImage="true" 
+                choice={saturn_choice.skin.skin_allergy_to} value="Salicylic Acid" text="Salicylic Acid"/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="Retinol"/>
+               clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Retinol")} noImage="true" 
+               choice={saturn_choice.skin.skin_allergy_to} value="Retinol" text="Retinol"/>
                <ChoiceCard 
-                clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="Niacinamide"/>
+                clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Niacinamide")} noImage="true" 
+                choice={saturn_choice.skin.skin_allergy_to} value="Niacinamide" text="Niacinamide"/>
               <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="Kojic Acid"/>
+               clickHandler={()=> Set_minor_data("skin","skin_allergy_to","Kojic Acid")} noImage="true" 
+               choice={saturn_choice.skin.skin_allergy_to} value="Kojic Acid" text="Kojic Acid"/>
                <ChoiceCard 
-               clickHandler={handleClick} noImage="true" choice={skin_allergy_to}  text="None"/>
+               clickHandler={()=> Set_minor_data("skin","skin_allergy_to","None")} noImage="true" 
+               choice={saturn_choice.skin.skin_allergy_to} value="None" text="None"/>
             </div>
             
         </div>

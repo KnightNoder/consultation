@@ -6,7 +6,7 @@ const GenericButton = ({text,choice,conditionMet,vibrateText,newButton,directNav
     if(directNavigate) {
       navigate(parseInt(navigateTo))
     } else if(productNavigate){
-      window.open(`https://ghc.health/products/${productLink}`)
+      window.open(`https://saturn.health/products/${productLink}`)
     } else {
       if(conditionMet){
         navigate('/'+choice)

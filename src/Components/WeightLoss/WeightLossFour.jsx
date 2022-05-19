@@ -78,7 +78,7 @@ const WeightLossFour = () => {
               </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"appointment"} vibrateText={()=>{}} backLink="weightloss-2" conditionMet={!!Object.values(check_list).filter((x)=> x).length}/>
+        <ProceedTemplate text="Proceed" choice={"appointment"} vibrateText={()=>{}} backLink="weight-management-2" conditionMet={!!Object.values(check_list).filter((x)=> x).length}/>
     </>
   )
 }

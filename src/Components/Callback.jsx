@@ -8,32 +8,25 @@ import { useEffect, useState } from "react";
 const {getCategory,getProductId,getSendMailData} = require('./common/utils')
 const axios = require('axios');
 
-const Callback = () => {
+const Callback = ({saturn_choice}) => {
     const [image,Set_image] =  useState('');
     const [price,Set_price] = useState('');
     const [compare_at_price,Set_compare_at_price] = useState('')
     const [title,Set_title] = useState('');
     const [product_link,Set_link]= useState('');
-    const [call_customer,Set_call_customer] = useState(false)
     const [bmi,Set_bmi] = useState('')
-    const [category, Set_catgory] = useState('')
     // const [product_subtext,Set_product_subtext] = useState('')
     
   useEffect(()=>{
-    const choice = window.localStorage.getItem('choice');
-    Set_catgory(choice)
-    const category =  getCategory(choice);
-    const product_id = getProductId(choice);
-    const weight = parseInt(window.localStorage.getItem("weight"));
-    const height = parseInt(window.localStorage.getItem("height"));
-    const BMI = parseInt((weight * 10000) / (height * height));
-    if(category == '')
-    Set_bmi(BMI)
-    Set_call_customer(window.localStorage.getItem('appointment_type') == 'Get a free consultation call')
+    const product_id = getProductId(saturn_choice);
+    // const weight = parseInt(saturn_choice.user_info.height);
+    // const height = parseInt(saturn_choice.user_info.weight);
+    // const BMI = parseInt((weight * 10000) / (height * height));
+    // Set_bmi(BMI)
     const getData = async () => {
         var config = {
             method: 'get',
-            url: `https://${process.env.REACT_APP_GET_PRODUCTS_BASE_URL}/${category}/products.json`,
+            url: `https://${process.env.REACT_APP_GET_PRODUCTS_BASE_URL}/${saturn_choice.category}/products.json`,
             headers: { 
               'Content-Type': 'application/json'
             }
@@ -58,7 +51,7 @@ const Callback = () => {
 
     getData();
 
-    const data = getSendMailData();
+    const data = getSendMailData(saturn_choice);
     const config = {
         method: 'post',
         url: `https://${process.env.REACT_APP_SEND_MAIL_API_BASE_URL}/api/device/consultation`,
@@ -92,11 +85,11 @@ const Callback = () => {
                         <div className="name">
                             Thank you for filling out the assessment!
                         </div>
-                        { call_customer ? <div className="designation">
+                        { (saturn_choice.appointment_type == 'Get a free consultation call') ? <div className="designation">
                             One of our physician’s assistants will call you shortly.
                         </div> : <div className="designation"> </div> }
                         <div className="designation">
-                            {call_customer ? "Meanwhile," : ""} Check out our recommended products.
+                            {(saturn_choice.appointment_type == 'Get a free consultation call') ? "Meanwhile," : ""} Check out our recommended products.
                         </div>
                     </div>
                 </div>
@@ -128,7 +121,7 @@ const Callback = () => {
                     <h3 className="hidden-h3">
                          Our Recommendation
                     </h3>
-                   { category === 'WeightLoss' ?  <div className="bmi">
+                   { saturn_choice.category === 'weight-management' ?  <div className="bmi">
                         <div className="bmi-text">
                             Your BMI
                         </div>

@@ -1,7 +1,7 @@
 import '../css/ChoiceCard.css'
 import Radio from '@mui/material/Radio';
 
-const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
+const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,value}) => {
 
   const ImageStyle = {
     display: "block"
@@ -11,21 +11,10 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
     display: "none"
   }
 
-
-  let val = (choice == text);
   return (
     <>
-          <div className={`choice-card ${ val ? "selectStyle" : "deselectStyle"}`} 
-          onClick={() => clickHandler(text)} name={text} >
-              {/* <div className='radio-button'>
-                  <img src={ cardSelected ? selectImage : deselectImage} name={text} alt="" />
-                  </div>
-                  <div className='image' >
-                  <img src={image} name={text} className='image-section' alt="" />
-                  </div>
-                  <div className='text'style={cardSelected ? selectTextStyle : deselectTextStyle } >
-                  {text}
-                </div> */}
+          <div className={`choice-card ${ (value == choice) ? "selectStyle" : "deselectStyle"}`} 
+          onClick={() => clickHandler()} name={text} >
               <div className='one'>
                   <Radio 
                   sx={{
@@ -37,13 +26,13 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,input}) => {
                       fontSize: 15 ,
                     }
                   }}
-                  checked={choice == text}
+                  checked={value == choice}
                 />
               </div>
               <div className='two' style={ (noImage) ? NoImageStyle : ImageStyle }>
                 <img src={image} className='image-section' alt="" />
               </div>
-              <div className={`three ${(choice == text) ? "selectTextStyle" : "deselectTextStyle"}`}>
+              <div className={`three ${(value == choice) ? "selectTextStyle" : "deselectTextStyle"}`}>
                 <div className='text'>
                   {text} 
                 </div>

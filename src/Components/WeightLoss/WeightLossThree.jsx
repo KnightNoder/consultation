@@ -36,7 +36,7 @@ const WeightLossThree = () => {
                clickHandler={handleClick} noImage="true" choice={exercise_a_week}  text="1-2 times a week"/>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"weightloss-3"} backLink="weightloss-1" conditionMet="true"/>
+        <ProceedTemplate text="Proceed" choice={"weight-management-3"} backLink="weight-management-1" conditionMet="true"/>
     </>
   )
 }

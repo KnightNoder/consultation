@@ -28,61 +28,72 @@ import WeightLossTwo from './Components/WeightLoss/WeightLossTwo'
 import WeightLossThree from './Components/WeightLoss/WeightLossThree'
 import WeightLossFour from './Components/WeightLoss/WeightLossFour'
 import BasicInfo from './Components/BasicInfo';
+
 function App() {
-  const [choice,SetChoice] = useState('')
-  // const [screenSize,setScreenSize] = useState('')
-  // const [value,SetValue] =  useState('Male')
-  //   const screenWidth = window.innerWidth;
-  //   setScreenSize(screenWidth);
-  useEffect(()=>{
-    SetChoice((window.localStorage.getItem('choice')) || '')
-  },[])
-
-  const onchg = (e) => {
-    SetChoice(e.target.value)
-    window.localStorage.setItem('choice',e.target.value)
-  }
-
-  const [payload,SetPayload] = useState({
-    'user1':{
-      firstNameOne: window.localStorage.getItem('firstNameOne') || '',
-      lastNameOne: window.localStorage.getItem('lastNameOne') || '',
+  let [saturn_choice,Set_saturn_choice] = useState(JSON.parse(window.localStorage.getItem('saturn_choice')) || {
+    "assessment_type":"6min",
+    "category":"skin",
+    "user_info":{
+      "first_name":"",
+      "last_name":"",
+      "email":"",
+      "phone_number":"",
+      "age":"",
+      "height":"",
+      "weight":""
     },
-    'user2':{
-      firstNameTwo: window.localStorage.getItem('firstNameTwo') || '',
-      lastNameTwo: window.localStorage.getItem('lastNameTwo') || '',
-    }
+    "skin":{
+      "skin_concern":"Open pores",
+      "skin_texture":"Oily",
+      "skin_type":"Normal",
+      "skin_allergy_to":"Vitamin C",
+    },
+    " ":"Get a free consultation call"
   })
 
-  const onchange = (e) => {
-    SetPayload((prevState) => {
-      window.localStorage.setItem(e.target.name,e.target.value)
-      return {
-        ...prevState,[payload[choice][e.target.name]]:e.target.value
-      }
-    })
-  } 
+const Set_data = (item,val) => {
+  Set_saturn_choice((prevState)=>{
+    return {...prevState,[item]: val}
+  })
+}
 
+const Set_minor_data = (minor_key,item,val) => {
+  Set_saturn_choice((state)=>{
+    return {...state,[minor_key]:{
+      ...state[minor_key],
+      [item]: val
+    }}
+  })
+}
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  // const onChangeValue = (event) => {
-  //   console.log(event.target.value);
-  // }
+
+  useEffect(()=>{
+    window.localStorage.setItem('saturn_choice',JSON.stringify(saturn_choice))
+  },[saturn_choice])
+
   return (
     <BrowserRouter basename="/pages/consultation"> 
        <div className='main-container'>
            <Routes>
-             <Route path='/' exact element={<LandingPage/>}/>
-             <Route path='/choice' exact element={<ChoicePage />}/>
-             <Route path='/user-details' exact element={<BasicInfo category={choice}/>}/>
+             <Route path='/' exact element={<LandingPage Set_data={Set_data}/>}/>
+             <Route path='/choice' exact element={<ChoicePage saturn_choice={saturn_choice} 
+                Set_data={Set_data}
+                Set_minor_data={Set_minor_data}/>}/>
+             <Route path='/user-details' exact element={<BasicInfo saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data} />}/>
              <Route path='/hairfall' exact element={<HairOne/>}/>
              <Route path='/hairfall-1' exact element={<HairTwo/>}/>
              <Route path='/hairfall-2' exact element={<HairThree/>}/>
-             <Route path='/skin' exact element={<SkinOne/>}/>
-             <Route path='/skin-1' exact element={<SkinTwo/>}/>
-             <Route path='/skin-2' exact element={<SkinThree/>}/>
-             <Route path='/skin-3' exact element={<SkinFour/>}/>
+             <Route path='/skin' exact element={<SkinOne saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data} />}/>
+             <Route path='/skin-1' exact element={<SkinTwo saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data} />}/>
+             <Route path='/skin-2' exact element={<SkinThree saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data} />}/>
+             <Route path='/skin-3' exact element={<SkinFour saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data} />}/>
              <Route path='/performance' exact element={<PerformanceOne/>}/>
              <Route path='/performance-1' exact element={<PerformanceTwo/>}/>
              <Route path='/performance-2' exact element={<PerformanceThree/>}/>
@@ -91,14 +102,16 @@ function App() {
              <Route path='/beard' exact element={<BeardOne/>}/>
              <Route path='/beard-1' exact element={<BeardTwo/>}/>
              <Route path='/beard-2' exact element={<BeardThree/>}/>
-             <Route path='/weightloss' exact element={<WeightLossOne/>}/>
-             <Route path='/weightloss-1' exact element={<WeightLossTwo/>}/>
-             <Route path='/weightloss-2' exact element={<WeightLossThree/>}/>
-             <Route path='/weightloss-3' exact element={<WeightLossFour/>}/>
-             <Route path='/appointment' exact element={<Appointment/>}/>
+             <Route path='/weight-management' exact element={<WeightLossOne/>}/>
+             <Route path='/weight-management-1' exact element={<WeightLossTwo/>}/>
+             <Route path='/weight-management-2' exact element={<WeightLossThree/>}/>
+             <Route path='/weight-management-3' exact element={<WeightLossFour/>}/>
+             <Route path='/appointment' exact element={<Appointment saturn_choice={saturn_choice} 
+                Set_data={Set_data}/>}/>
              <Route path='/book' exact element={<Book/>}/>
-             <Route path='/recommendation' exact element={<Recommendation category={choice}/>}/>
-             <Route path='/callback' exact element={<Callback/>}/>
+             <Route path='/recommendation' exact element={<Recommendation saturn_choice={saturn_choice}/>}/>
+             <Route path='/callback' exact element={<Callback saturn_choice={saturn_choice}/>}/>
+             <Route path='*' exact element={<LandingPage Set_data={Set_data}/>}/>
            </Routes>
        </div> 
       </BrowserRouter>

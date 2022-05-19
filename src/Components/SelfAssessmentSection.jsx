@@ -5,7 +5,7 @@ import pic2 from '../images/60-sec-small.png'
 import pic3 from '../images/green-tick.png'
 import '../css/SelfAssessmentSection.css'
 
-const SelfAssessmentSection = () => {
+const SelfAssessmentSection = ({Set_data}) => {
   const navigate = useNavigate();
   return (
     <>
@@ -19,7 +19,7 @@ const SelfAssessmentSection = () => {
             <li>Get a personalized treatment plan</li>
         </ul>
         <div className='img-notes'>
-            <img src="https://cdn.shopify.com/s/files/1/0638/1391/0746/files/assess-male.png?v=1649334430" alt="" />
+            <img src="https://cdn.shopify.com/s/files/1/0607/6029/3588/files/saturn-assessment.png?v=1652949870" alt="" />
         </div>
     </div>
     
@@ -75,7 +75,7 @@ const SelfAssessmentSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className='start-assessment' onClick={() => navigate('/choice')}>
+                <div className='start-assessment' onClick={() => {Set_data("assessment_type","30sec"); navigate('/choice')}}>
                     Start Assessment
                 </div>
             </div> 
@@ -139,7 +139,14 @@ const SelfAssessmentSection = () => {
                     Quick Assessment
                 </div>
                 <div className='small-stopwatch'>
-                   
+                    {/* <div className='stopwatch'> */}
+                        <div className='small-clock'>
+                            <img src={pic} className="small-clock-img" alt=""/>
+                        </div>
+                        <div className='stopwatch-text'>
+                            30 Sec
+                        </div>
+                    {/* </div> */}
                 </div>
             </div>
             <div className='content'>
@@ -149,7 +156,7 @@ const SelfAssessmentSection = () => {
                 Start Assessment
             </div>
         </div>
-        <div className='assessment-card-small'>
+        {/* <div className='assessment-card-small'>
             <div className='bottom-heading'>
                 <div className='heading'>
                     Detailed Self Assessment
@@ -167,7 +174,7 @@ const SelfAssessmentSection = () => {
             <div className='submit' onClick={() => navigate('/choice')}>
                 Start Assessment
             </div>
-        </div>
+        </div> */}
     </div>
     </>
   )

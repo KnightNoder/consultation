@@ -27,7 +27,7 @@
     caret-color:  var(--saturnBorder);
 }
 
-@media only screen and (min-width: 480px){
+@media only screen and (min-width: 600px){
     .assessment h4{
         margin-top: 2%;
         font-size: 16px;
@@ -40,7 +40,7 @@
     }
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 600px){
     .assessment h4{
     }
 

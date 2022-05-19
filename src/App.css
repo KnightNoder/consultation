@@ -19,6 +19,8 @@ html {
   --marsBlack:#000000;
   --saturnLight: #E8C4D2;
   --priceText: #894255;
+  --newButtonTextColor: #975169;
+
 }
 
 * {
@@ -47,7 +49,7 @@ html {
   margin-left: 1%;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   
   .main-container{
     margin-left: 0%;
@@ -63,7 +65,8 @@ html {
     flex:1;
     display: flex;
     justify-content: center;
-    flex-direction: column-reverse;
+    position: fixed;
+    bottom: 0px;
   }
   
   .header-block,.self-assessment-section,.assessment-image{
@@ -113,7 +116,7 @@ html {
   }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 600px) {
 
   .main-container{
     display: flex;
@@ -161,10 +164,6 @@ html {
     /* padding-right: 5%; */
   }
 
-  .assessment-card{
-    width: 25%;
-  }
-
   .start-assessment-heading{
     display: none;
   }
@@ -176,8 +175,8 @@ html {
   .start-assessment{
     flex: 2 1;
     width: 100%;
-    background: #F3F3F3;
-    border-top: 1px solid #FF9186;
+    background: var(--saturnBorder);
+    border-top: 1px solid var(--saturnBorder) ;
     box-sizing: border-box;
     border-radius: 0px 0px 24px 24px;
     display: flex;
@@ -188,7 +187,7 @@ html {
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-    color: #FE8276;
+    color: white;
     cursor: pointer;
   }
 
@@ -208,7 +207,7 @@ html {
   }
 
   .main-image {
-    height: 450px;
+    height: 500px;
     width: 96%;
   }
 

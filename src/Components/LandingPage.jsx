@@ -3,7 +3,7 @@ import Header from './Header'
 import SelfAssessmentSection from './SelfAssessmentSection'
 import { useEffect } from 'react'
 
-const LandingPage = () => {
+const LandingPage = ({Set_data}) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -12,7 +12,7 @@ const LandingPage = () => {
   return (
     <>
         <Header/>
-        <SelfAssessmentSection/>
+        <SelfAssessmentSection Set_data={Set_data}/>
     </>
   )
 }

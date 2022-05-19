@@ -54,7 +54,7 @@ const WeightLossOne = () => {
               </span>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" vibrateText={vibrateText} choice={"weightloss-1"} backLink="user-details" conditionMet={height && weight}/>
+        <ProceedTemplate text="Proceed" vibrateText={vibrateText} choice={"weight-management-1"} backLink="user-details" conditionMet={height && weight}/>
     </>
   )
 }
