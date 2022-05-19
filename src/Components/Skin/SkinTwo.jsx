@@ -14,7 +14,7 @@ const SkinTwo = ({saturn_choice,Set_minor_data}) => {
   
   return (
     <>
-        <div className={`${disp ? "show" : "hide"}`}>
+        <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           Skin concerns are unique to each individual 
           and one needs the right care to keep up with good skin health.
         </div>

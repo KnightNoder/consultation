@@ -15,7 +15,7 @@ const SkinOne = ({saturn_choice,Set_minor_data}) => {
 
   return (
     <>
-        <div className={`${disp ? "show" : "hide"}`}>
+        <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           Answer a few questions so we can help
         </div>
         <div className="choice-container">

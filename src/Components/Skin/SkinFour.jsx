@@ -14,7 +14,7 @@ const SkinFour = ({saturn_choice,Set_minor_data}) => {
 
   return (
     <>
-        <div className={`${disp ? "show" : "hide"}`}>
+        <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
           Tell us which ingredients affect your skin and we’ll helps you find your skincare match
         </div>
         <div className="choice-container">

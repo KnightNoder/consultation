@@ -50,7 +50,7 @@ html {
 }
 
 
-.show{
+.show-overlay-screen{
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(8px);
   position: fixed;
@@ -78,7 +78,7 @@ html {
   visibility: visible;
 }
 
-.hide{
+.hide-overlay-screen{
   display: none;
 }
 

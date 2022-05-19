@@ -34,7 +34,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
 
   return (
     <>
-        <div className={`${disp ? "show" : "hide"}`}>
+        <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
             We will need your contact details to reach out for the consultation
         </div>
         <div className="choice-container">

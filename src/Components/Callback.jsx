@@ -77,7 +77,7 @@ const Callback = ({saturn_choice}) => {
     
   return (
     <>
-        <div className={`${disp ? "show" : "hide"}`}>
+        <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
             Our best minds are curating a personalized wellness plan for you
             {/* <div className="progress-bar-saturn">
                 <div class="in"></div>
