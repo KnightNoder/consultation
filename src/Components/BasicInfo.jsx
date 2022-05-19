@@ -36,7 +36,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
               <h5>Fill in your basic information </h5>
               <h4>We're just getting to know you better</h4>
               <InputCard heading="First Name" placeholder="Eg. John" name="first_name" onchange={(e) => {Set_minor_data("user_info","first_name",e.target.value); SetVibrateFirstName(false)}}
-              value={saturn_choice.user_info.first_name} vibrate={vibrate_first_name} errorText="Invalid input" requiredErrorText="Invalid input" required="*" 
+              value={saturn_choice.user_info.first_name} vibrate={vibrate_first_name} errorText="Invalid input" requiredErrorText="Please provide name to proceed" required="*" 
                validity={saturn_choice.user_info.first_name}/>
               <br />
               <InputCard heading="Last Name" placeholder="Eg. Doe" value={saturn_choice.user_info.last_name} onchange={(e) => Set_minor_data("user_info","last_name",e.target.value)}
@@ -44,13 +44,13 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
               <br />
               <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={saturn_choice.user_info.phone_number}
                validity={saturn_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_choice.user_info.phone_number)}
-              onchange={(e) => {Set_minor_data("user_info","phone_number",e.target.value);SetVibratePhone(false);}} errorText="Invalid input" requiredErrorText="Invalid input" 
+              onchange={(e) => {Set_minor_data("user_info","phone_number",e.target.value);SetVibratePhone(false);}} errorText="Invalid input" requiredErrorText="Please provide valid phone number to proceed" 
                required="*" vibrate={vibrate_phone}/>
               <br />
               <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={saturn_choice.user_info.email} 
               validity={saturn_choice.user_info.email.includes('@')}
               onchange={(e) => {Set_minor_data("user_info","email",e.target.value);SetVibrateEmail(false)}} errorText="Invalid input"
-               requiredErrorText="Invalid Input" required="*" vibrate={vibrate_email}/>
+               requiredErrorText="Please provide valid email to proceed" required="*" vibrate={vibrate_email}/>
               <br />
             </div>
         </div>

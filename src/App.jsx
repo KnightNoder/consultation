@@ -48,7 +48,7 @@ function App() {
       "skin_type":"Normal",
       "skin_allergy_to":"Vitamin C",
     },
-    " ":"Get a free consultation call"
+    "appointment_type":"Get a free consultation call"
   })
 
 const Set_data = (item,val) => {
