@@ -1,7 +1,7 @@
 import '../css/ChoiceCard.css'
 import Radio from '@mui/material/Radio';
 
-const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,value}) => {
+const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,value,show}) => {
 
   const ImageStyle = {
     display: "block"
@@ -15,7 +15,7 @@ const ChoiceCard = ({choice,image,text,subtext,clickHandler,noImage,value}) => {
     <>
           <div className={`choice-card ${ (value == choice) ? "selectStyle" : "deselectStyle"}`} 
           onClick={() => clickHandler()} name={text} >
-              <div className='one'>
+              <div className={`one ${show ? "dont-show-radio" : "show-radio"}`}  >
                   <Radio 
                   sx={{
                     color: "#CACACA",

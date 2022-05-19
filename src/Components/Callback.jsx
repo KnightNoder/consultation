@@ -15,14 +15,19 @@ const Callback = ({saturn_choice}) => {
     const [title,Set_title] = useState('');
     const [product_link,Set_link]= useState('');
     const [bmi,Set_bmi] = useState('')
+    const [disp,Set_disp] = useState(true);
     // const [product_subtext,Set_product_subtext] = useState('')
     
   useEffect(()=>{
     const product_id = getProductId(saturn_choice);
+    console.log(product_id,'prod id');
     // const weight = parseInt(saturn_choice.user_info.height);
     // const height = parseInt(saturn_choice.user_info.weight);
     // const BMI = parseInt((weight * 10000) / (height * height));
     // Set_bmi(BMI)
+    setTimeout(() => {
+        Set_disp(false)
+      }, 4000);
     const getData = async () => {
         var config = {
             method: 'get',
@@ -34,6 +39,7 @@ const Callback = ({saturn_choice}) => {
         await axios(config)
         .then(response => {
             const product_recommended = (response.data["products"].filter((item) => item.id == product_id));
+            console.log(product_recommended,'reco prod')
             let product_title = product_recommended[0]["title"];
             const product_price = product_recommended[0]["variants"][0]["price"]
             const compare_price = product_recommended[0]["variants"][0]["compare_at_price"]
@@ -71,6 +77,12 @@ const Callback = ({saturn_choice}) => {
     
   return (
     <>
+        <div className={`${disp ? "show" : "hide"}`}>
+            Our best minds are curating a personalized wellness plan for you
+            {/* <div className="progress-bar-saturn">
+                <div class="in"></div>
+            </div> */}
+        </div>
         <Header/>
         <div className="recommendation-section">
             <div className="doctor-info2" style={{marginTop:"0%"}}>

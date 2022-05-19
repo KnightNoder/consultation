@@ -9,12 +9,15 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
   const [vibrate_first_name,SetVibrateFirstName] = useState(false);
   const [vibrate_phone,SetVibratePhone] = useState(false);
   const [vibrate_email,SetVibrateEmail] = useState(false);
+  const [disp,Set_disp] = useState(true);
+  const [vibrate,SetVibrate] = useState(false);
 
   const vibrateText = () => {
     navigator.vibrate(1000)
     SetVibrateFirstName(true)
     SetVibrateEmail(true)
     SetVibratePhone(true)
+    SetVibrate(true)
   }
 
 
@@ -24,10 +27,16 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
     Set_minor_data("user_info","last_name","")
     Set_minor_data("user_info","email","")
     Set_minor_data("user_info","phone_number","")
+    setTimeout(() => {
+      Set_disp(false)
+    }, 2000);
   }, [])
 
   return (
     <>
+        <div className={`${disp ? "show" : "hide"}`}>
+            We will need your contact details to reach out for the consultation
+        </div>
         <div className="choice-container">
             <div className='assessment-image'>
             <ImageCard/>
@@ -51,6 +60,11 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
               validity={saturn_choice.user_info.email.includes('@')}
               onchange={(e) => {Set_minor_data("user_info","email",e.target.value);SetVibrateEmail(false)}} errorText="Invalid input"
                requiredErrorText="Please provide valid email to proceed" required="*" vibrate={vibrate_email}/>
+              <br />
+              <InputCard heading="Age" placeholder="Eg. 24" value={saturn_choice.user_info.age} 
+              validity={saturn_choice.user_info.age}
+              onchange={(e) => {Set_minor_data("user_info","age",e.target.value);SetVibrate(false)}} errorText="Invalid input"
+               requiredErrorText="Please provide valid age to proceed" required="*" vibrate={vibrate}/>
               <br />
             </div>
         </div>

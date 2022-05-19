@@ -20,7 +20,7 @@ html {
   --saturnLight: #E8C4D2;
   --priceText: #894255;
   --newButtonTextColor: #975169;
-
+  position: relative;
 }
 
 * {
@@ -47,6 +47,61 @@ html {
   color: #F44336;
   margin-top: 2%;
   margin-left: 1%;
+}
+
+
+.show{
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0px;
+  left:0px;
+  height: 100%;
+  width: 100%;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF; 
+  z-index:999
+}
+
+.dont-show-radio{
+  visibility: hidden;
+}
+
+.show-radio{
+  visibility: visible;
+}
+
+.hide{
+  display: none;
+}
+
+.progress-bar-saturn {
+  border: 1px solid #666;
+  height: 20px;
+  width: 100%;
+  
+}
+
+.in {
+  animation: fill 2s linear 1;
+  height: 100%;
+  background-color: pink;
+}
+
+@keyframes fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 600px) {

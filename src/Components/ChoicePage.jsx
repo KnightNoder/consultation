@@ -59,20 +59,10 @@ const ChoicePage = ({saturn_choice,Set_data,Set_minor_data}) => {
               <ChoiceCard 
                clickHandler={() => Set_data("category","skin")} choice={saturn_choice.category} noImage="true" image={skinImage} text="Skin Health"
                value="skin"/>
-              <div className='input-age'>
-                <h5 style={{display:"inline-block"}}>Age</h5>
-                {/* <span> (Your secret's safe <img src={winkImage} alt=""  />) </span> */}
-              </div>
-              <input className='input' value={saturn_choice.user_info.age} onChange={(e) => Set_minor_data("user_info","age",e.target.value)} type="text" placeholder='Eg.24' />
-              <div className={`error-text ${(vibrate) ? "text-vibrate" : ''} `} style={(!(saturn_choice.user_info.age) || (saturn_choice.user_info.age)>120 || /[a-zA-Z]/.test(saturn_choice.user_info.age))
-               ? {visibility:"visible"}: {visibility:"hidden"} }  id="top">
-                  Please provide valid age to proceed
-                  {/* visibility:"hidden" */}
-              </div>
             </div>
         </div>
           <ProceedTemplate text="Proceed" choice='user-details' backLink=""
-          conditionMet={(saturn_choice.user_info.age)> 0 && (saturn_choice.user_info.age) <= 120} vibrate={vibrate} vibrateText={vibrateText} />
+          conditionMet="true" vibrate={vibrate} vibrateText={vibrateText} />
     </>
   )
 }

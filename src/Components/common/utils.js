@@ -98,11 +98,11 @@ const getProductId = (saturn_choice) => {
       const skin_allergy_to = saturn_choice.skin.skin_allergy_to;
       if (skin_allergy_to == "None") {
         if (skin_concern == "Open pores") return "7451594588382"; //GLOWSKINSERUM
-        if (skin_concern == "Pigmentation") return "7463330709726"; // Alpha arbutin 6920580530340
+        if (skin_concern == "Pigmentation") return "7451594588382"; // Alpha arbutin 6920580530340
         if (skin_concern == "Active Acne") return "7451593769182"; // Anti-acne gel
         if (skin_concern == "Aging") return "7530239721694"; //Anti-aging serum
         if (skin_concern == "Dark circles") return "7451594588382"; //GLOWSKINSERUM
-        if (skin_concern == "Acne marks & spots") return "7489917878494"; //Acne removal kit
+        if (skin_concern == "Acne marks & spots") return "7451594588382"; //Acne removal kit
         if (skin_concern == "Dull Skin") return "7451594588382"; //GLOWSKINSERUM
       } else if (skin_allergy_to == "Vitamin C") {
         if (skin_concern == "Open pores") return "7658081157342"; // Foam face wash and toner
@@ -113,12 +113,13 @@ const getProductId = (saturn_choice) => {
         if (skin_concern == "Acne marks & spots") return "7451593769182"; // Anti-acne gel
         if (skin_concern == "Dull Skin") return "7451598356702"; // 3% Niacinamide face toner
       } else if (skin_allergy_to == "Salicylic Acid") {
+        //Salicylic Acid
         if (skin_concern == "Open pores") return "7451598356702"; // 3% Niacinamide face toner
         if (skin_concern == "Pigmentation") return "7463330709726"; // 2% Alpha buretin
         if (skin_concern == "Active Acne") return "7463330709726"; // 2% Alpha buretin
         if (skin_concern == "Aging") return "7489916272862"; // Happy skin kit
-        if (skin_concern == "Dark circles") return "7451594588382"; // Glow skin  serum
         if (skin_concern == "Acne marks & spots") return "7463330709726"; // 2% Alpha buretin
+        if (skin_concern == "Dark circles") return "7451594588382"; // Glow skin  serum
         if (skin_concern == "Dull Skin") return "7451598356702"; // 3% Niacinamide face toner
       } else if (skin_allergy_to == "Retinol") {
         if (skin_concern == "Open pores") return "7451598356702"; // 3% Niacinamide face toner

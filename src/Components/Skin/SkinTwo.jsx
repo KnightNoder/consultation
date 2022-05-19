@@ -1,27 +1,34 @@
 import ChoiceCard from '../ChoiceCard';
 import ProceedTemplate from '../ProceedTemplate';
-import { useEffect } from 'react';
+import { useState,useEffect } from 'react';
 import ImageCard from '../ImageCard';
 
 const SkinTwo = ({saturn_choice,Set_minor_data}) => {
-  
+  const [disp,Set_disp] = useState(true);
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
+    setTimeout(() => {
+      Set_disp(false)
+    }, 2000);
   }, []);
   
   return (
     <>
+        <div className={`${disp ? "show" : "hide"}`}>
+          Skin concerns are unique to each individual 
+          and one needs the right care to keep up with good skin health.
+        </div>
         <div className="choice-container">
             <div className='assessment-image'>
               <ImageCard/>    
             </div>
             <div className='assessment'>
               <h5>Please select your skin texture </h5>
-              <ChoiceCard 
+              <ChoiceCard show={disp} 
                 clickHandler={() => Set_minor_data("skin","skin_texture","Oily")} noImage="true" choice={saturn_choice.skin.skin_texture} value="Oily" text="Oily"/>
-              <ChoiceCard 
+              <ChoiceCard show={disp} 
                 clickHandler={() => Set_minor_data("skin","skin_texture","Dry")} noImage="true" choice={saturn_choice.skin.skin_texture}  value="Dry" text="Dry"/>
-              <ChoiceCard 
+              <ChoiceCard show={disp} 
                clickHandler={() => Set_minor_data("skin","skin_texture","Combined")} noImage="true" choice={saturn_choice.skin.skin_texture}  value="Combined" text="Combined "/>
             </div>
         </div>

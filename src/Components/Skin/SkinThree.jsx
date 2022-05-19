@@ -1,11 +1,10 @@
 import assessmentImage from '../../images/assessment.png'
 import ChoiceCard from '.././ChoiceCard';
 import ProceedTemplate from '.././ProceedTemplate';
-import { useEffect } from 'react';
+import {useEffect } from 'react';
 import ImageCard from '../ImageCard';
 
 const SkinThree = ({saturn_choice,Set_minor_data}) => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
