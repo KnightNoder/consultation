@@ -107,11 +107,11 @@ const Callback = ({saturn_choice}) => {
                         <div className="name">
                             Thank you for filling out the assessment!
                         </div>
-                        { (saturn_choice.appointment_type == 'Get a free consultation call') ? <div className="designation">
+                        { (saturn_choice.appointment_type == 'FREE Consultation call') ? <div className="designation">
                             One of our physician’s assistants will call you shortly.
                         </div> : <div className="designation"> </div> }
                         <div className="designation">
-                            {(saturn_choice.appointment_type == 'Get a free consultation call') ? "Meanwhile," : ""} Check out our recommended products.
+                            {(saturn_choice.appointment_type == 'FREE Consultation call') ? "Meanwhile," : ""} Check out our recommended products.
                         </div>
                     </div>
                 </div>
