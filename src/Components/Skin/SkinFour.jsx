@@ -45,7 +45,7 @@ const SkinFour = ({saturn_choice,Set_minor_data}) => {
             </div>
             
         </div>
-        <ProceedTemplate text="Proceed"  conditionMet="true" choice={"appointment"} backLink="skin-1"/>
+        <ProceedTemplate text="Proceed" conditionMet="true" choice={"appointment"} backLink="skin-1"/>
     </>
   )
 }
