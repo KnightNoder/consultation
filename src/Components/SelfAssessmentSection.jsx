@@ -52,15 +52,15 @@ const SelfAssessmentSection = ({Set_data}) => {
                                 <img src={pic3} alt="" />
                             </div>
                             <div className='report-text-content'>
-                                Get your analysis in 30 seconds
+                                Get your FREE analysis and book an appointment in 30 seconds
                             </div>
                         </div>
                         <div className='report-text'>
                             <div className='tick'>
-                                <img src={pic3} alt="" />
+                                {/* <img src={pic3} alt="" /> */}
                             </div>
                             <div className='report-text-content'>
-                                Get a free doctor’s consultation
+                                {/* Get a free doctor’s consultation */}
                             </div>                   
                         </div>
                         <div className='report-text'>
@@ -152,7 +152,7 @@ const SelfAssessmentSection = ({Set_data}) => {
             <div className='content'>
                 Get recommended products that suit your concerns
             </div>
-            <div className='submit' onClick={() => navigate('/choice')}>
+            <div className='submit' onClick={() =>{ Set_data("assessment_type","30sec"); navigate('/choice')}}>
                 Start Assessment
             </div>
         </div>

@@ -1,12 +1,17 @@
 import '../css/GenericButton.css'
 import {useNavigate} from "react-router-dom"
+
 const GenericButton = ({text,choice,conditionMet,vibrateText,newButton,directNavigate,navigateTo,radiusBottom,productNavigate,productLink}) => {
   const navigate = useNavigate();
   const navigateCheck = () => {
     if(directNavigate) {
       navigate(parseInt(navigateTo))
     } else if(productNavigate){
-      window.open(`https://saturn.health/products/${productLink}`)
+      const redirectToCheckout = async () => {
+        window.open(`https://saturn-saturn.myshopify.com/cart/${productLink}`)
+      };
+
+      redirectToCheckout();
     } else {
       if(conditionMet){
         navigate('/'+choice)

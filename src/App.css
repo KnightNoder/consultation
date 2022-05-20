@@ -63,11 +63,10 @@ html {
   align-items: center;
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 30px;
   text-align: center;
   color: #FFFFFF; 
-  z-index:999
+  z-index:999;
+  flex-direction: column;
 }
 
 .dont-show-radio{
@@ -84,13 +83,13 @@ html {
 
 .progress-bar-saturn {
   border: 1px solid #666;
-  height: 20px;
-  width: 100%;
-  
+  height: 4px;
+  width: 79%;
+  margin: 7% 0;
 }
 
 .in {
-  animation: fill 2s linear 1;
+  animation: fill 4s linear 1;
   height: 100%;
   background-color: pink;
 }
@@ -168,6 +167,16 @@ html {
 
   .scroll-div::-webkit-scrollbar{
     color: red;
+  }
+
+  .show-overlay-screen{
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0 5%
+  }
+
+  .product-checkout-button{
+    display: none;
   }
 }
 
@@ -262,8 +271,17 @@ html {
   }
 
   .main-image {
-    height: 500px;
+    height: 600px;
     width: 96%;
   }
 
+  .show-overlay-screen{
+    font-size: 50px;
+    line-height: 60px;
+    padding: 0 13%
+  }
+
+  .product-checkout{
+    display: none;
+  }
 }

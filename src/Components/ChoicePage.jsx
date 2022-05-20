@@ -46,7 +46,8 @@ const ChoicePage = ({saturn_choice,Set_data,Set_minor_data}) => {
                 <ImageCard/>
             </div>
             <div className='assessment'>
-              <h5>I would like to Assess my </h5>
+              <h5>FREE online consultation starts here:</h5>
+              <h4 className='subtext'>Tell us what we can help you with</h4>
               {/* <ChoiceCard 
                 clickHandler={handleClick} choice={selected} noImage="true" image={hairfallImage} text="Hairfall"/>
               <ChoiceCard 

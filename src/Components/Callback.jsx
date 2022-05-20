@@ -5,6 +5,7 @@ import phone from '../images/call.png'
 import GenericButton from './GenericButton';
 import '../css/Recommendation.css'
 import { useEffect, useState } from "react";
+import '../css/ProceedTemplate.css'
 const {getCategory,getProductId,getSendMailData} = require('./common/utils')
 const axios = require('axios');
 
@@ -16,6 +17,7 @@ const Callback = ({saturn_choice}) => {
     const [product_link,Set_link]= useState('');
     const [bmi,Set_bmi] = useState('')
     const [disp,Set_disp] = useState(true);
+    const [variant_id,Set_variant_id] = useState('');
     // const [product_subtext,Set_product_subtext] = useState('')
     
   useEffect(()=>{
@@ -44,12 +46,20 @@ const Callback = ({saturn_choice}) => {
             const product_price = product_recommended[0]["variants"][0]["price"]
             const compare_price = product_recommended[0]["variants"][0]["compare_at_price"]
             const img_src = product_recommended[0]["images"][0]["src"]
+            const variant_id =  product_recommended[0]["variants"][0]["id"]
+            console.log(variant_id,'variant_id');
+            Set_link(`${variant_id}:1?checkout[shipping_address][first_name]=${saturn_choice.user_info.first_name}&
+             checkout[shipping_address][last_name]=${saturn_choice.user_info.last_name}&
+             checkout[shipping_address][phone]=${saturn_choice.user_info.phone_number}`
+            )
+            // checkout[contact_email]=${saturn_choice.user_info.email}
+            console.log(product_link,'prod link');
             // Set_product_subtext(subtext)
             Set_title(product_title);
             Set_image(img_src)
             Set_price(product_price)
             Set_compare_at_price(compare_price)
-            Set_link(product_recommended[0]["handle"])
+            // Set_link(product_recommended[0]["handle"])
         }).catch((error)=>{
             console.log(error)
         });
@@ -79,9 +89,9 @@ const Callback = ({saturn_choice}) => {
     <>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
             Our best minds are curating a personalized wellness plan for you
-            {/* <div className="progress-bar-saturn">
+            <div className="progress-bar-saturn">
                 <div class="in"></div>
-            </div> */}
+            </div>
         </div>
         <Header/>
         <div className="recommendation-section">
@@ -162,9 +172,16 @@ const Callback = ({saturn_choice}) => {
                         <div className="price">
                            Rs.{price} <span className="strike-text">&nbsp;&nbsp;<strike>Rs.{compare_at_price}</strike> </span>
                         </div>
-                        <div className="buy-button">
+                        <div className="buy-button product-checkout-button">
                             <GenericButton productNavigate="true" productLink={product_link} radiusBottom="true" text={"Buy Now"}/>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className="product-checkout">
+                <div className="proceed-container">
+                    <div className='proceed-button'>
+                        <GenericButton text="BUY NOW"  productNavigate="true" productLink={product_link}/>
                     </div>
                 </div>
             </div>

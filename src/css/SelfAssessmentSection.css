@@ -55,7 +55,7 @@
 .small-stopwatch{
     display: flex;
     margin-top: 2%;
-    margin-left: 8%;
+    margin-left: 4%;
 }
 
 .small-clock, .stopwatch-text{
@@ -73,7 +73,6 @@
     flex: 6;
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
     line-height: 19px;
     color: #333333;
     display: flex;
@@ -295,10 +294,18 @@
     .top-heading .heading {
         display: block;
     }
+
+    .stopwatch-text{
+        font-size: 10px;
+    }
 }
 
 @media only screen and (min-width: 600px){
     .top-heading .heading {
         flex:1
+    }
+    
+    .stopwatch-text{
+        font-size: 18px;
     }
 }

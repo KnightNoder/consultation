@@ -9,13 +9,14 @@ const SkinFour = ({saturn_choice,Set_minor_data}) => {
     window.scrollTo(0, 0);
     setTimeout(() => {
       Set_disp(false)
-    }, 2000);
+    }, 5000);
   }, [])
 
   return (
     <>
         <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
-          Tell us which ingredients affect your skin and we’ll helps you find your skincare match
+          Each skin type has a different way of treatment.
+          Knowing which ingredients affect your skin helps us customize a treatment plan for you
         </div>
         <div className="choice-container">
             <div className='assessment-image'>
@@ -44,7 +45,7 @@ const SkinFour = ({saturn_choice,Set_minor_data}) => {
             </div>
             
         </div>
-        <ProceedTemplate text="Proceed"  conditionMet="true" choice={"appointment"} backLink="skin-2"/>
+        <ProceedTemplate text="Proceed"  conditionMet="true" choice={"appointment"} backLink="skin-1"/>
     </>
   )
 }

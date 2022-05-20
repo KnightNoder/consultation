@@ -29,7 +29,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
     Set_minor_data("user_info","phone_number","")
     setTimeout(() => {
       Set_disp(false)
-    }, 2000);
+    }, 3000);
   }, [])
 
   return (
@@ -42,8 +42,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
             <ImageCard/>
             </div>  
             <div className='assessment'>
-              <h5>Fill in your basic information </h5>
-              <h4>We're just getting to know you better</h4>
+              <h5>Fill up the details below :</h5>
               <InputCard heading="First Name" placeholder="Eg. John" name="first_name" onchange={(e) => {Set_minor_data("user_info","first_name",e.target.value); SetVibrateFirstName(false)}}
               value={saturn_choice.user_info.first_name} vibrate={vibrate_first_name} errorText="Invalid input" requiredErrorText="Please provide name to proceed" required="*" 
                validity={saturn_choice.user_info.first_name}/>

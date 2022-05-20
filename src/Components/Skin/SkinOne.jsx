@@ -10,7 +10,7 @@ const SkinOne = ({saturn_choice,Set_minor_data}) => {
     window.scrollTo(0,0);
     setTimeout(() => {
       Set_disp(false)
-    }, 2000);
+    }, 3000);
   }, []);
 
   return (
@@ -23,22 +23,22 @@ const SkinOne = ({saturn_choice,Set_minor_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>Please select your skin concern </h5>
+              <h5>What are you concerned about?</h5>
               <div className='scroll-div'>
                 <ChoiceCard show={disp}
                   clickHandler={() => Set_minor_data("skin","skin_concern","Open pores")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Open pores" text="Open pores"/>
                 <ChoiceCard show={disp}
                   clickHandler={() => Set_minor_data("skin","skin_concern","Pigmentation")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Pigmentation"  text="Pigmentation"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","skin_concern","Active Acne")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Active Acne" text="Active Acne"/>
+                clickHandler={() => Set_minor_data("skin","skin_concern","Active Acne")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Active Acne" text="Acne"/>
                 <ChoiceCard show={disp}
                 clickHandler={() => Set_minor_data("skin","skin_concern","Aging")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Aging" text="Aging"/>
                 <ChoiceCard show={disp}
                 clickHandler={() => Set_minor_data("skin","skin_concern","Dark circles")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Dark circles" text="Dark circles"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","skin_concern","Acne marks & spots")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Acne marks & spots"  text="Acne marks & spots"/>
+                clickHandler={() => Set_minor_data("skin","skin_concern","Acne marks & spots")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Acne marks & spots"  text="Spots & marks"/>
                 <ChoiceCard show={disp}
-                clickHandler={() => Set_minor_data("skin","skin_concern","Dull Skin")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Dull Skin" text="Dull Skin"/>
+                clickHandler={() => Set_minor_data("skin","skin_concern","Dull Skin")} noImage="true" choice={saturn_choice.skin.skin_concern} value="Dull Skin" text="Dull skin (general skincare)"/>
               </div>
             </div>
         </div>

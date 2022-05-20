@@ -90,9 +90,9 @@ const Set_minor_data = (minor_key,item,val) => {
              Set_minor_data={Set_minor_data} />}/>
              <Route path='/skin-1' exact element={<SkinTwo saturn_choice={saturn_choice}
              Set_minor_data={Set_minor_data} />}/>
-             <Route path='/skin-2' exact element={<SkinThree saturn_choice={saturn_choice}
-             Set_minor_data={Set_minor_data} />}/>
-             <Route path='/skin-3' exact element={<SkinFour saturn_choice={saturn_choice}
+             {/* <Route path='/skin-2' exact element={<SkinThree saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data} />}/> */}
+             <Route path='/skin-2' exact element={<SkinFour saturn_choice={saturn_choice}
              Set_minor_data={Set_minor_data} />}/>
              <Route path='/performance' exact element={<PerformanceOne/>}/>
              <Route path='/performance-1' exact element={<PerformanceTwo/>}/>
