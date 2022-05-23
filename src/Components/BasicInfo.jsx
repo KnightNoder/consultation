@@ -76,7 +76,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
               errorText="Invalid input" vibrate={true} validity={true} />
               <br />
               <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={saturn_choice.user_info.phone_number}
-              inputMode="numeric" validity={saturn_choice.user_info.phone_number.length == 10}
+              inputMode="numeric" validity={saturn_choice.user_info.phone_number.length == 10} numberCheck={numberCheck}
               onchange={(e) => {Set_minor_data("user_info","phone_number",e.target.value);SetVibratePhone(false)}} errorText="Invalid input" requiredErrorText="Please provide valid phone number to proceed" 
                required="*" vibrate={vibrate_phone}/>
               <br />
