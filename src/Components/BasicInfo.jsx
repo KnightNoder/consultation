@@ -93,7 +93,8 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
             </div>
         </div>
         <ProceedTemplate  vibrate={false} vibrateText={vibrateText} text="Proceed" choice={saturn_choice.category} backLink="choice" 
-        conditionMet={saturn_choice.user_info.first_name && saturn_choice.user_info.email.includes('@') && (saturn_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_choice.user_info.phone_number))}
+        conditionMet={saturn_choice.user_info.first_name && saturn_choice.user_info.email.includes('@') && (saturn_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_choice.user_info.phone_number))
+        && (saturn_choice.user_info.age && saturn_choice.user_info.age <= 149)}
         /> 
     </>
   )
