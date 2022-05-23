@@ -61,7 +61,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
                requiredErrorText="Please provide valid email to proceed" required="*" vibrate={vibrate_email}/>
               <br />
               <InputCard heading="Age" placeholder="Eg. 24" value={saturn_choice.user_info.age} 
-              validity={saturn_choice.user_info.age}
+              validity={saturn_choice.user_info.age} inputMode="numeric"
               onchange={(e) => {Set_minor_data("user_info","age",e.target.value);SetVibrate(false)}} errorText="Invalid input"
                requiredErrorText="Please provide valid age to proceed" required="*" vibrate={vibrate}/>
               <br />
@@ -74,14 +74,14 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
   )
 }
 
-const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,numberCheck,validity}) => {
+const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,inputMode,validity}) => {
   return (
     <>
       <h3 style={{}}>{heading} 
         <div style={{display:"inline-block",fontSize:"20px",color:"#EA2C2C", marginLeft:"3px"}} className=''>{required}
         </div>
       </h3>
-      <input className='input' onChange={onchange} value={value} 
+      <input className='input' onChange={onchange} value={value} inputMode={inputMode}
       type="text" placeholder={placeholder}/>
       <span style={ (vibrate && !validity) ? {visibility:"visible"} : {visibility:"hidden"}} className='error-text' id="two">
         {requiredErrorText}
