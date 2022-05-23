@@ -20,6 +20,30 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
     SetVibrate(true)
   }
 
+  const numberCheck = (e)  => {
+            var key;
+            var keychar;
+
+            if (window.event)
+                key = window.event.keyCode;
+            else if (e)
+                key = e.which;
+            else
+                return true;
+            console.log(key,e,'event or key')
+            keychar = String.fromCharCode(key);
+
+            // control keys
+            if ((key==0) || (key==8) || (key==9) || (key==13) || (key==27) ||
+            (key == 37) ||  (key == 39) || (key == 46) )
+                return true;
+
+            // numbers
+            else if ((("0123456789").indexOf(keychar) > -1))
+                return true;
+            else
+                e.preventDefault()
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,6 +51,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
     Set_minor_data("user_info","last_name","")
     Set_minor_data("user_info","email","")
     Set_minor_data("user_info","phone_number","")
+    Set_minor_data("user_info","age","")
     setTimeout(() => {
       Set_disp(false)
     }, 3000);
@@ -51,8 +76,8 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
               errorText="Invalid input" vibrate={true} validity={true} />
               <br />
               <InputCard heading="Phone Number"  placeholder="Eg. 9876543210" name="phone_number" value={saturn_choice.user_info.phone_number}
-               validity={saturn_choice.user_info.phone_number.length == 10 && /^[0-9]+$/.test(saturn_choice.user_info.phone_number)}
-              onchange={(e) => {Set_minor_data("user_info","phone_number",e.target.value);SetVibratePhone(false);}} errorText="Invalid input" requiredErrorText="Please provide valid phone number to proceed" 
+              inputMode="numeric" validity={saturn_choice.user_info.phone_number.length == 10}
+              onchange={(e) => {Set_minor_data("user_info","phone_number",e.target.value);SetVibratePhone(false)}} errorText="Invalid input" requiredErrorText="Please provide valid phone number to proceed" 
                required="*" vibrate={vibrate_phone}/>
               <br />
               <InputCard heading="Email" placeholder="Eg. johndoe@ghc.health" value={saturn_choice.user_info.email} 
@@ -61,7 +86,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
                requiredErrorText="Please provide valid email to proceed" required="*" vibrate={vibrate_email}/>
               <br />
               <InputCard heading="Age" placeholder="Eg. 24" value={saturn_choice.user_info.age} 
-              validity={saturn_choice.user_info.age} inputMode="numeric"
+              validity={saturn_choice.user_info.age && saturn_choice.user_info.age <= 149} inputMode="numeric" numberCheck={numberCheck}
               onchange={(e) => {Set_minor_data("user_info","age",e.target.value);SetVibrate(false)}} errorText="Invalid input"
                requiredErrorText="Please provide valid age to proceed" required="*" vibrate={vibrate}/>
               <br />
@@ -74,7 +99,7 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
   )
 }
 
-const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,inputMode,validity}) => {
+const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, required,onchange,inputMode,validity,numberCheck}) => {
   return (
     <>
       <h3 style={{}}>{heading} 
@@ -82,7 +107,7 @@ const InputCard = ({heading,placeholder,requiredErrorText,value,vibrate, require
         </div>
       </h3>
       <input className='input' onChange={onchange} value={value} inputMode={inputMode}
-      type="text" placeholder={placeholder}/>
+      type="text" placeholder={placeholder} onKeyDown={numberCheck}/> 
       <span style={ (vibrate && !validity) ? {visibility:"visible"} : {visibility:"hidden"}} className='error-text' id="two">
         {requiredErrorText}
       </span>
