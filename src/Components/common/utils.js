@@ -222,14 +222,14 @@ const getSendMailData = (saturn_choice) => {
   }
 
   const data = JSON.stringify({
-    firstName: saturn_choice.first_name,
-    lastName: saturn_choice.last_name,
-    age: saturn_choice.age,
-    phone: saturn_choice.phone_number,
-    email: saturn_choice.email,
-    assessment_type: saturn_choice.assessment_type,
+    firstName: saturn_choice.user_info.first_name,
+    lastName: saturn_choice.user_info.last_name,
+    age: saturn_choice.user_info.age,
+    phone: saturn_choice.user_info.phone_number,
+    email: saturn_choice.user_info.email,
+    consultancy_type: saturn_choice.assessment_type,
     category: saturn_choice.category,
-    appointment_type: saturn_choice.appointment_type,
+    booking: saturn_choice.appointment_type,
     image: "",
     user_survey: questionnaire,
   });

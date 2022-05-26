@@ -22,7 +22,6 @@ const Callback = ({saturn_choice}) => {
     
   useEffect(()=>{
     const product_id = getProductId(saturn_choice);
-    console.log(product_id,'prod id');
     // const weight = parseInt(saturn_choice.user_info.height);
     // const height = parseInt(saturn_choice.user_info.weight);
     // const BMI = parseInt((weight * 10000) / (height * height));
@@ -35,26 +34,21 @@ const Callback = ({saturn_choice}) => {
             method: 'get',
             url: `https://${process.env.REACT_APP_GET_PRODUCTS_BASE_URL}/${saturn_choice.category}/products.json`,
             headers: { 
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': "*",
-            }
+              'Content-Type': 'application/json'            }
         };
         await axios(config)
         .then(response => {
             const product_recommended = (response.data["products"].filter((item) => item.id == product_id));
-            console.log(product_recommended,'reco prod')
             let product_title = product_recommended[0]["title"];
             const product_price = product_recommended[0]["variants"][0]["price"]
             const compare_price = product_recommended[0]["variants"][0]["compare_at_price"]
             const img_src = product_recommended[0]["images"][0]["src"]
             const variant_id =  product_recommended[0]["variants"][0]["id"]
-            console.log(variant_id,'variant_id');
             Set_link(`${variant_id}:1?checkout[shipping_address][first_name]=${saturn_choice.user_info.first_name}&
              checkout[shipping_address][last_name]=${saturn_choice.user_info.last_name}&
              checkout[shipping_address][phone]=${saturn_choice.user_info.phone_number}`
             )
             // checkout[contact_email]=${saturn_choice.user_info.email}
-            console.log(product_link,'prod link');
             // Set_product_subtext(subtext)
             Set_title(product_title);
             Set_image(img_src)
@@ -69,22 +63,26 @@ const Callback = ({saturn_choice}) => {
     getData();
 
     const data = getSendMailData(saturn_choice);
-    const config = {
-        method: 'post',
-        url: `https://${process.env.REACT_APP_SEND_MAIL_API_BASE_URL}/api/device/consultation`,
-        headers: { 
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': "*",
-        },
-        data : data
-      };
-      axios(config).then((response) => {
-        console.log('success')
-      }).catch(function (error) {
-        console.log(error);
-      }); 
+    console.log(data,'data')
+    const sendMail = async () => {
+        const config = {
+            method: 'post',
+            url: `https://${process.env.REACT_APP_SEND_MAIL_API_BASE_URL}/api/device/consultation`,
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            data : data
+        };
+        axios(config).then((response) => {
+            console.log('success')
+        }).catch(function (error) {
+            console.log(error);
+        }); 
+    }
+    
+    sendMail();
 
-  },[])
+    },[])
 
     
   return (

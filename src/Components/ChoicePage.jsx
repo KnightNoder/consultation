@@ -15,7 +15,6 @@ const ChoicePage = ({saturn_choice,Set_data,Set_minor_data}) => {
   const [vibrate,SetVibrate] = useState(false);
   const [age_valid,Set_age_valid]= useState(false);
 
-  console.log(saturn_choice.user_info,'app state');
   const vibrateText = () => {
     navigator.vibrate(1000)
     SetVibrate(true)
