@@ -35,7 +35,11 @@ const Callback = ({saturn_choice}) => {
             method: 'get',
             url: `https://${process.env.REACT_APP_GET_PRODUCTS_BASE_URL}/${saturn_choice.category}/products.json`,
             headers: { 
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': "https://stagingappapi.ghc.health/api/device/consultation",
+              "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, POST, DELETE, OPTIONS",
+              "Access-Control-Allow-Headers": "Content-Type",
+              "Access-Control-Max-Age": 86400
             }
         };
         await axios(config)
