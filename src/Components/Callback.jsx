@@ -73,7 +73,8 @@ const Callback = ({saturn_choice}) => {
         method: 'post',
         url: `https://${process.env.REACT_APP_SEND_MAIL_API_BASE_URL}/api/device/consultation`,
         headers: { 
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': "*",
         },
         data : data
       };
