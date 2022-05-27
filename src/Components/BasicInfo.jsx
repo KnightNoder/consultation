@@ -30,7 +30,6 @@ const BasicInfo = ({saturn_choice,Set_minor_data}) => {
                 key = e.which;
             else
                 return true;
-            console.log(key,e,'event or key')
             keychar = String.fromCharCode(key);
 
             // control keys

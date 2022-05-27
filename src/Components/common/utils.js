@@ -183,11 +183,11 @@ const getSendMailData = (saturn_choice) => {
     //   ),
     // },
     skin: {
-      "Please select your skin concern": saturn_choice.skin_concern,
-      "Please select your skin texture": saturn_choice.skin_texture,
-      "Please select your skin type": saturn_choice.skin_type,
+      "Please select your skin concern": saturn_choice.skin.skin_concern,
+      "Please select your skin texture": saturn_choice.skin.skin_texture,
+      "Please select your skin type": saturn_choice.skin.skin_type,
       "Are you allergic to any of the ingredients?":
-        saturn_choice.skin_allergy_to,
+        saturn_choice.skin.skin_allergy_to,
     },
     // Performance: {
     //   "How is your sexual drive over the last one year?":
