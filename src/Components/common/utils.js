@@ -231,6 +231,7 @@ const getSendMailData = (saturn_choice) => {
     category: saturn_choice.category,
     booking: saturn_choice.appointment_type,
     image: "",
+    type: "saturn",
     user_survey: questionnaire,
   });
 
