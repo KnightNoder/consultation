@@ -186,8 +186,8 @@ html {
   .main-container{
     display: flex;
     flex-direction: column;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding-top: 2%;
     margin-bottom:10%
   }
