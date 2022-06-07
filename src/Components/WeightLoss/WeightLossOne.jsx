@@ -16,6 +16,8 @@ const WeightLossOne = ({saturn_choice,Set_minor_data}) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    Set_minor_data("user_info","height","");
+    Set_minor_data("user_info","weight","");
     setTimeout(() => {
       Set_disp(false)
     }, 3000);

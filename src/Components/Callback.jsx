@@ -170,7 +170,7 @@ const Callback = ({saturn_choice}) => {
                             {/* Treats all hair concerns and improves overall hair growth */}
                         {/* </div> */}
                         <div className="price">
-                           Rs.{price} <span className="strike-text">&nbsp;&nbsp;<strike>Rs.{compare_at_price}</strike> </span>
+                           Rs.{price} { compare_at_price ? <span className="strike-text">&nbsp;&nbsp;<strike>Rs.{compare_at_price}</strike></span> : null }
                         </div>
                         <div className="buy-button product-checkout-button">
                             <GenericButton productNavigate="true" productLink={product_link} radiusBottom="true" text={"Buy Now"}/>
