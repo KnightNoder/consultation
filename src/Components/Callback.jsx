@@ -22,10 +22,11 @@ const Callback = ({saturn_choice}) => {
     
   useEffect(()=>{
     const product_id = getProductId(saturn_choice);
-    // const weight = parseInt(saturn_choice.user_info.height);
-    // const height = parseInt(saturn_choice.user_info.weight);
-    // const BMI = parseInt((weight * 10000) / (height * height));
-    // Set_bmi(BMI)
+    console.log(product_id,'prod id');
+    const weight = parseInt(saturn_choice.user_info.height);
+    const height = parseInt(saturn_choice.user_info.weight);
+    const BMI = parseInt((weight * 10000) / (height * height));
+    Set_bmi(BMI)
     setTimeout(() => {
         Set_disp(false)
       }, 4000);
@@ -39,6 +40,7 @@ const Callback = ({saturn_choice}) => {
         await axios(config)
         .then(response => {
             const product_recommended = (response.data["products"].filter((item) => item.id == product_id));
+            console.log(product_recommended,'prod reco');
             let product_title = product_recommended[0]["title"];
             const product_price = product_recommended[0]["variants"][0]["price"]
             const compare_price = product_recommended[0]["variants"][0]["compare_at_price"]

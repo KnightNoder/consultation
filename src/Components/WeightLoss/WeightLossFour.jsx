@@ -5,27 +5,15 @@ import '../../css/WeightLossFour.css';
 import { useEffect, useState } from 'react';
 import ImageCard from '../ImageCard'
 
-const WeightLossFour = () => {
-  const [check_list,Set_check_list] = useState(JSON.parse(window.localStorage.getItem('check_list')) || {
-    "Cholestrol": true,
-    "Thyroid":false,
-    "Heart":false,
-    "Diabetes": false,
-    "Kidney":false,
-    "No_such_problems": false,
-    "Others": false,
-    "Others_input":""
-  })
-
-
+const WeightLossFour = ({saturn_choice,Set_minor_data,Set_weight_data}) => {
+  const [disp,Set_disp] = useState(true);
+  
   const changeHandler = (name,value) =>{
-    
-    Set_check_list((prevState) =>{
       if(name == 'No such problems'){
         name = 'No_such_problems'
       }
       if(name == "No_such_problems" && value == false){
-        return {
+        Set_minor_data("weight_management","check_list",{
           "Cholestrol": false,
           "Thyroid":false,
           "Heart":false,
@@ -34,51 +22,49 @@ const WeightLossFour = () => {
           "No_such_problems": true,
           "Others": false,
           "Others_input":""
-        }
+        })
       } else {
-        return {...prevState,[name]: !value,"No_such_problems":false}
+        Set_weight_data(name,value)
       }
-    })
   }
 
-  useEffect(()=>{
-    window.localStorage.setItem('check_list',JSON.stringify(check_list));
-  },
-  [check_list]
-  )
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      Set_disp(false)
+    }, 3000);
+  }, [])
 
-  const inputHandler = (e) => {
-    Set_check_list((prevState) =>{
-      return {...prevState,[e.target.name]: e.target.value}
-    })
-  }
   return (
     <>
+        <div className={`${disp ? "show-overlay-screen" : "hide-overlay-screen"}`}>
+          Some medical conditions do require a special plan. Help us find you a healthy way to manage your weight
+        </div>
         <div className="choice-container">
             <div className='assessment-image'>
                 <ImageCard/>
             </div>
             <div className='assessment'>
               <h5>Do you have any pre-existing problems? </h5>
-              <div className={` error-text-checkbox ${!!Object.values(check_list).filter((x)=> x).length ? "not-visible": "visible"}`}>Please answer the question to proceed</div>
+              <div className={` error-text-checkbox ${!!Object.values(saturn_choice.weight_management.check_list).filter((x)=> x).length ? "not-visible": "visible"}`}>Please answer the question to proceed</div>
               <div className='scroll-div'>
-                <CheckBoxCard name="Cholestrol" value={check_list.Cholestrol} onChange={(name,value)=>changeHandler(name,value)}  text="Cholestrol"/>
-                <CheckBoxCard name="Thyroid" value={check_list.Thyroid} onChange={(name,value)=>changeHandler(name,value)} text="Thyroid"/>
-                <CheckBoxCard name="Heart" onChange={(name,value)=>changeHandler(name,value)} value={check_list.Heart} text="Heart"/>
-                <CheckBoxCard name="Diabetes" onChange={(name,value)=>changeHandler(name,value)} value={check_list.Diabetes} text="Diabetes"/>
-                <CheckBoxCard name="Kidney" onChange={(name,value)=>changeHandler(name,value)} value={check_list.Kidney} text="Kidney"/>
-                <CheckBoxCard name="No_such_problems" onChange={(name,value)=>changeHandler(name,value)} value={check_list.No_such_problems} text="No such problems"/>
+                <CheckBoxCard name="Cholestrol" value={saturn_choice.weight_management.check_list.Cholestrol} onChange={(name,value)=>changeHandler(name,value)}  text="Cholestrol"/>
+                <CheckBoxCard name="Thyroid" value={saturn_choice.weight_management.check_list.Thyroid} onChange={(name,value)=>changeHandler(name,value)} text="Thyroid"/>
+                <CheckBoxCard name="Heart" onChange={(name,value)=>changeHandler(name,value)} value={saturn_choice.weight_management.check_list.Heart} text="Heart"/>
+                <CheckBoxCard name="Diabetes" onChange={(name,value)=>changeHandler(name,value)} value={saturn_choice.weight_management.check_list.Diabetes} text="Diabetes"/>
+                <CheckBoxCard name="Kidney" onChange={(name,value)=>changeHandler(name,value)} value={saturn_choice.weight_management.check_list.Kidney} text="Kidney"/>
+                <CheckBoxCard name="No_such_problems" onChange={(name,value)=>changeHandler(name,value)} value={saturn_choice.weight_management.check_list.No_such_problems} text="No such problems"/>
                 {/* <div className='optional-input' style={{display:"flex", justifyContent: "center",
                   alignItems:"center"
                 }}> */}
-                <CheckBoxCard name="Others" onChange={(name,value)=>changeHandler(name,value)} value={check_list.Others} text="Others"/>
-                <input className='input' name="Others_input" value={check_list.Others_input} disabled={check_list.Others != true}
-                onChange={(e) => inputHandler(e)} style={{height:"65px"}} type="text" placeholder='Specify the issue' autoComplete='off' />
+                <CheckBoxCard name="Others" onChange={(name,value)=>changeHandler(name,value)} value={saturn_choice.weight_management.check_list.Others} text="Others"/>
+                <input className='input' name="Others_input" value={saturn_choice.weight_management.check_list.Others_input} disabled={saturn_choice.weight_management.check_list.Others != true}
+                onChange={(name,value)=>changeHandler(name,value)} style={{height:"65px"}} type="text" placeholder='Specify the issue' autoComplete='off' />
                 {/* </div> */}
               </div>
             </div>
         </div>
-        <ProceedTemplate text="Proceed" choice={"appointment"} vibrateText={()=>{}} backLink="weight-management-2" conditionMet={!!Object.values(check_list).filter((x)=> x).length}/>
+        <ProceedTemplate text="Proceed" choice={"appointment"} vibrateText={()=>{}} backLink="weight-management-2" conditionMet={!!Object.values(saturn_choice.weight_management.check_list).filter((x)=> x).length}/>
     </>
   )
 }

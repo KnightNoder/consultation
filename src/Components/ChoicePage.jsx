@@ -53,9 +53,9 @@ const ChoicePage = ({saturn_choice,Set_data,Set_minor_data}) => {
                 clickHandler={handleClick} choice={selected} noImage="true" image={beardImage} text="Beard"/>
               <ChoiceCard 
                clickHandler={handleClick} choice={selected} noImage="true" image={performanceImage} text="Performance"/> */}
-              {/* <ChoiceCard 
+              <ChoiceCard 
                clickHandler={() => Set_data("category","weight-management")} choice={saturn_choice.category} noImage="true" image={weightlossImage} text="Weight Management" 
-               value="weight-management"/> */}
+               value="weight-management"/>
               <ChoiceCard 
                clickHandler={() => Set_data("category","skin")} choice={saturn_choice.category} noImage="true" image={skinImage} text="Skin Health"
                value="skin"/>

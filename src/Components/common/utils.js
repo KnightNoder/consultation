@@ -51,13 +51,13 @@ const getProductId = (saturn_choice) => {
     //   )
     //     return "6980058677412";
     //   else return "6743341072548";
-    // case "weight-management":
-    //   const weight = parseInt(window.localStorage.getItem("weight"));
-    //   const height = parseInt(window.localStorage.getItem("height"));
-    //   const BMI = (weight * 10000) / (height * height);
-    //   if (BMI > 25) return "6679222288548";
-    //   else if (BMI > 22 && BMI <= 25) return "6774754902180";
-    //   else return "6766304428196";
+    case "weight-management":
+      const weight = parseInt(saturn_choice.user_info.weight);
+      const height = parseInt(saturn_choice.user_info.height);
+      const BMI = (weight * 10000) / (height * height);
+      if (BMI > 25) return "7630401143006";
+      else if (BMI > 22 && BMI <= 25) return "7619064365278";
+      else return "7634556059870";
     // case "Performance":
     //   const erection_case = window.localStorage.getItem("erection_problem");
     //   const ejaculation_case = window.localStorage.getItem("ejaculation_case");
@@ -151,6 +151,10 @@ const getProductId = (saturn_choice) => {
 
 const getSendMailData = (saturn_choice) => {
   const choice = saturn_choice.category;
+  const keys = Object.keys(saturn_choice.weight_management.check_list);
+  const filtered_string = keys.filter(function (key) {
+    return saturn_choice.weight_management.check_list[key];
+  });
   var stateObject = {
     // Hairfall: {
     //   "What is the current condition of your hair and scalp?":
@@ -171,17 +175,15 @@ const getSendMailData = (saturn_choice) => {
     //   "Does anyone in your family have beard growth issues?":
     //     window.localStorage.getItem("family_beard_growth_issues"),
     // },
-    // WeightLoss: {
-    //   Height: window.localStorage.getItem("height"),
-    //   Weight: window.localStorage.getItem("weight"),
-    //   "How often do you eat meals in a day?":
-    //     window.localStorage.getItem("meals_a_day"),
-    //   "How many days do you exercise in a week?":
-    //     window.localStorage.getItem("exercise_a_week"),
-    //   "Do you have any pre-existing problems?": window.localStorage.getItem(
-    //     "pre_existing_problems"
-    //   ),
-    // },
+    "weight-management": {
+      Height: saturn_choice.user_info.height,
+      Weight: saturn_choice.user_info.weight,
+      "How often do you eat meals in a day?":
+        saturn_choice.weight_management.meals_a_day,
+      "How many days do you exercise in a week?":
+        saturn_choice.weight_management.exercise_a_week,
+      "Do you have any pre-existing problems?": filtered_string.toString(),
+    },
     skin: {
       "Please select your skin concern": saturn_choice.skin.skin_concern,
       "Please select your skin texture": saturn_choice.skin.skin_texture,
@@ -217,10 +219,14 @@ const getSendMailData = (saturn_choice) => {
     });
   }
 
+  console.log(stateObject[choice], choice, "state object");
+
   if (Object.keys(stateObject[choice].length == 4)) {
     questionnaire.push(testObj);
   }
 
+  if (choice == "weight-management") {
+  }
   const data = JSON.stringify({
     firstName: saturn_choice.user_info.first_name,
     lastName: saturn_choice.user_info.last_name,

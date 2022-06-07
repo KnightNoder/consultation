@@ -48,6 +48,20 @@ function App() {
       "skin_type":"Normal",
       "skin_allergy_to":"Vitamin C",
     },
+    "weight_management":{
+      "meals_a_day":"Greater than 6 times",
+      "exercise_a_week":"Daily",
+      "check_list":{
+        "Cholestrol": true,
+        "Thyroid":false,
+        "Heart":false,
+        "Diabetes": false,
+        "Kidney":false,
+        "No_such_problems": false,
+        "Others": false,
+        "Others_input":""
+      }
+    },
     "appointment_type":"FREE Consultation call"
   })
 
@@ -63,6 +77,19 @@ const Set_minor_data = (minor_key,item,val) => {
       ...state[minor_key],
       [item]: val
     }}
+  })
+}
+
+const Set_weight_data = (item,val) => {
+  Set_saturn_choice((state) => {
+    return {...state,"weight_management": {
+        ...state["weight_management"], ["check_list"]:{
+          ...state["weight_management"]["check_list"],
+          [item]:!val,
+          "No_such_problems":false
+        }
+      }
+    }
   })
 }
   useEffect(() => {
@@ -102,10 +129,14 @@ const Set_minor_data = (minor_key,item,val) => {
              <Route path='/beard' exact element={<BeardOne/>}/>
              <Route path='/beard-1' exact element={<BeardTwo/>}/>
              <Route path='/beard-2' exact element={<BeardThree/>}/>
-             <Route path='/weight-management' exact element={<WeightLossOne/>}/>
-             <Route path='/weight-management-1' exact element={<WeightLossTwo/>}/>
-             <Route path='/weight-management-2' exact element={<WeightLossThree/>}/>
-             <Route path='/weight-management-3' exact element={<WeightLossFour/>}/>
+             <Route path='/weight-management' exact element={<WeightLossOne saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data} />}/>
+             <Route path='/weight-management-1' exact element={<WeightLossTwo saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data}/>}/>
+             <Route path='/weight-management-2' exact element={<WeightLossThree saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data}/>}/>
+             <Route path='/weight-management-3' exact element={<WeightLossFour saturn_choice={saturn_choice}
+             Set_minor_data={Set_minor_data} Set_weight_data={Set_weight_data}/>}/>
              <Route path='/appointment' exact element={<Appointment saturn_choice={saturn_choice} 
                 Set_data={Set_data}/>}/>
              <Route path='/book' exact element={<Book/>}/>
