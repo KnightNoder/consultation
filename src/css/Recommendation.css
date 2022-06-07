@@ -402,13 +402,14 @@
     }
 
     .bmi .bmi-text{
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .bmi .bmi-number{
-        font-size: 15px;
-        height: 25px;
-        width: 25px;
+        font-size: 13px;
+        height: 20px;
+        width: 20px;
+        margin-right: 3%;
     }
 
     .product-header{
