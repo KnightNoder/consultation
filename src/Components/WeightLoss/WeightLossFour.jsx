@@ -5,7 +5,7 @@ import '../../css/WeightLossFour.css';
 import { useEffect, useState } from 'react';
 import ImageCard from '../ImageCard'
 
-const WeightLossFour = ({saturn_choice,Set_minor_data,Set_weight_data}) => {
+const WeightLossFour = ({saturn_choice,Set_minor_data,Set_weight_data,Set_others_input}) => {
   const [disp,Set_disp] = useState(true);
   
   const changeHandler = (name,value) =>{
@@ -59,7 +59,7 @@ const WeightLossFour = ({saturn_choice,Set_minor_data,Set_weight_data}) => {
                 }}> */}
                 <CheckBoxCard name="Others" onChange={(name,value)=>changeHandler(name,value)} value={saturn_choice.weight_management.check_list.Others} text="Others"/>
                 <input className='input' name="Others_input" value={saturn_choice.weight_management.check_list.Others_input} disabled={saturn_choice.weight_management.check_list.Others != true}
-                onChange={(name,value)=>changeHandler(name,value)} style={{height:"65px"}} type="text" placeholder='Specify the issue' autoComplete='off' />
+                onChange={(e)=>Set_others_input(e.target.name,e.target.value)} style={{height:"65px"}} type="text" placeholder='Specify the issue' autoComplete='off' />
                 {/* </div> */}
               </div>
             </div>

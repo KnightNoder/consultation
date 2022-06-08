@@ -22,7 +22,7 @@ const SkinTwo = ({saturn_choice,Set_minor_data}) => {
               <ImageCard/>    
             </div>
             <div className='assessment'>
-              <h5>Describe your skin texture</h5>
+              <h5>Describe your skin type</h5>
               <ChoiceCard show={disp} 
                 clickHandler={() => Set_minor_data("skin","skin_texture","Oily")} noImage="true" choice={saturn_choice.skin.skin_texture} value="Oily" text="Oily"/>
               <ChoiceCard show={disp} 

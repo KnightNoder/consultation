@@ -92,6 +92,19 @@ const Set_weight_data = (item,val) => {
     }
   })
 }
+
+
+const Set_others_input = (item,val) => {
+  Set_saturn_choice((state) => {
+    return {...state,"weight_management": {
+        ...state["weight_management"], ["check_list"]:{
+          ...state["weight_management"]["check_list"],
+          [item]:val
+        }
+      }
+    }
+  })
+}
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -136,7 +149,7 @@ const Set_weight_data = (item,val) => {
              <Route path='/weight-management-2' exact element={<WeightLossThree saturn_choice={saturn_choice}
              Set_minor_data={Set_minor_data}/>}/>
              <Route path='/weight-management-3' exact element={<WeightLossFour saturn_choice={saturn_choice}
-             Set_minor_data={Set_minor_data} Set_weight_data={Set_weight_data}/>}/>
+             Set_minor_data={Set_minor_data} Set_weight_data={Set_weight_data} Set_others_input={Set_others_input}/>}/>
              <Route path='/appointment' exact element={<Appointment saturn_choice={saturn_choice} 
                 Set_data={Set_data}/>}/>
              <Route path='/book' exact element={<Book/>}/>

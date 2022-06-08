@@ -185,9 +185,9 @@ const getSendMailData = (saturn_choice) => {
       "Do you have any pre-existing problems?": filtered_string.toString(),
     },
     skin: {
-      "Please select your skin concern": saturn_choice.skin.skin_concern,
-      "Please select your skin texture": saturn_choice.skin.skin_texture,
-      "Please select your skin type": saturn_choice.skin.skin_type,
+      "What are you concerned about?": saturn_choice.skin.skin_concern,
+      // "Please select your skin texture": saturn_choice.skin.skin_texture,
+      "Describe your skin type": saturn_choice.skin.skin_type,
       "Are you allergic to any of the ingredients?":
         saturn_choice.skin.skin_allergy_to,
     },
@@ -221,12 +221,15 @@ const getSendMailData = (saturn_choice) => {
 
   console.log(stateObject[choice], choice, "state object");
 
+  if (Object.keys(stateObject[choice].length == 3)) {
+    questionnaire.push(testObj);
+    questionnaire.push(testObj);
+  }
+
   if (Object.keys(stateObject[choice].length == 4)) {
     questionnaire.push(testObj);
   }
 
-  if (choice == "weight-management") {
-  }
   const data = JSON.stringify({
     firstName: saturn_choice.user_info.first_name,
     lastName: saturn_choice.user_info.last_name,
