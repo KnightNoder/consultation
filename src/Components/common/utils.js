@@ -187,7 +187,7 @@ const getSendMailData = (saturn_choice) => {
     skin: {
       "What are you concerned about?": saturn_choice.skin.skin_concern,
       // "Please select your skin texture": saturn_choice.skin.skin_texture,
-      "Describe your skin type": saturn_choice.skin.skin_type,
+      "Describe your skin type": saturn_choice.skin.texture,
       "Are you allergic to any of the ingredients?":
         saturn_choice.skin.skin_allergy_to,
     },
