@@ -28,7 +28,7 @@ const SkinTwo = ({saturn_choice,Set_minor_data}) => {
               <ChoiceCard show={disp} 
                 clickHandler={() => Set_minor_data("skin","skin_texture","Dry")} noImage="true" choice={saturn_choice.skin.skin_texture}  value="Dry" text="Dry"/>
               <ChoiceCard show={disp} 
-               clickHandler={() => Set_minor_data("skin","skin_texture","Combined")} noImage="true" choice={saturn_choice.skin.skin_texture}  value="Combined" text="Normal "/>
+               clickHandler={() => Set_minor_data("skin","skin_texture","Normal")} noImage="true" choice={saturn_choice.skin.skin_texture}  value="Normal" text="Normal "/>
             </div>
         </div>
         <ProceedTemplate conditionMet="true" text="Proceed" choice={"skin-2"} backLink="skin"/>
